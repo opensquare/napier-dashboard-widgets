@@ -107,7 +107,6 @@ z#top{
   vertical-align:top;
   }
 #sideContent{
-  background:#d2e994;
   width:200px;
 }
 
@@ -123,9 +122,11 @@ z#top{
 	zfloat:left;
 	zwidth:210px;
 	zmin-height:150px;
-	zpadding-left:36px;
 	zborder-bottom:1px solid silver;
 	}
+#dashOptions {
+	padding-left: 38px;
+}
 #pageContent li{
   border:1px dotted #ddd;
   margin:10px 10px 30px 0;
@@ -139,7 +140,6 @@ z#top{
   float:left;
   width:210px;
   height:220px;
-  padding-left:36px;
   border:1px dotted #ddd;
   margin:0 10px 10px 0;
  }
@@ -393,7 +393,6 @@ z#pageContent table .data2 {
 
 /* Sidebar styling */
 .sideWidget{
-  position:fixed;
   width:200px;
   min-height:100px;
   background:lightgrey;

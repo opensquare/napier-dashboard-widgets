@@ -1,7 +1,7 @@
 <widget>
 	<type>layout</type>
 	<parameters>
-		<url>index.jsp</url>
+		<url>index.html</url>
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>
