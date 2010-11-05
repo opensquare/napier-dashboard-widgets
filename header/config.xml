@@ -1,0 +1,9 @@
+<widget>
+	<type>layout</type>
+	<parameters>
+		<url>index.jsp</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+	</attributes>
+</widget>

@@ -1,0 +1,13 @@
+<widget>
+<type>internalPage</type>
+	<parameters>
+		<url>modeSwitcher.html</url>
+	</parameters>
+    <attributes>
+    	<modeswitchchannel>default</modeswitchchannel>
+        <js>modeSwitcher.js</js>
+        <css>style.css</css>
+		<useHashUrl>true</useHashUrl>
+		<displayheader>false</displayheader>
+    </attributes>
+</widget>

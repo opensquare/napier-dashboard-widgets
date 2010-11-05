@@ -1,0 +1,11 @@
+<widget>
+<type>layout</type>
+	<parameters>
+		<url>modeSwitched.html</url>
+	</parameters>
+    <attributes>
+		<modeswitchchannel>default</modeswitchchannel>
+		<js>modeSwitched.js</js>
+		<displayheader>false</displayheader>
+	</attributes>
+</widget>
