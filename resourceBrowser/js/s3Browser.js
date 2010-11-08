@@ -25,7 +25,7 @@ function deleteFile(itemName, filePath){
 	}
 	var answer = confirm("You are about to delete " + fileName);
 	if(answer){
-		sendRequest("../../browserHelper", "action=deleteFile&itemName=" + itemName.replace(/\//g, ";") + "&filePath=" + filePath, actionResponseRefresh);
+		sendRequest("../../resourceManagerAdapter", "action=deleteFile&itemName=" + itemName.replace(/\//g, ";") + "&filePath=" + filePath, actionResponseRefresh);
 	}else{
 		return false;	
 	}
@@ -38,7 +38,7 @@ function cloneDirectory(dirPath){
 	}
 	var newDirPath = prompt("Enter a new directory name", dirPath);
 	if(newDirPath!=null){
-		sendRequest("../../browserHelper", "action=cloneDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
+		sendRequest("../../resourceManagerAdapter", "action=cloneDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -51,7 +51,7 @@ function deleteDirectory(dirPath){
 	}
 	var answer = confirm("You are about to delete " + dirName);
 	if(answer){
-		sendRequest("../../browserHelper", "action=deleteDirectory&dirPath=" + dirPath, actionResponseReload);
+		sendRequest("../../resourceManagerAdapter", "action=deleteDirectory&dirPath=" + dirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -70,7 +70,7 @@ function renameFile(itemName, filePath){
 	var fileDir = filePath.substring(0,filePath.indexOf(fileName));
 	var newFileName = prompt("Enter a new file name", fileName);
 	if(newFileName!=null){
-		sendRequest("../../browserHelper", "action=renameFile&itemName=" + itemName.replace(/\//g, ";") + "&newFileName=" + newFileName, actionResponseRefresh);
+		sendRequest("../../resourceManagerAdapter", "action=renameFile&itemName=" + itemName.replace(/\//g, ";") + "&newFileName=" + newFileName, actionResponseRefresh);
 	}else{
 		return false;	
 	}
@@ -89,7 +89,7 @@ function renameDirectory(dirPath){
 	var newDirName = prompt("Enter a new directory name", dirName);
 	var newDirPath = pathToDir + newDirName;
 	if(newDirName!=null){
-		sendRequest("../../browserHelper", "action=renameDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
+		sendRequest("../../resourceManagerAdapter", "action=renameDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -101,7 +101,7 @@ function createDirectory(folderPath){
 		return false;
 	}
 	var dirPath = folderPath + "/" + folderName;
-	sendRequest("../../browserHelper", "action=createDirectory&dirPath=" + dirPath, actionResponseReload);
+	sendRequest("../../resourceManagerAdapter", "action=createDirectory&dirPath=" + dirPath, actionResponseReload);
 }
 
 function viewFile(filePath){
@@ -151,7 +151,7 @@ function executeQuery(q, mi, nt, sk, so){
 	if(nt!=null){
 		params += "&nextToken=" + nt;
 	}
-	sendRequest("../../browserHelper", params, populateFileList);
+	sendRequest("../../resourceManagerAdapter", params, populateFileList);
 }
 
 function actionResponseRefresh(){
