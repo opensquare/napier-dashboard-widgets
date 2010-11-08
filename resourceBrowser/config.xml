@@ -1,0 +1,9 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>index.html</url>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+	</attributes>
+</widget>

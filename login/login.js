@@ -6,11 +6,13 @@ function Widget_login() {
 		$("form", this.$widgetDiv).submit(function() {
 			var $loginFormJQ = $(this);
 			widgetObject.clearErrors();
+			var formData = $loginFormJQ.serialize();
+			disableForm($loginFormJQ);
 			
 			$.ajax( {
 				type: "POST",
 				url: "login",
-				data: $loginFormJQ.serialize(),
+				data: formData,
 				dataType: "json",
 				
 				success: function(data){
@@ -24,6 +26,7 @@ function Widget_login() {
 				},
 				
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					enableForm($loginFormJQ);
 					httpStatus = XMLHttpRequest.status;
 					switch(httpStatus) {
 						case 401:
