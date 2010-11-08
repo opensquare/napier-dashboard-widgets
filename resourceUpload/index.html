@@ -1,0 +1,43 @@
+<form method="POST" action="#" enctype="multipart/form-data" to="http://ec2-174-129-188-18.compute-1.amazonaws.com:8080/resource-manager/uploadResource" target="resultIframe" >
+	<table>
+		<tr>
+			<td>Type: </td>
+			<td>
+				<select name="resourceType">
+					<option value="basis">Basis</option>
+					<option value="ratingTable">Rating Table</option>
+					<option value="response">Response</option>
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="resourcePath" value="/Transforms"/>
+			</td>
+			<td>Name: </td>
+			<td>
+				<input type="text" name="resourceName" id="resourceNameInput" value=""/>
+			</td>
+			<td>Effective: </td>
+			<td>
+				<input type="text" name="effectiveTime" value="now"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="text-align:center">Either paste the resource you would like to upload into the box below</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="text-align:center">
+				<textarea name="resource" cols="60"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="text-align:center">Or select the file to upload below</td>
+		</tr>
+		<tr>
+			<td colspan="7" style="text-align:center">
+				<input type="file" name="resourceFile" size="60"/>
+			</td>
+			<tr>
+	</table>
+	<input type="submit" value="Upload" style="float:right"/>
+</form>
+<iframe name="resultIframe" style="display: none;" />

@@ -5,6 +5,6 @@
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>
-		<js>resourceBrowser.js</js>
+		<js>resourceUpload.js</js>
 	</attributes>
 </widget>

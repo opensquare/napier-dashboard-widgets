@@ -129,12 +129,12 @@ function viewHistory(filePath){
 function searchByAddress(address){
 	if(self.toolbar.document.getElementById("address")!=null){
 		self.toolbar.document.getElementById("address").value = address;
-		self.toolbar.document.getElementById("search").value = "";
 	}
 	includeArchives = false;
 	queryType="address";
 	previousToken = new Array();
 	page = 1;
+	parent.notifyChannelOfEvent("resourceBrowserChangeDirectory", {path: address});
 	executeQuery(address, maxItems, null, defaultSortKey, "asc");
 }
 
