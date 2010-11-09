@@ -25,7 +25,12 @@ function deleteFile(itemName, filePath){
 	}
 	var answer = confirm("You are about to delete " + fileName);
 	if(answer){
-		sendRequest("../../resourceManagerAdapter", "action=deleteFile&itemName=" + itemName.replace(/\//g, ";") + "&filePath=" + filePath, actionResponseRefresh);
+		$.ajax({
+			url: "../../resourceManagerAdapter", 
+			data: "action=deleteFile&itemName=" + itemName.replace(/\//g, ";") + "&filePath=" + filePath, 
+			success: actionResponseRefresh
+		});
+//		sendRequest("../../resourceManagerAdapter", "action=deleteFile&itemName=" + itemName.replace(/\//g, ";") + "&filePath=" + filePath, actionResponseRefresh);
 	}else{
 		return false;	
 	}
@@ -38,7 +43,12 @@ function cloneDirectory(dirPath){
 	}
 	var newDirPath = prompt("Enter a new directory name", dirPath);
 	if(newDirPath!=null){
-		sendRequest("../../resourceManagerAdapter", "action=cloneDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
+		$.ajax({
+			url: "../../resourceManagerAdapter",
+			data: "action=cloneDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath,
+			success: actionResponseReload
+		});
+//		sendRequest("../../resourceManagerAdapter", "action=cloneDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -51,7 +61,12 @@ function deleteDirectory(dirPath){
 	}
 	var answer = confirm("You are about to delete " + dirName);
 	if(answer){
-		sendRequest("../../resourceManagerAdapter", "action=deleteDirectory&dirPath=" + dirPath, actionResponseReload);
+		$.ajax({
+			url: "../../resourceManagerAdapter",
+			data: "action=deleteDirectory&dirPath=" + dirPath,
+			success: actionResponseReload
+		});
+//		sendRequest("../../resourceManagerAdapter", "action=deleteDirectory&dirPath=" + dirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -70,7 +85,12 @@ function renameFile(itemName, filePath){
 	var fileDir = filePath.substring(0,filePath.indexOf(fileName));
 	var newFileName = prompt("Enter a new file name", fileName);
 	if(newFileName!=null){
-		sendRequest("../../resourceManagerAdapter", "action=renameFile&itemName=" + itemName.replace(/\//g, ";") + "&newFileName=" + newFileName, actionResponseRefresh);
+		$.ajax({
+			url: "../../resourceManagerAdapter",
+			data: "action=renameFile&itemName=" + itemName.replace(/\//g, ";") + "&newFileName=" + newFileName, 
+			success: actionResponseRefresh
+		});
+//		sendRequest("../../resourceManagerAdapter", "action=renameFile&itemName=" + itemName.replace(/\//g, ";") + "&newFileName=" + newFileName, actionResponseRefresh);
 	}else{
 		return false;	
 	}
@@ -89,7 +109,12 @@ function renameDirectory(dirPath){
 	var newDirName = prompt("Enter a new directory name", dirName);
 	var newDirPath = pathToDir + newDirName;
 	if(newDirName!=null){
-		sendRequest("../../resourceManagerAdapter", "action=renameDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
+		$.ajax({
+			url: "../../resourceManagerAdapter",
+			data: "action=renameDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath,
+			success: actionResponseReload
+		});
+//		sendRequest("../../resourceManagerAdapter", "action=renameDirectory&dirPath=" + dirPath + "&newDirPath=" + newDirPath, actionResponseReload);
 	}else{
 		return false;	
 	}
@@ -101,7 +126,12 @@ function createDirectory(folderPath){
 		return false;
 	}
 	var dirPath = folderPath + "/" + folderName;
-	sendRequest("../../resourceManagerAdapter", "action=createDirectory&dirPath=" + dirPath, actionResponseReload);
+	$.ajax({
+		url: "../../resourceManagerAdapter",
+		data: "action=createDirectory&dirPath=" + dirPath,
+		success: actionResponseReload
+	});
+//	sendRequest("../../resourceManagerAdapter", "action=createDirectory&dirPath=" + dirPath, actionResponseReload);
 }
 
 function viewFile(filePath){
@@ -151,15 +181,16 @@ function executeQuery(q, mi, nt, sk, so){
 	if(nt!=null){
 		params += "&nextToken=" + nt;
 	}
-	sendRequest("../../resourceManagerAdapter", params, populateFileList);
+	$.ajax({
+		url: "../../resourceManagerAdapter",
+		data: params,
+		success: populateFileList
+	});
+//	sendRequest("../../resourceManagerAdapter", params, populateFileList);
 }
 
 function actionResponseRefresh(){
-	if (req.readyState == 4) {	
-		if (req.status == 200) {
-			refreshFileList();
-		}
-	}
+	refreshFileList();
 }
 
 function refreshFileList(){
@@ -167,51 +198,43 @@ function refreshFileList(){
 }
 
 function actionResponseReload(){
-	if (req.readyState == 4) {	
-		if (req.status == 200) {
-			window.location.reload(true);
-		}
-	}
+	window.location.reload(true);
 }
 
-function populateFileList(){
-	if (req.readyState == 4) {	
-		if (req.status == 200) {
-			var files = req.responseXML.getElementsByTagName("resource");
-			var archives = false;
-			fileDivHTML = "";
-			for(i=0;i<files.length;i++){
-				try{
-					var itemName = "";
-					var filePath = files[i].getElementsByTagName("filePath")[0].childNodes[0].nodeValue;
-					var fileName = filePath.substring(filePath.lastIndexOf("/")+1);
-					var fileType = files[i].getElementsByTagName("fileType")[0].childNodes[0].nodeValue;
-					var effectiveTime = files[i].getElementsByTagName("effectiveTime")[0].childNodes[0].nodeValue;
-					var expiryTime = files[i].getElementsByTagName("expiryTime")[0].childNodes[0].nodeValue;
-					if(fileName.indexOf("_")!=0){
-						fileDivHTML += "<a class='file " + fileType + "' href='#' itemName='" + itemName + "' filePath='" + filePath + "' onclick='parent.fileSelected(this.getAttribute(\"filePath\"));selectFile(this.getAttribute(\"filePath\"));'>"
-						fileDivHTML += "<span class='fileName'>" + fileName + "</span>";
-						fileDivHTML += "<span class='effectiveTime'>" + effectiveTime + "</span>";
-						fileDivHTML += "<span class='expiryTime'>" + expiryTime + "</span>";
-						fileDivHTML += "</a><br/>";
-					}
-				}catch(e){
-					alert(e);
-				}
+function populateFileList(data){
+	var files = data.getElementsByTagName("resource");
+	var archives = false;
+	fileDivHTML = "";
+	for(i=0;i<files.length;i++){
+		try{
+			var itemName = "";
+			var filePath = files[i].getElementsByTagName("filePath")[0].childNodes[0].nodeValue;
+			var fileName = filePath.substring(filePath.lastIndexOf("/")+1);
+			var fileType = files[i].getElementsByTagName("fileType")[0].childNodes[0].nodeValue;
+			var effectiveTime = files[i].getElementsByTagName("effectiveTime")[0].childNodes[0].nodeValue;
+			var expiryTime = files[i].getElementsByTagName("expiryTime")[0].childNodes[0].nodeValue;
+			if(fileName.indexOf("_")!=0){
+				fileDivHTML += "<a class='file " + fileType + "' href='#' itemName='" + itemName + "' filePath='" + filePath + "' onclick='parent.fileSelected(this.getAttribute(\"filePath\"));selectFile(this.getAttribute(\"filePath\"));'>"
+				fileDivHTML += "<span class='fileName'>" + fileName + "</span>";
+				fileDivHTML += "<span class='effectiveTime'>" + effectiveTime + "</span>";
+				fileDivHTML += "<span class='expiryTime'>" + expiryTime + "</span>";
+				fileDivHTML += "</a><br/>";
 			}
-			self.files.document.getElementById("files").innerHTML = fileDivHTML;
-			previousTokens[page*1-1] = nextToken;
-			try{
-				nextToken = req.responseXML.getElementsByTagName("nextToken")[0].childNodes[0].nodeValue;
-				displayPageControls(page, true);
-			}catch(e){
-				nextToken = null;
-				displayPageControls(page, false);
-			}
-			self.files.prepareFileMenus();
-			applySortClasses();
+		}catch(e){
+			alert(e);
 		}
 	}
+	self.files.document.getElementById("files").innerHTML = fileDivHTML;
+	previousTokens[page*1-1] = nextToken;
+	try{
+		nextToken = data.getElementsByTagName("nextToken")[0].childNodes[0].nodeValue;
+		displayPageControls(page, true);
+	}catch(e){
+		nextToken = null;
+		displayPageControls(page, false);
+	}
+	self.files.prepareFileMenus();
+	applySortClasses();
 }
 
 function displayPageControls(pageNo, next){
