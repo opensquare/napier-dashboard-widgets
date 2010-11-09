@@ -1,16 +1,32 @@
 function Widget_resourceBrowser() {
 
+	this.napierResourceManagerUrl = null;
+
 	this.initExtend = function() {
-		addListenerToChannel(this, "resourceBrowserRefreshDirectory");
+		this.napierResourceManagerUrl = this.$widgetDiv.attr("napierResourceManagerUrl");
 	}
 
+	this.onReadyExtend = function() {
+		addListenerToChannel(this, "resourceBrowserRefreshDirectory");
+		addListenerToChannel(this, "resourceBrowserViewFile");
+	}
+	
 	this.handleEvent = function(channel, event) {
-		var iframe = $("iframe", this.$widgetDiv);
-		if (iframe.size() > 0) {
-			if (iframe[0].contentWindow.refreshFileList) {
-				iframe[0].contentWindow.refreshFileList();
+		if (channel == "resourceBrowserRefreshDirectory") {
+			var iframes = $("iframe", this.$widgetDiv);
+			if (iframes.size() > 0) {
+				if (iframes[0].contentWindow.refreshFileList) {
+					iframes[0].contentWindow.refreshFileList();
+				}
 			}
+		} else if (channel = "resourceBrowserViewFile") {
+			this.showResource(event.filePath);
 		}
+	}
+	
+	this.showResource = function(filePath) {
+		var path = this.napierResourceManagerUrl + "resources/" + filePath.replace(/\//g, ";");
+		window.open(path, filePath, 'width=800,height=600');
 	}
 	
 }

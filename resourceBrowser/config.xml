@@ -6,5 +6,6 @@
 	<attributes>
 		<displayheader>false</displayheader>
 		<js>resourceBrowser.js</js>
+		<napierResourceManagerUrl>{napierResourceManagerUrl}</napierResourceManagerUrl>
 	</attributes>
 </widget>

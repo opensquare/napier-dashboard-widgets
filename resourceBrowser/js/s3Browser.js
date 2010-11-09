@@ -142,7 +142,7 @@ function viewFile(filePath){
 		alert("You have not selected a file to view");
 		return false;
 	}
-	openPopup(viewFileUrl.replace("{filePath}", filePath), 800, 600);
+	parent.notifyChannelOfEvent("resourceBrowserViewFile", {filePath: filePath});
 }
 
 function viewHistory(filePath){
