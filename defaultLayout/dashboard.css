@@ -70,31 +70,6 @@ z#top{
   cursor:pointer;
   float:right;
 	}
-#navbar	{
-	background:#444;
-	background-image:-moz-linear-gradient(top,#666,#333);
-	padding:4px;
-	text-shadow:1px 1px 1px #000;
-	}
-#navbar table {
-	width:90%;
-	table-layout:fixed;
-	text-align:center;
-	margin:auto;
-	border:1px dotted gray;
-    -moz-border-radius:12px;
-	}
-#navbar a {
-	display:block;
-	color:white;
-	zfont-size:110%;
-	text-decoration:none;
-	-moz-border-radius:12px;
-	padding:1px;
-	}
-#navbar a:hover{
-  background-color:gray;
-  }
 
 /* Main Body Layout */
 #dashboard{

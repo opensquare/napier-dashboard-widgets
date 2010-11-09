@@ -1,1 +1,0 @@
-<div style="background-color:#195d00;padding:10px 4px;color:#3e991c;text-align:right;line-height:1.5em">Powered by <b>PortalWizard</b><br/>&copy; Open Square, 2009</div>
