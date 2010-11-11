@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>stats.jsp</url>
+	</parameters>
+	<attributes>
+		<js>stats.js</js>
+		<displayHeader>false</displayHeader>
+	</attributes>
+</widget>
