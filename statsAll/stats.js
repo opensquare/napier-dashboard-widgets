@@ -312,7 +312,7 @@ function updateErrorStats(){
 						tableHTML += "<tr>";
 						tableHTML += "<td>" + calcID + "</td>";
 						tableHTML += "<td>" + stats[i].getElementsByTagName("physicalTime")[0].childNodes[0].nodeValue + "</td>";
-						tableHTML += "<td><a href='#' onclick='window.open(\"viewCalc.jsp?calcRef=" + calcID + "\")'>View</a></td>"
+						tableHTML += "<td><a href='#' onclick='window.open(\"showComponent?name=viewCalc&calcRef=" + calcID + "\")'>View</a></td>"
 						tableHTML += "</tr>";
 					}
 					errorTable.innerHTML = tableHTML;
