@@ -25,7 +25,7 @@ function Widget_resourceBrowser() {
 	}
 	
 	this.showResource = function(filePath) {
-		var path = this.napierResourceManagerUrl + "resources/" + filePath.replace(/\//g, ";");
+		var path = "../../proxy/{naper-resource-manager}/resources/" + filePath.replace(/\//g, ";");
 		window.open(path, filePath, 'width=800,height=600');
 	}
 	
