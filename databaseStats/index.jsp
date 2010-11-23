@@ -36,18 +36,19 @@
 
 	int numberOfCalcs = Integer.parseInt(newestCalcID) - Integer.parseInt(oldestCalcID);
 %>
-<div>
-	<span class="h1">Database</span>
-	<a name="details" style="visibility:hidden"></a>
-	<a name="database" href="#top"></a>
-	<span class="h2"> </span>
-	<div>Number of calculations: <%=numberOfCalcs%></div>
-	<table>
-		<tr>
-			<td>Oldest Calculation: </td><td><%=oldestCalcTime%></td><td><%=oldestCalcID%></td><td><a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=oldestCalcID%>')">View</a></td>
-		</tr>
-		<tr>
-			<td>Newest Calculation: </td><td><%=newestCalcTime%></td><td><%=newestCalcID%></td><td><a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=oldestCalcID%>')">View</a></td>
-		</tr>
-	</table>
-</div>
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+		<th>Start</th>
+		<th>End</th>
+		<th>No of Records</th>
+	</tr>
+	<tr>
+		<td><img src="" /></td>
+		<td>Current database</td>
+		<td><%=oldestCalcTime%> <a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=oldestCalcID%>')"><%=oldestCalcID%></a></td>
+		<td><%=newestCalcTime%> <a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=newestCalcID%>')"><%=newestCalcID%></a></td>
+		<td><%=numberOfCalcs%></td>
+	</tr>
+</table>

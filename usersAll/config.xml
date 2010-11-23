@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>users.jsp</url>
+	</parameters>
+	<attributes>
+		<js>users.js</js>
+		<displayHeader>false</displayHeader>
+	</attributes>
+</widget>

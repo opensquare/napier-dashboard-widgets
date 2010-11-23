@@ -1,23 +1,31 @@
 /* Set Base HTML Tags */
 body{
   margin:0;
-  min-width:1000px;
+  min-width:625px;
+  width:auto;
   font:10pt arial, sans-serif;
   }
 a{
-  color:#840;
+  color:inherit;
   }
 a img{
   border:none;
   }
 h1{
-  font-size:120%;
+  font-size:150%;
+  font-weight:normal;
   }
 input[type="text"], input[type="password"], textarea, select{
   background-color:#ffe6a0;
   border:1px solid;
   zmargin:1px;
   }
+textarea{
+  margin-top:-1px;
+}
+th{
+  vertical-align:bottom;
+}
 zpre	{
 	border:1px solid silver;
 	font-family:courier;
@@ -86,19 +94,6 @@ z#top{
 }
 
 
-#dashOptions, .subOptions, #pageContent, #loginOptions {
-	zlist-style-type:none;
-	zmargin:0;
-	zpadding:0;
-	ztext-decoration:none;
-	zcolor:#333;
-	}
-#dashOptions>li, #pageContent>li, #loginOptions>li {
-	zfloat:left;
-	zwidth:210px;
-	zmin-height:150px;
-	zborder-bottom:1px solid silver;
-	}
 #dashOptions {
 	padding-left: 38px;
 }
@@ -111,18 +106,16 @@ z#top{
 	zborder:none;
 	zpadding:0 0 0 0;
 }
-#dashOptions li.pageOptions{
+li.pageOptions{
   float:left;
   width:210px;
   height:220px;
   border:1px dotted #ddd;
   margin:0 10px 10px 0;
  }
-zli.pageOptions a.pageLink{
-	color:#333;
-	text-decoration:none;
-	outline:none;
-}
+li.pageOptions:hover {
+  background:#ffc;
+  }
 #mainContent #statsOption{
   background-image:url("chart.gif");
   background-repeat:no-repeat;
@@ -143,16 +136,6 @@ zli.pageOptions a.pageLink{
   background-image:url("info.gif");
   background-repeat:no-repeat;
   }
-#pageContent>li {
-	zfloat:none;
-	zwidth:auto;
-	zheight:auto;
-	zpadding-bottom:30px;
-	zpadding-top:20px;
-	}
-#dashOptions>li:hover {
-	background:#ffc;
-	}
 #dashboard .h1 {
 	display:block;
 	color:#d70;
@@ -178,7 +161,6 @@ zli.pageOptions a.pageLink{
 #dashboard .p {
 	display:block;
 	padding:2px 20px 2px 2px;
-	font-size:90%;
 	}
 #dashboard .b {
 	font-size:90%;
@@ -214,8 +196,12 @@ zli.pageOptions a.pageLink{
 .subOptions{
   list-style-type:disc;
   padding-left:16px;
-  color:#840;
-  }
+  zcolor:#840;
+  text-decoration:none;
+}
+.subOptions a{
+  text-decoration:none;
+}
 #pageContent .pageOptions {
 	background-color:#f0f0f0;
 	border:1px dotted silver;
@@ -236,23 +222,23 @@ zli.pageOptions a.pageLink{
 	zfloat:left;
 	clear:both;
 	}
-#pageContent table {
+#pageContent table{
 	zwidth:100%;
 	ztable-layout:fixed;
-	border:1px solid silver;
+	zborder:1px solid silver;
 	}
-#pageContent table th {
+#pageContent th {
 	padding:2px;
 	font-weight:bold;
-	border-bottom:1px solid silver;
+	zborder-bottom:1px solid silver;
 	font-size:90%;
 	text-align:left;
 	}
-#pageContent table td {
+#pageContent td {
 	padding:2px;
 	font-size:90%;
 	}
-.sideWidget table td {
+.sideWidget td {
 	font-size:80%;
 	}
 #pageContent table input {
@@ -365,6 +351,17 @@ z#pageContent table .data2 {
 #pageContent .info a {
 	color:#777;
 	}
+.filter li{
+  float:left;
+  margin:10px 20px 0 0;
+  color:#999;
+}
+.filter li.selected{
+  font-weight:bold;
+  color:#333;
+}
+
+
 
 /* Sidebar styling */
 .sideWidget{
