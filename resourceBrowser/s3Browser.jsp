@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script type="text/javascript" src="js/dashboard.js"></script>
-		<script type="text/javascript" src="../../js/jquery-1.4.2.js" ></script>
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
 		<script type="text/javascript" src="js/s3Browser.js"></script>
 		<title>S3 Browser</title>
 	</head>

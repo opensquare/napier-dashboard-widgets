@@ -20,7 +20,7 @@
 		
 		<script type="text/javascript" src="js/tree.js"></script> 
 		<script type="text/javascript" src="js/s3Browser_folders.js"></script>
-		<script type="text/javascript" src="../../js/jquery-1.4.2.js" ></script>
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
 		<script src="js/contextMenu.js" type="text/javascript"></script>
 	</head>
 	<body>

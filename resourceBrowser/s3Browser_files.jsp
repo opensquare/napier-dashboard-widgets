@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="css/s3Browser-files.css" type="text/css"></link>
 	
 	<script type="text/javascript" src="js/s3Browser_files.js"></script>
-	<script type="text/javascript" src="../../js/jquery-1.4.2.js" ></script>
+	<script type="text/javascript" src="../../js/jquery.js" ></script>
 	<script src="js/contextMenu.js" type="text/javascript"></script>
 </head>
 <body>
