@@ -272,7 +272,7 @@ function updateVolumeStats(){
 					document.getElementById("noVolume").style.display = "none";
 				}
 			}else{
-				alert("An error occurred - v");
+				//alert("An error occurred - v");
 			}
 		}
 	} 
@@ -320,7 +320,7 @@ function updateErrorStats(){
 					document.getElementById("noErrors").style.display="none";
 				}
 			}else{
-				alert("An error occurred - e");
+				//alert("An error occurred - e");
 			}
 		}
 	} 
@@ -412,7 +412,7 @@ function updatePerformanceStats()
 				}
 				
 			}else{
-				alert("An error occurred - d");
+				//alert("An error occurred - d");
 			}
 		}
 	}	

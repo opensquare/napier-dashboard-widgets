@@ -211,10 +211,14 @@ function populateFileList(data){
 			var filePath = files[i].getElementsByTagName("filePath")[0].childNodes[0].nodeValue;
 			var fileName = filePath.substring(filePath.lastIndexOf("/")+1);
 			var fileType = files[i].getElementsByTagName("fileType")[0].childNodes[0].nodeValue;
+			var napierFileType = "basis";
+			if (fileType == "xls") {
+				napierFileType = "ratingTable";
+			}
 			var effectiveTime = files[i].getElementsByTagName("effectiveTime")[0].childNodes[0].nodeValue;
 			var expiryTime = files[i].getElementsByTagName("expiryTime")[0].childNodes[0].nodeValue;
 			if(fileName.indexOf("_")!=0){
-				fileDivHTML += "<a class='file " + fileType + "' href='#' itemName='" + itemName + "' filePath='" + filePath + "' onclick='parent.fileSelected(this.getAttribute(\"filePath\"));selectFile(this.getAttribute(\"filePath\"));'>"
+				fileDivHTML += "<a class='file " + fileType + "' href='#' itemName='" + itemName + "' filePath='" + filePath + "' napierFileType='" + napierFileType + "' onclick='parent.fileSelected(this.getAttribute(\"filePath\"), this.getAttribute(\"napierFileType\"));selectFile(this.getAttribute(\"filePath\"));'>"
 				fileDivHTML += "<span class='fileName'>" + fileName + "</span>";
 				fileDivHTML += "<span class='effectiveTime'>" + effectiveTime + "</span>";
 				fileDivHTML += "<span class='expiryTime'>" + expiryTime + "</span>";
@@ -309,9 +313,10 @@ function setSearchComparison(partial){
 	}
 }
 
-function fileSelected(filePath){
+function fileSelected(filePath, napierFileType){
 	if(filePath.indexOf("/") > -1){
 	    filePath = filePath.substring(filePath.lastIndexOf("/")+1);
 	}
 	parent.document.getElementById("resourceNameInput").value=filePath;
+	parent.document.getElementById("resourceTypeInput").value=napierFileType;
 }
