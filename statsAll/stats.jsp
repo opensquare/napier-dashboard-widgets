@@ -5,8 +5,8 @@ boolean autoLoad = true;
 <h1>Stats</h1>
 <ul class="filter">
 	<li class="selected"><a>All</a></li>
-	<li><a>By User</a></li>
-	<li><a>By Instance</a></li>
+	<li><a>By Source</a></li>
+	<li><a>By Calculation</a></li>
 </div>
 <div style="float:right;margin:10px">
 	<label>View stats by: <select id="timePeriod" onchange="showPeriodSelect(this.value);<%if(autoLoad){%>getStats(this.value)<%}%>"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="month">Month</option><option value="year">Year</option></select></label>

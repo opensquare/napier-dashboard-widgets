@@ -1,9 +1,8 @@
 <p>Archives available:</p>
 <style>
-	#pageContent th{border-bottom:1px solid silver;margin-right:2px;}
-	#pageContent td{width:120px;}
+	.databaseArchiveTable th{border-bottom:1px solid silver;margin-right:2px;}
 </style>
-<table>
+<table class="databaseArchiveTable">
 	<tr>
 		<th></th>
 		<th>Date</th>
@@ -21,7 +20,7 @@
 </table>
 <p></p>
 <input type="button" value="New Archive..." onclick="$('#newArchive').toggle()"/>
-<table id="newArchive" style="display:none">
+<table id="newArchive" class="databaseArchiveTable" style="display:none">
 	<tr>
 		<th></th>
 		<th>Date</th>

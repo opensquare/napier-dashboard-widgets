@@ -1,17 +1,17 @@
 <style>
-	#pageContent th{border-bottom:1px solid silver;margin-right:2px;}
-	#pageContent td{width:120px;}
-	#pageContent td:nth-child(1){width:30px;}
-	#pageContent td:nth-child(2){width:300px;}
-	#pageContent td:nth-child(3){width:80px;}
-	#pageContent td:nth-child(7){width:auto;}
+	.instancesTable th{border-bottom:1px solid silver;margin-right:2px;}
+	.instancesTable td{width:120px;}
+	.instancesTable td:nth-child(1){width:30px;}
+	.instancesTable td:nth-child(2){width:300px;}
+	.instancesTable td:nth-child(3){width:80px;}
+	.instancesTable td:nth-child(7){width:auto;}
 </style>
 <h1>Instances</h1>
 <ul id="pageContent">
 	<li>
 		<span class="h1">Gateway Instance</span>
 		<p>This instance provides the web endpoint for your Napier service.  You will need to give the URL to those users who are authorised to submit jobs.</p>
-		<table>
+		<table class="instancesTable">
 			<tr>
 				<th></th>
 				<th>URL</th>
@@ -30,7 +30,7 @@
 	<li>
 		<span class="h1">Calc Instances</span>
 		<p>Instances listed here carry out the calculation function of your Napier service.</p>
-		<table>
+		<table class="instancesTable">
 			<tr>
 				<th></th>
 				<th>Description</th>
@@ -59,7 +59,7 @@
 		</table>
 		<p></p>
 		<input type="button" value="Start New Instance..." onclick="$('#newInstance').toggle()"/>
-		<table id="newInstance" style="display:none">
+		<table id="newInstance" class="instancesTable" style="display:none">
 			<tr>
 				<th></th>
 				<th>Description</th>

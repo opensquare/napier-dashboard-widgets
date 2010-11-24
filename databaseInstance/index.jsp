@@ -1,10 +1,10 @@
 <style>
-	#pageContent th{border-bottom:1px solid silver;margin-right:2px;}
-	#pageContent td{width:120px;}
-	#pageContent td:nth-child(1){width:30px;}
-	#pageContent td:nth-child(2){width:300px;}
+	#databaseTable th{border-bottom:1px solid silver;margin-right:2px;}
+	#databaseTable td{width:120px;}
+	#databaseTable td:nth-child(1){width:30px;}
+	#databaseTable td:nth-child(2){width:300px;}
 </style>
-<table>
+<table id="databaseTable">
 	<tr>
 		<th></th>
 		<th>Description</th>
