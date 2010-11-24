@@ -49,35 +49,6 @@ ul{
   }
 
 /* Header & Navigation */
-#top{
-  background-color:#ffe6a0;
-  color:#333
-  }
-z#top{
-        _position:relative;
-        background-color:#ffe6a0;
-}
-#top table{
-  width:90%;
-  margin:auto;
-  }
-#username{
-  width:150px;
-  background:rgba(255,255,255,0.3);
-  font-size:80%;
-  padding:0 4px;
-  text-align:right;
-  }
-#top .button {
-  font-size:11px;
-  background:#840;
-  border:none;
-  color:#fff;
-  -moz-border-radius:12px;
-  padding:1px 18px;
-  cursor:pointer;
-  float:right;
-	}
 
 /* Main Body Layout */
 #dashboard{
