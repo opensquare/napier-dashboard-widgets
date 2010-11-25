@@ -4,7 +4,11 @@
 	.instancesTable td:nth-child(1){width:30px;}
 	.instancesTable td:nth-child(2){width:300px;}
 	.instancesTable td:nth-child(3){width:80px;}
-	.instancesTable td:nth-child(7){width:auto;}
+	.instancesTable td:nth-child(6){width:auto;}
+	#instancesAuto input[type="text"]{width:30px;}
+	#instancesAuto input[type="text"]{width:18px;text-align:right;padding:2px;}
+	#instancesAuto td:nth-child(3),#instancesAuto td:nth-child(4){width:160px;}
+	#instancesAuto td:nth-child(5){width:auto;}
 </style>
 <h1>Instances</h1>
 <ul id="pageContent">
@@ -34,41 +38,41 @@
 			<tr>
 				<th></th>
 				<th>Description</th>
-				<th>Approx Capacity/Hour</th>
-				<th>Start</th>
-				<th>Stop</th>
+				<th>CPU/Hour</th>
+				<th>Started</th>
 				<th>Status</th>
 			</tr>
 			<tr>
-				<td><img src="" /></td>
+				<td><img src="widgets/instanceManagementAll/machine-small.gif" /></td>
 				<td>Amazon US East Small (i-6d04b504)</td>
-				<td>3,000</td>
+				<td>3%</td>
 				<td>12 Nov 2010 08:12:32</td>
-				<td></td>
 				<td>Registered</td>
 				<td>
 					<input type="button" value="Reset"/>
 					<input type="button" value="Deregister"/>
 				</td>
 			</tr>
-			<tr style="border-top:1px solid silver;font-weight:bold">
+			<tr>
 				<td></td>
-				<td style="text-align:right">Approx overall capacity/hour</td>
-				<td>3,000</td>
+				<td style="text-align:right">Total Average CPU/Hour</td>
+				<td>3%</td>
 			</tr>
 		</table>
-		<p></p>
-		<input type="button" value="Start New Instance..." onclick="$('#newInstance').toggle()"/>
-		<table id="newInstance" class="instancesTable" style="display:none">
+		<h2 style="margin:20px 0 10px 0">
+			Automatic Scaling 
+			<label style="font-weight:normal;margin-left:80px">Enabled</label>
+			<input type="checkbox" checked="checked"  onclick="$('#instancesAuto').slideToggle()"/>
+		</h2>
+		<table id="instancesAuto" class="instancesTable">
 			<tr>
 				<th></th>
-				<th>Description</th>
-				<th>Approx Capacity/Hour</th>
-				<th>Start</th>
-				<th>Stop</th>
+				<th>Type</th>
+				<th>Start thresholds</th>
+				<th>Stop thresholds</th>
 			</tr>
 			<tr>
-				<td><img src="" /></td>
+				<td><img src="widgets/instanceManagementAll/machine-small.gif" /></td>
 				<td>
 					<select>
 						<option>Amazon US East</option>
@@ -76,22 +80,46 @@
 						<option>Amazon EU West</option>
 						<option>Amazon Asia Pacific</option>
 					</select>
-					<select onchange="$('#newInstanceCapacity').html(this.value)">
-						<option value="1,000">Micro</option>
-						<option value="3,000" selected="selected">Small</option>
-						<option value="4,500">Medium</option>
-						<option value="6,000">Large</option>
+					<select>
+						<option>Micro</option>
+						<option selected="selected">Small</option>
+						<option>Medium</option>
+						<option>Large</option>
 					</select>
 				</td>
-				<td id="newInstanceCapacity">3,000</td>
-				<td><input/></td>
-				<td><input/></td>
-				<td></td>
+				<td>CPU/Hour <input type="text" value="60"/> &nbsp; Max No. <input type="text" value="20"/></td>
+				<td>CPU/Hour <input type="text" value="40"/> &nbsp; Min No. <input type="text" value="1"/></td>
+				<td><input type="button" value="Update"/></td>
+			</tr>
+		</table>		
+		<p></p>
+		<!-- input type="button" value="Start New Instance..." onclick="$('#newInstance').slideToggle()"/>
+		<table id="newInstance" class="instancesTable" style="display:none">
+			<tr>
+				<th></th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><img src="widgets/instanceManagementAll/machine-small.gif" /></td>
+				<td>
+					<select>
+						<option>Amazon US East</option>
+						<option>Amazon US West</option>
+						<option>Amazon EU West</option>
+						<option>Amazon Asia Pacific</option>
+					</select>
+					<select>
+						<option>Micro</option>
+						<option selected="selected">Small</option>
+						<option>Medium</option>
+						<option>Large</option>
+					</select>
+				</td>
 				<td>
 					<input type="button" value="Start"/>
 				</td>
 			</tr>
-		</table>		
+		</table -->
 	</li>
 	<li>
 		<span class="h1">History</span>

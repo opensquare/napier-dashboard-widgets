@@ -5,6 +5,7 @@
 	.usersTable td:nth-child(6){text-align:right;}
 	.usersTable td:nth-child(7){width:auto;}
 	.usersTable textarea{width:114px;}
+	.usersTable input[type="checkbox"]{margin:0 4px;}
 </style>
 <h1>Users</h1>
 <ul id="pageContent">
@@ -22,8 +23,8 @@
 			</tr>
 			<tr>
 				<td style='text-align:center'><img src='widgets/usersAll/office-small.png'/></td>
-				<td><input id='cn0' name='companyName' type='text' value='Open Insure'/></td>
-				<td><textarea name="address">123 Long Lane</textarea></td>
+				<td><input id='cn0' name='companyName' type='text' value='Open Insure' disabled="disabled" /></td>
+				<td><textarea name="address" disabled="disabled">123 Long Lane</textarea></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -34,19 +35,19 @@
 				<th>Name</th>
 				<th>Username</th>
 				<th>Password</th>
-				<th>IP Check&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="enableIPChecking" value="true" /></th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right"/></th>
 				<th>Privileges</th>
 			</tr>
 			<tr>
 				<td style='text-align:center'><img src='widgets/usersAll/person-small.gif'/></td>
-				<td><input id='fn0' name='name' type='text' value='Test User'/></td>
-				<td><input id='em0' name='email' type='text' value='test'/></td>
-				<td><input type="password" name="password" value='pass'/>
-				<td><textarea name="validIPs">0.0.0.0</textarea></td>
+				<td><input id='fn0' name='name' type='text' value='Test User' disabled="disabled"/></td>
+				<td><input id='em0' name='email' type='text' value='test' disabled="disabled"/></td>
+				<td><input type="password" name="password" value='passpass' disabled="disabled"/>
+				<td><textarea name="validIPs" disabled="disabled">0.0.0.0</textarea></td>
 				<td>
-					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true" checked="checked"/>
-					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true" />
-					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true" checked="checked"/>
+					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true" checked="checked" disabled="disabled" />
+					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true" disabled="disabled" />
+					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true" checked="checked" disabled="disabled" />
 				</td>
 				<td style="width:110px;text-align:center;">
 					<input class='edit' onclick='unlockFields1(this)' type='button' value='Edit' style="width:100px"/>
@@ -63,19 +64,19 @@
 				<th>Name</th>
 				<th>Username</th>
 				<th>Password</th>
-				<th>IP Check&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="enableIPChecking" value="true" /></th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right;"/></th>
 				<th>Privileges</th>
 			</tr>
 			<tr>
-				<td style='text-align:center'><img src='widgets/usersAll/person-small.gif'/></td>
-				<td><input id='fn0' name='name' type='text' value='MoneySupermarket'/></td>
-				<td><input id='em0' name='email' type='text' value='moneysup'/></td>
-				<td><input type="password" name="password" value=''/>
-				<td><textarea name="validIPs">0.0.0.0</textarea></td>
+				<td style='text-align:center'><img src='widgets/usersAll/machine-small.gif'/></td>
+				<td><input id='fn0' name='name' type='text' value='MoneySupermarket' disabled="disabled"/></td>
+				<td><input id='em0' name='email' type='text' value='msm-test' disabled="disabled"/></td>
+				<td><input type="password" name="password" value='passpass' disabled="disabled"/>
+				<td><textarea name="validIPs" disabled="disabled">0.0.0.0</textarea></td>
 				<td>
-					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true"/>
-					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true" />
-					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true" checked="checked"/>
+					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true" disabled="disabled"/>
+					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true" disabled="disabled"/>
+					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true" checked="checked" disabled="disabled"/>
 				</td>
 				<td style="width:110px;text-align:center;">
 					<input class='suspend' type='button' value='Suspend' style="width:100px"/>
@@ -84,7 +85,56 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="20" style="text-align:right"><input class='add' type='button' value='Add New User'/></td>
+				<th></th>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right;"/></th>
+				<th>Privileges</th>
+			</tr>
+			<tr>
+				<td style='text-align:center'><img src='widgets/usersAll/machine-small.gif'/></td>
+				<td><input id='fn0' name='name' type='text' value='CompareTheMarket' disabled="disabled"/></td>
+				<td><input id='em0' name='email' type='text' value='ctm-test' disabled="disabled"/></td>
+				<td><input type="password" name="password" value='passpass' disabled="disabled"/>
+				<td><textarea name="validIPs" disabled="disabled">0.0.0.0</textarea></td>
+				<td>
+					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true" disabled="disabled"/>
+					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true" disabled="disabled"/>
+					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true" checked="checked" disabled="disabled"/>
+				</td>
+				<td style="width:110px;text-align:center;">
+					<input class='suspend' type='button' value='Suspend' style="width:100px"/>
+					<input class='edit' onclick='unlockFields1(this)' type='button' value='Edit' style="width:100px"/>
+					<input class='Delete' type='button' value='Delete' style="width:100px"/>
+				</td>
+			</tr>
+		</table>
+		<p></p>
+		<input class='add' type='button' value='Add New User...' onclick="$('#usersNewUser').slideToggle()"/>
+		<table id="usersNewUser" class="usersTable" style="display:none;">
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" style="float:right;"/></th>
+				<th>Privileges</th>
+			</tr>
+			<tr>
+				<td style='text-align:center'><img src='widgets/usersAll/machine-small.gif'/></td>
+				<td><input id='fn0' name='name' type='text'/></td>
+				<td><input id='em0' name='email' type='text'/></td>
+				<td><input type="password" name="password" />
+				<td><textarea name="validIPs" ></textarea></td>
+				<td>
+					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true"/>
+					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true"/>
+					Submit Jobs: <input id='vaj' class="readonly" name='viewAllJobs' type='checkbox' value="true"/>
+				</td>
+				<td style="width:110px;text-align:center;">
+					<input type='button' value='Save' style="width:100px"/>
+				</td>
 			</tr>
 		</table>
 	</li>
