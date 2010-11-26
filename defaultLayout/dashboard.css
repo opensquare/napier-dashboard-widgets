@@ -4,76 +4,58 @@ body{
   min-width:625px;
   width:auto;
   font:10pt arial, sans-serif;
-  }
+}
 a{
   color:inherit;
-  }
+}
 a img{
   border:none;
-  }
+}
 h1{
-  font-size:150%;
+  font-size:160%;
   font-weight:normal;
-  }
+}
+h2{
+  font-size:120%;
+}
 input[type="text"], input[type="password"], textarea, select{
-  background-color:#ffe6a0;
+  zbackground-color:#ffe6a0;
   border:1px solid;
-  zmargin:1px;
-  }
+}
 textarea{
   margin-top:-1px;
 }
 th{
   vertical-align:bottom;
 }
-zpre	{
-	border:1px solid silver;
-	font-family:courier;
-	padding:6px;
-	}
-zlegend	{
-	font-weight:bold;
-	}
-zfieldset fieldset legend	{
-	font-weight:normal;
-	}
-zol li	{
-	padding-top:6px;
-	}
 ul{
   list-style-type:none;
   margin:0;
   padding:0;
-  ztext-decoration:none;
   color:#333;
-  }
-
-/* Header & Navigation */
-
-/* Main Body Layout */
-#dashboard{
-  width:90%;
-  min-height:400px;
-  margin:5px auto;
-  }
-#dashboard td{
-  padding:10px 0;
-  vertical-align:top;
-  }
-#sideContent{
-  width:200px;
 }
 
+/* Color Schemes */
+.colorScheme1{
+  background-color:#ffe6a0;
+  color:#333
+}
 
+/* Cross Widget Layout */
 #dashOptions {
-	padding-left: 38px;
+  padding-left: 38px;
+}
+.modeSwitched>.widget-content{
+  width:90%;
+  margin:10px auto;
 }
 #pageContent li{
   border:1px dotted #ddd;
-  margin:10px 10px 30px 0;
+  margin:10px 0 30px 0;
   padding:4px;
+  clear:both;
 }
-#pageContent ul.subOptions li{
+z#pageContent ul.subOptions li{
 	zborder:none;
 	zpadding:0 0 0 0;
 }
@@ -188,7 +170,7 @@ li.pageOptions:hover {
 	background-image:url('top.gif');
 	background-repeat:no-repeat;
 	}
-#pageContent>li {
+z#pageContent>li {
 	zwidth:100%;
 	zfloat:left;
 	clear:both;
@@ -208,9 +190,6 @@ li.pageOptions:hover {
 #pageContent td {
 	padding:2px;
 	font-size:90%;
-	}
-.sideWidget td {
-	font-size:80%;
 	}
 #pageContent table input {
 	font-size:90%;
@@ -322,17 +301,6 @@ z#pageContent table .data2 {
 #pageContent .info a {
 	color:#777;
 	}
-.filter li{
-  float:left;
-  margin:10px 20px 0 0;
-  color:#999;
-}
-.filter li.selected{
-  font-weight:bold;
-  color:#333;
-}
-
-
 
 /* Sidebar styling */
 .sideWidget{
@@ -355,19 +323,6 @@ z#pageContent table .data2 {
   margin:2px 0;
   }
 
-/* Footer */
-#footer {
-	clear:both;
-	font-size:10px;
-	text-align:center;
-	padding:4px;
-	border-top:1px solid #444;
-	margin-top:10px;
-	}
-#pageContent .printer th{
-        width:150px;
-        border:none;
-        }
         
 /* Styles for sections still under development */
 

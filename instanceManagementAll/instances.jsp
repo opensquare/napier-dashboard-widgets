@@ -13,7 +13,7 @@
 <h1>Instances</h1>
 <ul id="pageContent">
 	<li>
-		<span class="h1">Gateway Instance</span>
+		<h2>Gateway Instance</h2>
 		<p>This instance provides the web endpoint for your Napier service.  You will need to give the URL to those users who are authorised to submit jobs.</p>
 		<table class="instancesTable">
 			<tr>
@@ -32,7 +32,7 @@
 		</table>
 	</li>
 	<li>
-		<span class="h1">Calc Instances</span>
+		<h2>Calc Instances</h2>
 		<p>Instances listed here carry out the calculation function of your Napier service.</p>
 		<table class="instancesTable">
 			<tr>
@@ -45,7 +45,7 @@
 			<tr>
 				<td><img src="widgets/instanceManagementAll/machine-small.gif" /></td>
 				<td>Amazon US East Small (i-6d04b504)</td>
-				<td>3%</td>
+				<td style="background-image:-moz-linear-gradient(left center,lightblue 3%,white 23%);">3%</td>
 				<td>12 Nov 2010 08:12:32</td>
 				<td>Registered</td>
 				<td>
@@ -122,7 +122,7 @@
 		</table -->
 	</li>
 	<li>
-		<span class="h1">History</span>
+		<h2>History</h2>
 		<p></p>
 		<textarea style="width:600px;height:400px;"/>
 		<input type="button" value="Clear Log"/>

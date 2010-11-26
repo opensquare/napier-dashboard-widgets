@@ -1,4 +1,13 @@
-<style type="text/css">#stats{background-color:gray} .meDropdown{text-align:right;float:right;width:120px}</style>
+<style type="text/css">
+	.filter{float:left;}
+	.filter li{display:table-cell;padding:10px 12px 0 0;color:#888;}
+	.filter li.selected{font-size:125%;font-weight:bold;color:#333;}
+	.statsTable{display:inline-block;font-size:125%;margin:20px 0;}
+	.statsTable th{background:grey;color:white;font-weight:normal;padding:4px;}
+	.statsTable td{border-bottom:1px dotted silver;vertical-align:middle;padding:4px;}
+	.statsTable td:nth-child(2){font-family:georgia;font-size:26px;padding-left:10px;}
+	#volumeStats{height;215px;}
+</style>
 <%
 boolean autoLoad = true;
 %>
@@ -8,7 +17,7 @@ boolean autoLoad = true;
 	<li><a>By Source</a></li>
 	<li><a>By Calculation</a></li>
 </div>
-<div style="float:right;margin:10px">
+<div style="float:right;margin:10px 0">
 	<label>View stats by: <select id="timePeriod" onchange="showPeriodSelect(this.value);<%if(autoLoad){%>getStats(this.value)<%}%>"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="month">Month</option><option value="year">Year</option></select></label>
 	<select id="hourSelect" style="display:none" <%if(autoLoad){%>onchange="getStats('hour')"<%}%>></select>
 	<select id="dateSelect" <%if(autoLoad){%>onchange="getStats('day')"<%}%>></select>
@@ -20,9 +29,9 @@ boolean autoLoad = true;
 <%}%>
 <ul id="pageContent">
 	<li>
-		<span class="h1">Traffic Overview</span>
+		<h2>Traffic Overview</h2>
 		<p>The graph shows a count of the calculations processed in the period.</p>
-		<img id= "volumeChart" src="" alt="Volume chart" height="200px" width="600px"/>
+		<img id= "volumeChart" src="" alt="Volume chart" style="margin-right:50px;"/>
 		<span id="noVolume" style="display:none">No activity</span>
 		<span id="volumeStats"></span>
 		<%if(!autoLoad){%>
@@ -30,9 +39,9 @@ boolean autoLoad = true;
 		<%}%>
 	</li>
 	<li>
-		<span class="h1">Calculation Performance</span>
+		<h2>Calculation Performance</h2>
 		<p>The charts show how quickly calculations submitted over the period were processed.  The elapsed time is measured from receipt of the calculation request to the time the response is sent back to the required destination.</p>
-		<img id= "performanceChart" src="" alt="Performance chart" height="200px" width="600px"/>
+		<img id= "performanceChart" src="" alt="Performance chart"/>
 		<span id="noPerformance" style="display:none">No activity</span>
 		<span id="performanceStats"></span>
 		<%if(!autoLoad){%>
@@ -40,12 +49,14 @@ boolean autoLoad = true;
 		<%}%>
 	</li>
 	<li>
-		<span class="h1">Calculation Errors</span>
+		<h2>Calculation Errors</h2>
 		<p>The table shows all the recorded errors in the period.</p>
 		<div id="errorTable" style="display:none">
 		<table>
-			<thead><th>ID</th><th>Submitted</th><th> </th></thead>
-			<tbody></tbody>
+			<tr>
+				<thead><th>ID</th><th>Submitted</th><th> </th></thead>
+				<tbody></tbody>
+			</tr>
 		</table>
 		</div>
 		<span id="noErrors">No activity</span>
@@ -64,4 +75,3 @@ boolean autoLoad = true;
 	getStats('day');
 	<%}%>
 </script>
-		

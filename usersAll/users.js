@@ -22,6 +22,17 @@ function lockFields1(){
 	}
 }
 
+
+function unlock(node){
+	$(node).prevAll().removeAttr('disabled');
+	$(node).next().show();
+}
+
+function lock(node){
+	$(this).prevAll().addAttr('disabled');
+	$(this).prev().removeAttr('disabled').show();
+}
+
 function unlockFields1(currentNode){
         var parent = currentNode.parentNode;
         parent = parent.parentNode;

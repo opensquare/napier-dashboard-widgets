@@ -1,7 +1,7 @@
 <h1>Help</h1>
 <ul id="pageContent">
 	<li>
-		<span class="h1">Information</span>
+		<h2>Information</h2>
 		<p>Here are some resources to get you started using your Napier service:</p>
 		<table>
 			<tr>
@@ -15,17 +15,9 @@
 		</table>
 	</li>
 	<li>
-		<span class="h1">Support</span>
+		<h2>Support</h2>
 		<p>If you need help using your Napier service:</p>
 		<table>
-			<tr>
-				<td rowspan="2"><img src=""/></td)
-				<td>Wiki</td>
-			</tr>
-			<tr>
-				<td></td)
-				<td>An online source of information...</td>
-			</tr>
 			<tr>
 				<td rowspan="2"><img src=""/></td)
 				<td>HelpDesk</td>

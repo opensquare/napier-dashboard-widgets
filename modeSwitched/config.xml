@@ -1,11 +1,12 @@
 <widget>
-<type>layout</type>
+	<type>layout</type>
 	<parameters>
 		<url>modeSwitched.html</url>
 	</parameters>
-    <attributes>
+	<attributes>
 		<modeswitchchannel>default</modeswitchchannel>
 		<js>modeSwitched.js</js>
 		<displayheader>false</displayheader>
+		<style>background:#fff</style>
 	</attributes>
 </widget>

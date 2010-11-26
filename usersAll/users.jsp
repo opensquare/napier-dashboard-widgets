@@ -10,7 +10,7 @@
 <h1>Users</h1>
 <ul id="pageContent">
 	<li>
-		<span class="h1">Account Details</span>
+		<h2>Account Details</h2>
 		<p>These are the main account holder's details registered for this Napier service:</p>
 		<table class="usersTable">
 			<tr>
@@ -28,7 +28,10 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td><input class='edit' onclick='unlockFields1(this)' type='button' value='Edit' style="width:100px"/></td>
+				<td>
+					<input onclick='unlock(this.parentNode)' type='button' value='Edit' style="width:100px"/>
+					<input onclick='lock(this.parentNode)' type='button' value='Save' style="width:100px;display:none;"/>
+				</td>
 			</tr>
 			<tr>
 				<th></th>
@@ -56,7 +59,7 @@
 		</table>
 	</li>
 	<li>
-		<span class="h1">Users</span>
+		<h2>Users</h2>
 		<p>These are the other users set up for your Napier service:</p>
 		<table class='usersTable'>
 			<tr>

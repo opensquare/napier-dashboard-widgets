@@ -255,24 +255,24 @@ function updateVolumeStats(){
 					average = Math.round(average*100)/100;
 					estimate = (jobTotal/periodLength)*totalPeriodLength;
 					estimate = Math.round(estimate);
-					var volumeStatsHtml = "<table>";
-					volumeStatsHtml += "<tr><td>Number of calculations submitted during this period: </td><td>" + jobTotal + " calculations</td></tr>";
-					volumeStatsHtml += "<tr><td>Number of calculations which failed during this period: </td><td>" + errorTotal + " calculations</td></tr>";
-					volumeStatsHtml += "<tr><td>Average calculations submitted during this period: </td><td>" + average + " calculations per " + period + " (Over " + periodLength + " " + period + "s)</td></tr>";
+					var volumeStatsHtml = "<table class='statsTable'><tr><th colspan='2'>Traffic Summary</th></tr>";
+					volumeStatsHtml += "<tr><td>Jobs submitted in period: </td><td>" + jobTotal + "</td></tr>";
+					volumeStatsHtml += "<tr><td>Average jobs in period/" + period + " (Over " + periodLength + " " + period + "s): </td><td>" + average + "</td></tr>";
+					volumeStatsHtml += "<tr><td>Failed jobs in period: </td><td>" + errorTotal + "</td></tr>";
 					if(partialPeriod == "true"){
-						volumeStatsHtml += "<tr><td>Estimated calculation submission for this period: </td><td>" + estimate + " calculations</td></tr>";
+						volumeStatsHtml += "<tr><td>Estimated total jobs submission in period: </td><td>" + estimate + "</td></tr>";
 					}
 					volumeStatsHtml += "</table>";
 					document.getElementById("volumeStats").innerHTML = volumeStatsHtml;
 					
-					var chartUrl = "getChart?chs=1000x200&chbh=5,0,5&chtt=&chd=t:" + jobStats + "|" + errorStats + "&cht=bvg&chco=0000FF,00FFFF,FF0000&chds=0," + maxVal + "&chxr=1,0," + maxVal + "&chxt=x,y&chl=" + volumeChartLabel + "&chdl=Total Jobs|Failed Jobs";
+					var chartUrl = "getChart?chs=600x200&chbh=5,0,5&chtt=&chd=t:" + jobStats + "|" + errorStats + "&cht=lc&chg=0,25,1,5&chm=o,4D89F9,0,,6|o,C6D9FD,1,,4&chco=4D89F9,C6D9FD&chds=0," + maxVal + "&chxr=1,0," + maxVal + "&chxt=x,y&chl=" + volumeChartLabel + "&chdl=Total Jobs|Failed Jobs";
 					document.getElementById("volumeChart").src = chartUrl;
 					document.getElementById("volumeChart").style.display = "block";
 					document.getElementById("volumeStats").style.display = "block";
 					document.getElementById("noVolume").style.display = "none";
 				}
 			}else{
-				//alert("An error occurred - v");
+				alert("An error occurred - v");
 			}
 		}
 	} 
@@ -320,7 +320,7 @@ function updateErrorStats(){
 					document.getElementById("noErrors").style.display="none";
 				}
 			}else{
-				//alert("An error occurred - e");
+				alert("An error occurred - e");
 			}
 		}
 	} 
@@ -358,9 +358,9 @@ function updatePerformanceStats()
 				var totalCalcs = 0;
 				var avgTime = 0;
 				for(i=0; i<bands; i++){
-					chartLabel = chartLabel + "< " + band*(i+1) + " " + bandType + "|";
+					chartLabel = chartLabel + "<" + band*(i+1) + bandType + "|";
 				}
-				chartLabel = chartLabel + "> " + band*bands + " " + bandType;
+				chartLabel = chartLabel + ">" + band*bands + bandType;
 				var statsArray = [0,0,0,0,0,0,0,0,0,0,0];
 				var stats = iPerfReq.responseXML.getElementsByTagName("stat");
 				for(i=0; i<stats.length; i++){
@@ -398,21 +398,21 @@ function updatePerformanceStats()
 					document.getElementById("performanceChart").style.display = "none";
 					document.getElementById("noPerformance").style.display = "inline";
 				}else{
-					var chartUrl = "getChart?chs=1000x200&chbh=30,0,30&chtt=Performance&chd=t:" + jobStats + "&cht=bvg&chco=0000FF,00FFFF,FF0000&chds=0," + maxVal + "&chxr=1,0," + maxVal + "&chxt=x,y&chl=" + chartLabel;
+					var chartUrl = "getChart?chs=600x200&chbh=30,0,20&chd=t:" + jobStats + "&cht=bvg&chco=4D89F9|C6D9FD&chds=0," + maxVal + "&chxr=1,0," + maxVal + "&chxt=x,y&chl=" + chartLabel;
 					document.getElementById("performanceChart").src = chartUrl;
 					document.getElementById("performanceChart").style.display = "block";
 					document.getElementById("noPerformance").style.display = "none";
 					avgTime = totalTime/totalCalcs;
 					avgTime = Math.round(avgTime);
-					var performanceStatsHtml = "<table>";
-					performanceStatsHtml += "<tr><td>Quickest Calculation Time: </td><td>" + quickestTime + " ms</td></tr>";
-					performanceStatsHtml += "<tr><td>Longest Calculation Time: </td><td>" + longestTime + " ms</td></tr>";
-					performanceStatsHtml += "<tr><td>Average Calculation Time: </td><td>" + avgTime + " ms</td></tr>";
+					var performanceStatsHtml = "<table class='statsTable'><tr><th colspan='2'>Performance Summary</th></tr>";
+					performanceStatsHtml += "<tr><td>Quickest Calculation Time: </td><td>" + quickestTime + "ms</td></tr>";
+					performanceStatsHtml += "<tr><td>Longest Calculation Time: </td><td>" + longestTime + "ms</td></tr>";
+					performanceStatsHtml += "<tr><td>Average Calculation Time: </td><td>" + avgTime + "ms</td></tr>";
 					document.getElementById("performanceStats").innerHTML = performanceStatsHtml;
 				}
 				
 			}else{
-				//alert("An error occurred - d");
+				alert("An error occurred - d");
 			}
 		}
 	}	
