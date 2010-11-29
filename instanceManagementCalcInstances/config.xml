@@ -1,0 +1,15 @@
+<widget>
+	<type>httpRequest</type>
+	<parameters>
+		<method>GET</method>
+		<!--url>{cloudserviceUrl}/instances/imageID={imageId}</url-->
+		<url>http://ec2-75-101-194-8.compute-1.amazonaws.com:8080/cloudservice/instances/imageID=ami-f394629a</url>
+		<xsl>calcInstances</xsl>
+	</parameters>
+	<attributes>
+		<!--cloudserviceUrl>{cloudserviceUrl}</cloudserviceUrl-->
+		<cloudserviceUrl>http://ec2-75-101-194-8.compute-1.amazonaws.com:8080/cloudservice</cloudserviceUrl>
+		<imageID>ami-f394629a</imageID>
+		<js>calcInstances.js</js>
+	</attributes>
+</widget>
