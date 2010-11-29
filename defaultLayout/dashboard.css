@@ -37,8 +37,17 @@ ul{
 
 /* Color Schemes */
 .colorScheme1{
-  background-color:#ffe6a0;
-  color:#333
+  background-image:-moz-linear-gradient(bottom,#59f,#ace);
+  color:#333;
+  -moz-border-radius:0;
+}
+.colorScheme2{
+  -moz-border-radius:0;
+}
+.colorScheme2 a{
+  color:#48e;
+  text-decoration:underline;
+  cursor:pointer;
 }
 
 /* Cross Widget Layout */
@@ -89,15 +98,15 @@ li.pageOptions:hover {
   background-image:url("info.gif");
   background-repeat:no-repeat;
   }
-#dashboard .h1 {
+.h1{
 	display:block;
-	color:#d70;
+	zcolor:#d70;
 	font-size:140%;
 	font-weight:bold;
 	padding-top:6px;
 	ztext-shadow:0 0 1px #f80;
 	}
-#dashboard .h2 {
+.h2{
 	display:block;
 	color:#333;
 	zfont-size:140%;
@@ -105,31 +114,31 @@ li.pageOptions:hover {
 	padding:0px 0 6px 0;
 	margin-top:24px;
 	}
-#dashboard .h3 {
+.h3{
 	display:block;
 	color:#333;
 	font-weight:bold;
 	padding:6px 0;
 	}
-#dashboard .p {
+.p{
 	display:block;
 	padding:2px 20px 2px 2px;
 	}
-#dashboard .b {
+.b{
 	font-size:90%;
 	font-weight:bold;
 	}
-#dashboard .i {
+.i{
 	zfont-style:italic;
 	font-weight:bold;
 	}
-#dashboard .note {
+.note{
 	display:block;
 	margin:10px 0;
 	background:#ffe6a0;
 	border:1px dashed silver;
 	}
-#dashboard .error {
+.error{
 	display:block;
 	padding:20px 0;
 	color:red;
@@ -139,7 +148,7 @@ li.pageOptions:hover {
 	width:95%;
 	border:1px solid silver;
 	}
-#dashboard .helpLink{
+.helpLink{
         display:block;
         background-image:url("help.gif");
         background-repeat:no-repeat;

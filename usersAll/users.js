@@ -23,14 +23,16 @@ function lockFields1(){
 }
 
 
-function unlock(node){
-	$(node).prevAll().removeAttr('disabled');
-	$(node).next().show();
+function unlock(node1,node2){
+	//parameters - 1) parent node containing fields to be unlocked, 2) (optional) other items (save/cancel buttons usually) to show
+	$(node1).find(':disabled').removeAttr('disabled');
+	$(node2).show();
 }
 
-function lock(node){
-	$(this).prevAll().addAttr('disabled');
-	$(this).prev().removeAttr('disabled').show();
+function lock(node1,node2){
+	//parameters - 1) parent node containing fields to be locked, 2) (optional) other item (edit button usually) to show (and hide any siblings)
+	$(node1).find(':enabled').attr('disabled',true);
+	$(node2).removeAttr('disabled').show().siblings().hide();
 }
 
 function unlockFields1(currentNode){

@@ -4,6 +4,7 @@
 		<url>index.html</url>
 	</parameters>
 	<attributes>
+		<class>colorScheme2</class>
 		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>

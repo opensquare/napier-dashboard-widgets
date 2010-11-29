@@ -31,7 +31,7 @@ boolean autoLoad = true;
 	<li>
 		<h2>Traffic Overview</h2>
 		<p>The graph shows a count of the calculations processed in the period.</p>
-		<img id= "volumeChart" src="" alt="Volume chart" style="margin-right:50px;"/>
+		<img id= "volumeChart" src="widgets/statsAll/chart.png" alt="Volume chart" style="margin-right:50px;"/>
 		<span id="noVolume" style="display:none">No activity</span>
 		<span id="volumeStats"></span>
 		<%if(!autoLoad){%>
@@ -41,7 +41,7 @@ boolean autoLoad = true;
 	<li>
 		<h2>Calculation Performance</h2>
 		<p>The charts show how quickly calculations submitted over the period were processed.  The elapsed time is measured from receipt of the calculation request to the time the response is sent back to the required destination.</p>
-		<img id= "performanceChart" src="" alt="Performance chart"/>
+		<img id= "performanceChart" src="widgets/statsAll/chart.png" alt="Performance chart"/>
 		<span id="noPerformance" style="display:none">No activity</span>
 		<span id="performanceStats"></span>
 		<%if(!autoLoad){%>
