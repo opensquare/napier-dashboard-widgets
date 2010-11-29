@@ -1,0 +1,9 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>schedulerUploadJob.html</url>
+	</parameters>
+	<attributes>
+		<js>schedulerUploadJob.js</js>
+	</attributes>
+</widget>
