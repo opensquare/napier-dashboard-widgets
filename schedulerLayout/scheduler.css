@@ -1,0 +1,32 @@
+.schedulerLayout table{
+  width:99%!important;
+  margin:10px 0 0 4px;
+  text-align:left!important;
+}
+.schedulerJobs table th,.schedulerResults table th{
+  background:#444;
+  color:#fff;
+  padding:4px;
+  border-right:1px solid #fff;
+}
+.schedulerLayout table td{
+  padding:4px;
+}
+.schedulerJobs table td:nth-child(6),.schedulerResults table td:nth-child(4){
+  padding:0 4px;
+}
+.schedulerJobs table th:nth-child(6){
+  border-right:none;
+}
+.schedulerJobs tr:nth-child(even){
+  background:#eee;
+}
+.schedulerJobs tr:hover{
+  background:#ddf;
+}
+.schedulerResults tfoot{
+  text-align:right;
+}
+.schedulerResults tfoot *{
+  margin-left:10px;
+}

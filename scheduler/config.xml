@@ -1,0 +1,6 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>scheduler.jsp</url>
+	</parameters>
+</widget>

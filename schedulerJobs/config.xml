@@ -1,0 +1,12 @@
+<widget>
+	<type>httpRequest</type>
+	<parameters>
+		<method>GET</method>
+		<url>{schedulerUrl}/REST/jobs</url>
+		<xsl>schedulerJobs</xsl>
+	</parameters>
+	<attributes>
+		<js>schedulerJobs.js</js>
+		<schedulerUrl>{schedulerUrl}</schedulerUrl>
+	</attributes>
+</widget>

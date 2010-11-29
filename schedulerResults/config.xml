@@ -1,0 +1,12 @@
+<widget>
+	<type>httpRequest</type>
+	<parameters>
+		<method>GET</method>
+		<url>{schedulerUrl}/REST/results/{query}?offset={offset}&amp;limit={limit}</url>
+		<xsl>schedulerResults</xsl>
+	</parameters>
+	<attributes>
+		<delayLoad>true</delayLoad>
+		<js>schedulerResults.js</js>
+	</attributes>
+</widget>

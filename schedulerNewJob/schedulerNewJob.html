@@ -1,0 +1,39 @@
+<div class="dialogue">
+	<p>Enter details about the job.</p>
+	<form method="POST">
+		<input type="hidden" name="jobType" value="JythonJob"/>
+		<table>
+			<tr>
+				<td>Job Name: </td><td><input type="text" name="jobName"/></td>
+			</tr>
+			<tr>
+				<td>Description: </td><td><input type="text" name="description"/></td>
+			</tr>
+			<tr>
+				<td>Script: </td><td><input type="text" name="script"/></td>
+			</tr>
+			<tr>
+				<td>Method: </td><td><input type="text" name="method"/></td>
+			</tr>
+			<tr>
+				<td>Params: </td><td><input type="text" name="params"/></td>
+			</tr>
+			<tr>
+				<td>Start Date: </td><td><input type="text" name="startDate" class="datepicker"/></td>
+			</tr>
+			<tr>
+				<td>Start Time: </td><td><input type="text" name="startTime"/></td>
+			</tr>
+			<tr>
+				<td>End Date: </td><td><input type="text" name="endDate" class="datepicker"/></td>
+			</tr>
+			<tr>
+				<td>End Time: </td><td><input type="text" name="endTime"/></td>
+			</tr>
+			<tr>
+				<td>Repeat: </td><td>Every <input type="text" name="interval" value="" style="width:50px;"/><select name="period" style="margin:0px 5px 0px 5px"><option value="s">Seconds</option><option value="m">Minutes</option><option value="h">Hours</option><option value="d">Days</option><option value="w">Weeks</option><option value="M">Months</option><option value="y">Years</option></select></td>
+			</tr>
+		</table>
+		<input type="submit" class="ui-button" value="Schedule Job"/>
+	</form>
+</div>

@@ -1,0 +1,12 @@
+<widget>
+	<type>httpRequest</type>
+	<parameters>
+		<method>GET</method>
+		<url>{schedulerUrl}/REST/manager/status</url>
+		<xsl>schedulerStatus</xsl>
+	</parameters>
+	<attributes>
+		<schedulerUrl>{schedulerUrl}</schedulerUrl>
+		<js>schedulerStatus.js</js>
+	</attributes>
+</widget>
