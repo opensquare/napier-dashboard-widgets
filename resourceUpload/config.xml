@@ -6,5 +6,6 @@
 	<attributes>
 		<displayheader>false</displayheader>
 		<js>resourceUpload.js</js>
+		<napierResourceManagerUrl>{napierResourceManagerUrl}uploadResource</napierResourceManagerUrl>
 	</attributes>
 </widget>
