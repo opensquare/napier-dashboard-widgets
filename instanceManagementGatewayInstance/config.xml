@@ -4,6 +4,6 @@
 		<url>index.jsp</url>
 	</parameters>
 	<attributes>
-		<!--displayHeader>false</displayHeader-->
+		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>

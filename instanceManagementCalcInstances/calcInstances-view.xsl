@@ -14,23 +14,23 @@
 					<th>Status</th>
 				</tr>
 				<xsl:for-each select="/instances/instance">
-				<tr>
+				<tr class="instanceRow" privateIP="{PrivateIPAddress}">
 					<td>
 						<img src="widgets/instanceManagementCalcInstances/machine-small.gif"/>
 					</td>
 					<td><xsl:value-of select="InstanceLocation"/><xsl:value-of select="' '"/><xsl:value-of select="InstanceType"/> (<xsl:value-of select="InstanceId"/>)</td>
 					<td style="background-image:-moz-linear-gradient(left center,lightblue 3%,white 23%);">3%</td>
 					<td><xsl:value-of select="LaunchTime"/></td>
-					<td><xsl:value-of select="translate(InstanceState, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/> (Registered)</td>
+					<td><xsl:value-of select="translate(InstanceState, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/> (<span class="registrationSpan">Checking....</span>)</td>
 					<td>
 						<input type="button" value="Reset">
 							<xsl:attribute name="onclick">window.open('http://<xsl:value-of select="PublicDnsName"/>:8080/calcservice/REST/action=clearCache')</xsl:attribute>
 						</input>
-						<input type="button" value="Register">
-							<xsl:attribute name="onclick">window.open('http://<xsl:value-of select="PublicDnsName"/>:8080/calcservice/REST/register')</xsl:attribute>
+						<input type="button" value="Register" class="registerButton" style="display:none">
+							<xsl:attribute name="url">http://<xsl:value-of select="PublicDnsName"/>:8080/calcservice/REST/register</xsl:attribute>
 						</input>
-						<input type="button" value="Deregister">
-							<xsl:attribute name="onclick">window.open('http://<xsl:value-of select="PublicDnsName"/>:8080/calcservice/REST/deregister')</xsl:attribute>
+						<input type="button" value="Deregister" class="deregisterButton" style="display:none">
+							<xsl:attribute name="url">http://<xsl:value-of select="PublicDnsName"/>:8080/calcservice/REST/deregister</xsl:attribute>
 						</input>
 					</td>
 				</tr>
@@ -41,9 +41,6 @@
 					<td>3%</td>
 				</tr>
 			</table>
-			<script type="type=text/javascript">
-				checkRegisteredInstances();
-			</script>
 		</li>
 	</xsl:template>
 </xsl:stylesheet>
