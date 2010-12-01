@@ -83,14 +83,25 @@ function Widget_instanceManagementCalcInstances() {
 		$.ajax({
 			url: widgetObject.autoScaleStatsUrl,
 			success: function(instancesData) {
+				var overallAverage = 0;
+				var num = 0;
 				$(".instanceRow", widgetObject.$widgetDiv).each(function() {
 					var privateIP = $(this).attr("privateIP");
-					for(instanceData in instancesData) {
+					for each (var instanceData in instancesData) {
 						if (instanceData.instance == privateIP) {
-							$(".cpu", this).html(instanceData.average + "%").css("background-image", "-moz-linear-gradient(left center,lightblue " + instanceData.average + "%,white " + (instanceData.average + 20) + "%)");
+							var average = instanceData.average;
+							average = Math.round(average*100)/100
+							overallAverage += average;
+							num++;
+							$(".cpu", this).html(average + "%").css("background-image", "-moz-linear-gradient(left center,lightblue " + average + "%,white " + (average + 20) + "%)");
 						}
 					}
 				});
+				if (num > 0) {
+					overallAverage = overallAverage / num;
+					overallAverage = Math.round(overallAverage*100)/100
+				}
+				$(".overallAverage", widgetObject.$widgetDiv).html(overallAverage + "%");
 			}
 		})
 	}
