@@ -4,6 +4,7 @@
 		<url>stats.jsp</url>
 	</parameters>
 	<attributes>
+		<css>stats.css</css>
 		<js>stats.js</js>
 		<displayHeader>false</displayHeader>
 	</attributes>

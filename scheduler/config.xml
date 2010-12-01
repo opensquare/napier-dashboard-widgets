@@ -1,6 +1,11 @@
 <widget>
 	<type>layout</type>
 	<parameters>
-		<url>scheduler.jsp</url>
+		<url>scheduler.html</url>
 	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>scheduler.css</css>
+	</attributes>
 </widget>
+

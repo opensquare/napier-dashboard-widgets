@@ -1,0 +1,9 @@
+.databaseTable td{
+	width:120px;
+	}
+.databaseTable td:nth-child(1){
+	width:30px;
+	}
+.databaseTable td:nth-child(2){
+	width:300px;
+	}

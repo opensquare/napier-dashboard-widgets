@@ -1,12 +1,3 @@
-<style>
-	.usersTable th{border-bottom:1px solid silver;margin-right:2px;}
-	.usersTable td{width:120px;}
-	.usersTable td:nth-child(1){width:20px;}
-	.usersTable td:nth-child(6){text-align:right;}
-	.usersTable td:nth-child(7){width:auto;}
-	.usersTable textarea{width:114px;}
-	.usersTable input[type="checkbox"]{margin:0 4px;}
-</style>
 <h1>Users</h1>
 <ul id="pageContent">
 	<li>
@@ -80,9 +71,9 @@
 				<td><input type="password" name="password" value='passpass' disabled="disabled"/>
 				<td><textarea name="validIPs" disabled="disabled">0.0.0.0</textarea></td>
 				<td>
-					Dashboard - Admin: <input name='dashboard' type='radio' value="true" disabled="disabled"/>
-					Dashboard - User: <input name='dashboard' type='radio' value="true" disabled="disabled"/>
-					Submit Jobs: <input name='viewAllJobs' type='checkbox' value="true" checked="checked" disabled="disabled"/>
+					Dashboard - Admin: <input name='dashboardAdmin' type='checkbox' value="true" disabled="disabled" />
+					Dashboard - User: <input name='dashboardUser' type='checkbox' value="true" disabled="disabled" />
+					Submit Jobs: <input name='jobsSubmit' type='checkbox' value="true" checked="checked" disabled="disabled"/>
 				</td>
 				<td style="width:110px;text-align:center;">
 					<input class="usersTable1Edit" onclick="unlock($('#usersTable1'),$(this).siblings())" type="button" value="Edit" style="width:100px"/>
@@ -107,9 +98,9 @@
 				<td><input type="password" name="password" value='passpass' disabled="disabled"/>
 				<td><textarea name="validIPs" disabled="disabled">0.0.0.0</textarea></td>
 				<td>
-					Dashboard - Admin: <input name='dashboard' type='radio' value="true" disabled="disabled"/>
-					Dashboard - User: <input name='dashboard' type='radio' value="true" disabled="disabled"/>
-					Submit Jobs: <input name='viewAllJobs' type='checkbox' value="true" checked="checked" disabled="disabled"/>
+					Dashboard - Admin: <input name='dashboardAdmin' type='checkbox' value="true" disabled="disabled" />
+					Dashboard - User: <input name='dashboardUser' type='checkbox' value="true" disabled="disabled" />
+					Submit Jobs: <input name='jobsSubmit' type='checkbox' value="true" checked="checked" disabled="disabled"/>
 				</td>
 				<td style="width:110px;text-align:center;">
 					<input class="usersTable2Edit" onclick="unlock($('#usersTable2'),$(this).siblings())" type="button" value="Edit" style="width:100px"/>

@@ -1,13 +1,3 @@
-<style type="text/css">
-	.filter{float:left;}
-	.filter li{display:table-cell;padding:10px 12px 0 0;color:#888;}
-	.filter li.selected{font-size:125%;font-weight:bold;color:#333;}
-	.statsTable{display:inline-block;font-size:125%;margin:20px 0;}
-	.statsTable th{background:grey;color:white;font-weight:normal;padding:4px;}
-	.statsTable td{border-bottom:1px dotted silver;vertical-align:middle;padding:4px;}
-	.statsTable td:nth-child(2){font-family:georgia;font-size:26px;padding-left:10px;}
-	#volumeStats{height;215px;}
-</style>
 <%
 boolean autoLoad = true;
 %>
@@ -16,7 +6,7 @@ boolean autoLoad = true;
 	<li class="selected"><a>All</a></li>
 	<li><a>By Source</a></li>
 	<li><a>By Calculation</a></li>
-</div>
+</ul>
 <div style="float:right;margin:10px 0">
 	<label>View stats by: <select id="timePeriod" onchange="showPeriodSelect(this.value);<%if(autoLoad){%>getStats(this.value)<%}%>"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="month">Month</option><option value="year">Year</option></select></label>
 	<select id="hourSelect" style="display:none" <%if(autoLoad){%>onchange="getStats('hour')"<%}%>></select>
@@ -31,7 +21,7 @@ boolean autoLoad = true;
 	<li>
 		<h2>Traffic Overview</h2>
 		<p>The graph shows a count of the calculations processed in the period.</p>
-		<img id= "volumeChart" src="widgets/statsAll/chart.png" alt="Volume chart" style="margin-right:50px;"/>
+		<img id= "volumeChart" src="widgets/statsAll/chart.png" alt="Volume chart"/>
 		<span id="noVolume" style="display:none">No activity</span>
 		<span id="volumeStats"></span>
 		<%if(!autoLoad){%>
@@ -48,7 +38,7 @@ boolean autoLoad = true;
 		<input type="button" value="Display Stats" onclick="getPerformanceStats()"/>
 		<%}%>
 	</li>
-	<li>
+	<li id="statsErrors" style="display:none;">
 		<h2>Calculation Errors</h2>
 		<p>The table shows all the recorded errors in the period.</p>
 		<div id="errorTable" style="display:none">

@@ -4,6 +4,7 @@
 		<url>index.html</url>
 	</parameters>
 	<attributes>
+		<css>database.css</css>
 		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>

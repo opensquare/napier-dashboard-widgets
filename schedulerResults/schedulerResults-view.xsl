@@ -5,7 +5,7 @@
 		<div>
 			<xsl:choose>
 				<xsl:when test="/response/success='true'">
-					<table width="100%" style="text-align:center">
+					<table>
 						<thead>
 							<tr>
 								<th>Name</th>

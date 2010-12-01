@@ -1,10 +1,4 @@
-<style>
-	#databaseTable th{border-bottom:1px solid silver;margin-right:2px;}
-	#databaseTable td{width:120px;}
-	#databaseTable td:nth-child(1){width:30px;}
-	#databaseTable td:nth-child(2){width:300px;}
-</style>
-<table id="databaseTable">
+<table class="databaseTable">
 	<tr>
 		<th></th>
 		<th>Description</th>
@@ -14,13 +8,13 @@
 	</tr>
 	<tr>
 		<td><img src="widgets/databaseInstance/database.gif" /></td>
-		<td>Master (184.73.237.43)</td>
-		<td>300Gb</td>
-		<td>43%</td>
+		<td>Master (75.101.194.8)</td>
+		<td>10Gb</td>
+		<td>16%</td>
 		<td>Active</td>
 		<td><input type="button" value="settings..."/></td>
 	</tr>
-	<tr>
+	<!-- tr>
 		<td><img src="widgets/databaseInstance/database.gif" /></td>
 		<td>Slave (184.73.237.44)</td>
 		<td>500Gb</td>
@@ -30,5 +24,5 @@
 			<input type="button" value="Pause Replication"/>
 			<input type="button" value="settings..."/>
 		</td>
-	</tr>
+	</tr -->
 </table>

@@ -1,0 +1,44 @@
+.filter{
+	float:left;
+	}
+.filter li{
+	display:table-cell;
+	padding:10px 12px 0 0;
+	color:#888;
+	}
+.filter li.selected{
+	font-size:115%;
+	font-weight:bold;
+	color:#333;
+	}
+.statsTable{
+	display:inline-table;
+	font-size:125%;
+	margin:20px 0;
+	width:400px;
+	vertical-align:top;
+	}
+.statsTable th:nth-child(2){
+	font-weight:normal!important;
+	text-align:right;
+	}
+.statsTable td{
+	border-bottom:1px dotted silver;
+	vertical-align:middle;
+	padding:4px!important;
+	}
+.statsTable td:nth-child(2){
+	font-family:georgia;
+	font-size:20px!important;
+	padding-left:10px;
+	text-align:right;
+	}
+.statsTable a{
+	color:#48e!important;
+	}
+#volumeStats,#volumeChart,#performanceChart{
+	display:inline!important;
+	}
+#volumeChart,#performanceChart{
+	margin-right:50px;
+	}

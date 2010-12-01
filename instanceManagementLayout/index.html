@@ -1,10 +1,10 @@
 <style>
-	.instancesTable th{border-bottom:1px solid silver;margin-right:2px;}
 	.instancesTable td{width:120px;}
-	.instancesTable td:nth-child(1){width:30px;}
+	.instancesTable td:nth-child(1){width:30px;text-align:center;}
 	.instancesTable td:nth-child(2){width:300px;}
 	.instancesTable td:nth-child(3){width:80px;}
 	.instancesTable td:nth-child(6){width:auto;}
+	#instancesGateway td:nth-child(2){width:500px;}
 	#instancesAuto input[type="text"]{width:30px;}
 	#instancesAuto input[type="text"]{width:18px;text-align:right;padding:2px;}
 	#instancesAuto td:nth-child(3),#instancesAuto td:nth-child(4){width:160px;}
@@ -12,8 +12,12 @@
 </style>
 <h1>Instances</h1>
 <ul id="pageContent">
-	<div class="widget" name="instanceManagementGatewayInstance">Loading...</div>
-	<div class="widget" name="instanceManagementCalcInstances">Loading...</div>
+	<li>
+		<div class="widget" name="instanceManagementGatewayInstance">Loading...</div>
+	</li>
+	<li>
+		<div class="widget" name="instanceManagementCalcInstances">Loading...</div>
+	</li>
 	<li>
 		<h2 style="margin:20px 0 10px 0">
 			Automatic Scaling
@@ -38,13 +42,13 @@
 					</select>
 					<select>
 						<option>Micro</option>
-						<option selected="selected">Small</option>
-						<option>Medium</option>
+						<option>Small</option>
+						<option selected="selected">Medium</option>
 						<option>Large</option>
 					</select>
 				</td>
-				<td>CPU/Hour <input type="text" value="60"/> &nbsp; Max No. <input type="text" value="20"/></td>
-				<td>CPU/Hour <input type="text" value="40"/> &nbsp; Min No. <input type="text" value="1"/></td>
+				<td>CPU/Hour <input type="text" value="80"/> &nbsp; Max No. <input type="text" value="20"/></td>
+				<td>CPU/Hour <input type="text" value="60"/> &nbsp; Min No. <input type="text" value="1"/></td>
 				<td><input type="button" value="Update"/></td>
 			</tr>
 		</table>
@@ -77,10 +81,10 @@
 			</tr>
 		</table -->
 	</li>
-	<li>
+	<!-- li>
 		<h2>History</h2>
 		<p></p>
 		<textarea style="width:600px;height:400px;"/>
 		<input type="button" value="Clear Log"/>
-	</li>
+	</li -->
 </ul>

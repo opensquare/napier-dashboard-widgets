@@ -36,7 +36,7 @@
 
 	int numberOfCalcs = Integer.parseInt(newestCalcID) - Integer.parseInt(oldestCalcID);
 %>
-<table>
+<table class="databaseTable">
 	<tr>
 		<th></th>
 		<th></th>

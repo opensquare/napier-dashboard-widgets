@@ -1,17 +1,13 @@
 function Widget_resourceUpload() {
 
-	this.napierResourceManagerUrl = null;
-
 	this.initExtend = function() {
-		this.napierResourceManagerUrl = this.$widgetDiv.attr("napierResourceManagerUrl");
 		addListenerToChannelReplayLast(this, "resourceBrowserChangeDirectory");
 	}
 
 	this.onReadyExtend = function() {
-		var widgetObject = this;
 		$("form", this.$widgetDiv).submit(function() {
 			var $this = $(this);
-			$this.attr("action", widgetObject.napierResourceManagerUrl + "?" + $this.serialize());
+			$this.attr("action", $this.attr("to") + "?" + $this.serialize());
 		})
 		
 		$("iframe[name='resultIframe']").load(function() {

@@ -1,0 +1,70 @@
+.scheduler li{
+  padding:0!important;
+}
+.scheduler .widget{
+  border:none!important;
+  margin:0;
+}
+.scheduler .widget-head{
+  background:none;
+  font-size:120%;
+}
+.scheduler .ui-icon{
+  display:inline-block;
+}
+.scheduler .ui-button{
+  padding:1px 10px;
+  -moz-box-shadow:1px 1px 0px #888;
+}
+.scheduler table{
+  zwidth:99%!important;
+  margin:10px 0 0 4px;
+  text-align:left!important;
+  zvertical-align:middle!important;
+}
+.schedulerJobs table th,.schedulerResults table th{
+  background:#444;
+  color:#fff;
+  padding:4px;
+  border-right:1px solid #fff;
+}
+.scheduler th:nth-child(1){
+  width:130px;
+}
+.scheduler th:nth-child(2){
+  width:280px;
+}
+.scheduler th:nth-child(3),.schedulerJobs th:nth-child(4){
+  width:150px;
+}
+.schedulerJobs table td:nth-child(6),.schedulerResults table td:nth-child(4){
+  padding:0 4px;
+  width:150px;
+}
+.schedulerJobs th:nth-child(6){
+  border-right:none;
+}
+.schedulerJobs tr:nth-child(even){
+  background:#eee;
+}
+.schedulerJobs tr:hover{
+  background:#ddf;
+}
+.schedulerResults th:nth-child(2){
+  width:160px!important;
+}
+.schedulerResults th:nth-child(3){
+  width:100px!important;
+}
+.schedulerResults td:nth-child(4){
+  width:auto!important;
+}
+.schedulerResults tfoot{
+  text-align:right;
+}
+.schedulerResults tfoot *{
+  margin-left:10px;
+}
+.schedulerJobs .widget-content{
+  text-align:right;
+}

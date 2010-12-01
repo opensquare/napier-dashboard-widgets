@@ -4,6 +4,7 @@
 		<url>users.jsp</url>
 	</parameters>
 	<attributes>
+		<css>users.css</css>
 		<js>users.js</js>
 		<displayHeader>false</displayHeader>
 		<class>colorScheme2</class>

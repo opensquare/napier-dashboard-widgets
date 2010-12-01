@@ -11,6 +11,9 @@
 	margin:auto;
 	border:1px dotted gray;
 	}
+#navbar td:nth-child(1){
+	display:none;
+}
 #navbar a {
 	display:block;
 	color:white;

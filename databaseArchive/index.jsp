@@ -1,8 +1,8 @@
 <p>Archives available:</p>
 <style>
-	.databaseArchiveTable th{border-bottom:1px solid silver;margin-right:2px;}
+	.databaseTable td:nth-child(1){text-align:center;}
 </style>
-<table class="databaseArchiveTable">
+<table class="databaseTable">
 	<tr>
 		<th></th>
 		<th>Date</th>
@@ -11,7 +11,7 @@
 		<th>No of Records</th>
 	</tr>
 	<tr>
-		<td><img src="" /></td>
+		<td><img src="widgets/databaseArchive/index_card.gif" /></td>
 		<td>16 Nov 2010</td>
 		<td>01 Jan 2010 00:00:00</td>
 		<td>31 Jan 2010 23:59:59</td>
@@ -20,7 +20,7 @@
 </table>
 <p></p>
 <input type="button" value="New Archive..." onclick="$('#newArchive').toggle()"/>
-<table id="newArchive" class="databaseArchiveTable" style="display:none">
+<table id="newArchive" class="databaseTable" style="display:none">
 	<tr>
 		<th></th>
 		<th>Date</th>
@@ -29,7 +29,7 @@
 		<th>No of Records</th>
 	</tr>
 	<tr>
-		<td><img src="" /></td>
+		<td><img src="widgets/databaseArchive/index_card.gif" /></td>
 		<td>22 Nov 2010</td>
 		<td><input/></td>
 		<td><input/></td>

@@ -76,7 +76,7 @@ li.pageOptions{
   margin:0 10px 10px 0;
  }
 li.pageOptions:hover {
-  background:#ffc;
+  background:#e0e6ff;
   }
 #mainContent #statsOption{
   background-image:url("chart.gif");
@@ -123,6 +123,7 @@ li.pageOptions:hover {
 .p{
 	display:block;
 	padding:2px 20px 2px 2px;
+	color:#333;
 	}
 .b{
 	font-size:90%;
@@ -158,11 +159,12 @@ li.pageOptions:hover {
 .subOptions{
   list-style-type:disc;
   padding-left:16px;
-  zcolor:#840;
+  color:#333;
   text-decoration:none;
 }
 .subOptions a{
   text-decoration:none;
+  color:#333;
 }
 #pageContent .pageOptions {
 	background-color:#f0f0f0;
@@ -188,13 +190,16 @@ z#pageContent>li {
 	zwidth:100%;
 	ztable-layout:fixed;
 	zborder:1px solid silver;
+	zfont-size:90%;
 	}
 #pageContent th {
-	padding:2px;
 	font-weight:bold;
-	zborder-bottom:1px solid silver;
-	font-size:90%;
 	text-align:left;
+	background:#444;
+	color:#fff;
+	padding:2px 4px;
+	border-right:1px solid #fff;
+	font-size:90%;
 	}
 #pageContent td {
 	padding:2px;
