@@ -1,0 +1,33 @@
+<h2>Calc Instances</h2>
+<p>Instances listed here carry out the calculation function of your Napier service.</p>
+<table class="instancesTable">
+	<tr>
+		<th/>
+		<th>Description</th>
+		<th>CPU Load</th>
+		<th>Started</th>
+		<th>Status</th>
+	</tr>
+
+	<tr class="instanceRow" privateIP="${privateIpAddress}" style="display: none;">
+		<td>
+			<img src="widgets/instanceManagementCalcInstances/machine-small.gif"/>
+		</td>
+		<td>${placement.availabilityZone} ${instanceType} (${instanceId})</td>
+		<td style="background-image:-moz-linear-gradient(left center,lightblue 0%,white 0%);" class="cpu">Unknown</td>
+		<td><xsl:value-of select="LaunchTime"/></td>
+		<td>${state.name} (<span class="registrationSpan">Checking....</span>)</td>
+		<td>
+			<input type="button" value="Reset" onclick="window.open('http://${publicDnsName}:8080/calcservice/REST/action=clearCache')" />
+			<input type="button" value="Register" class="registerButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/register" />
+			<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/deregister" />
+		</td>
+	</tr>
+
+	<tr>
+		<td/>
+		<td style="text-align:right">Overall Average CPU Load</td>
+		<td>%</td>
+	</tr>
+	
+</table>

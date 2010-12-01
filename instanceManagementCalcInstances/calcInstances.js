@@ -1,11 +1,29 @@
 function Widget_instanceManagementCalcInstances() {
 	
+	this.autoScaleGetInstancesUrl = null;
+	this.autoScaleStatsUrl = null;
+	
 	this.initExtend = function() {
 		addListenerToChannel(this, "calcInstancesUpdated");
 	}
 	
 	this.onReadyExtend = function() {
-		this.checkRegisteredInstances();
+		this.autoScaleGetInstancesUrl = this.$widgetDiv.attr("autoScaleGetInstancesUrl");
+		this.autoScaleStatsUrl = this.$widgetDiv.attr("autoScaleStatsUrl");
+		this.imageId = this.$widgetDiv.attr("imageId");
+		
+		var widgetObject = this;
+		$.ajax({
+			url: widgetObject.autoScaleGetInstancesUrl + "?image-id=" + widgetObject.imageId,
+			success: function(data) {
+				$("tr.instanceRow", widgetObject.$widgetDiv).after($("tr.instanceRow", $("table.instancesTable", widgetObject.$widgetDiv).tmpl(data)));
+				$("tr.instanceRow:first", widgetObject.$widgetDiv).remove();
+				$("tr.instanceRow", widgetObject.$widgetDiv).show();
+				widgetObject.checkRegisteredInstances();
+				widgetObject.setCpu();
+			}
+		});
+		
 	}
 	
 	this.handleEvent = function(channel, event) {
@@ -29,11 +47,13 @@ function Widget_instanceManagementCalcInstances() {
 				thisWidget.ajaxGetThenNotify(url);
 			});
 		});
+		var successCalled = false;
 		$.ajax({
 			type: "GET",
 			url: "http://ec2-75-101-194-8.compute-1.amazonaws.com:8080/loadbalancer/instances",
 			dataType: "text",
 			success: function(res) {
+				successCalled = true;
 				for (i in instances){
 					var privateIP = instances[i];
 					var row = rows[privateIP];
@@ -47,8 +67,32 @@ function Widget_instanceManagementCalcInstances() {
 						$(".deregisterButton", row).css("display", "none");
 					}
 				}
+			},
+			complete: function(XMLHttpRequest, textStatus) {
+				if (!successCalled) {
+					$(".instanceRow .registrationSpan", thisWidget.$widgetDiv).html("Deregistered");
+					$(".instanceRow .registerButton", thisWidget.$widgetDiv).css("display", "inline");
+					$(".instanceRow .deregisterButton", thisWidget.$widgetDiv).css("display", "none");
+				}
 			}
 		});
+	}
+	
+	this.setCpu = function() {
+		var widgetObject = this;
+		$.ajax({
+			url: widgetObject.autoScaleStatsUrl,
+			success: function(instancesData) {
+				$(".instanceRow", widgetObject.$widgetDiv).each(function() {
+					var privateIP = $(this).attr("privateIP");
+					for(instanceData in instancesData) {
+						if (instanceData.instance == privateIP) {
+							$(".cpu", this).html(instanceData.average + "%").css("background-image", "-moz-linear-gradient(left center,lightblue " + instanceData.average + "%,white " + (instanceData.average + 20) + "%)");
+						}
+					}
+				});
+			}
+		})
 	}
 	
 	this.ajaxGetThenNotify = function(url) {

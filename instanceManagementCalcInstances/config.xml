@@ -1,16 +1,13 @@
 <widget>
-	<type>httpRequest</type>
+	<type>internalPage</type>
 	<parameters>
-		<method>GET</method>
-		<!--url>{cloudserviceUrl}/instances/imageID={imageId}</url-->
-		<url>http://ec2-75-101-194-8.compute-1.amazonaws.com:8080/cloudservice/instances/imageID=ami-f394629a</url>
-		<xsl>calcInstances</xsl>
+		<url>instanceManagementCalcInstances.html</url>
 	</parameters>
 	<attributes>
-		<!--cloudserviceUrl>{cloudserviceUrl}</cloudserviceUrl-->
-		<cloudserviceUrl>http://ec2-75-101-194-8.compute-1.amazonaws.com:8080/cloudservice</cloudserviceUrl>
-		<imageID>ami-f394629a</imageID>
+		<autoScaleGetInstancesUrl>/autoscale-stats/aws/instances/</autoScaleGetInstancesUrl>
+		<autoScaleStatsUrl>/autoscale-stats/stats</autoScaleStatsUrl>
+		<imageId>ami-f394629a</imageId>
 		<js>calcInstances.js</js>
-		<displayHeader>false</displayHeader>
+		<displayHeader>true</displayHeader>
 	</attributes>
 </widget>
