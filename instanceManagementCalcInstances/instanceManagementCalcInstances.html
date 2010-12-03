@@ -15,12 +15,13 @@
 		</td>
 		<td>${placement.availabilityZone} ${instanceType} (${instanceId})</td>
 		<td style="background-image:-moz-linear-gradient(left center,lightblue 0%,white 0%);" class="cpu">Unknown</td>
-		<td><xsl:value-of select="LaunchTime"/></td>
+		<td>${launchTime}</td>
 		<td>${state.name} (<span class="registrationSpan">Checking....</span>)</td>
 		<td>
 			<input type="button" value="Reset" onclick="window.open('http://${publicDnsName}:8080/calcservice/REST/action=clearCache')" />
 			<input type="button" value="Register" class="registerButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/register" />
 			<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/deregister" />
+			<input type="button" value="Terminate" class="terminateButton" style="display:none" url="${autoScaleGetInstancesUrl}terminate/${instanceId}" />
 		</td>
 	</tr>
 
@@ -29,5 +30,7 @@
 		<td style="text-align:right">Overall Average CPU Load</td>
 		<td class="overallAverage">%</td>
 	</tr>
-	
+
 </table>
+
+<input type="button" value="Start New Instance" class="newInstanceButton"/>

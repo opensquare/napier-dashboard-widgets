@@ -16,12 +16,20 @@ function Widget_instanceManagementCalcInstances() {
 		$.ajax({
 			url: widgetObject.autoScaleGetInstancesUrl + "?image-id=" + widgetObject.imageId,
 			success: function(data) {
+				for(i in data){
+					data[i].autoScaleGetInstancesUrl = widgetObject.autoScaleGetInstancesUrl;				
+				}
 				$("tr.instanceRow", widgetObject.$widgetDiv).after($("tr.instanceRow", $("table.instancesTable", widgetObject.$widgetDiv).tmpl(data)));
 				$("tr.instanceRow:first", widgetObject.$widgetDiv).remove();
 				$("tr.instanceRow", widgetObject.$widgetDiv).show();
 				widgetObject.checkRegisteredInstances();
 				widgetObject.setCpu();
 			}
+		});
+		
+		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
+			var url = widgetObject.autoScaleGetInstancesUrl + "create/" + widgetObject.imageId;
+			widgetObject.ajaxGetThenNotify(url);
 		});
 		
 	}
@@ -42,7 +50,7 @@ function Widget_instanceManagementCalcInstances() {
 			rows[privateIP] = this;
 			
 			// handle register/deregister buttons
-			$(".registerButton, .deregisterButton", this).click(function(){
+			$(".registerButton, .deregisterButton, .terminateButton", this).click(function(){
 				var url = $(this).attr("url");
 				thisWidget.ajaxGetThenNotify(url);
 			});
@@ -57,14 +65,16 @@ function Widget_instanceManagementCalcInstances() {
 				for (i in instances){
 					var privateIP = instances[i];
 					var row = rows[privateIP];
-					if(res.indexOf(privateIP) > -1){
+					if(res.indexOf("http://" + privateIP + ":") > -1){
 						$(".registrationSpan", row).html("Registered");
 						$(".registerButton", row).css("display", "none");
 						$(".deregisterButton", row).css("display", "inline");
+						$(".terminateButton", row).css("display", "none");
 					}else{
 						$(".registrationSpan", row).html("Deregistered");
 						$(".registerButton", row).css("display", "inline");
 						$(".deregisterButton", row).css("display", "none");
+						$(".terminateButton", row).css("display", "inline");
 					}
 				}
 			},
