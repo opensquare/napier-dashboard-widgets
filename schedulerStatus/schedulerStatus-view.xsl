@@ -6,16 +6,16 @@
 			<xsl:choose>
 				<xsl:when test="/response/success='true'">
 					<table>
-						<tbody>
-							<tr>
-								<th>Scheduler Status: </th>
-								<td>
-									<xsl:value-of select="/response/status"/>
-								</td>
-								<td><a href="#" class="ui-button" action="start">Start</a>
-								<a href="#" class="ui-button" action="stop">Stop</a></td>
-							</tr>
-						</tbody>
+						<tr>
+							<td><h2>Scheduler Status: </h2></td>
+							<td>
+								<xsl:value-of select="/response/status"/>
+							</td>
+							<td>
+								<a href="#" class="ui-button" action="start">Start</a>
+								<a href="#" class="ui-button" action="stop">Stop</a>
+							</td>
+						</tr>
 					</table>
 				</xsl:when>
 				<xsl:otherwise>

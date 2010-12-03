@@ -1,7 +1,6 @@
 <table class="databaseTable">
 	<tr>
-		<th></th>
-		<th>Description</th>
+		<th colspan="2">Description</th>
 		<th>Disk Space</th>
 		<th>Disk Used</th>
 		<th>Status</th>
@@ -10,7 +9,7 @@
 		<td><img src="widgets/databaseInstance/database.gif" /></td>
 		<td>Master (75.101.194.8)</td>
 		<td>10Gb</td>
-		<td>16%</td>
+		<td style="background-image:-moz-linear-gradient(left center,lightblue 16%,white 36%)">16%</td>
 		<td>Active</td>
 		<td><input type="button" value="settings..."/></td>
 	</tr>

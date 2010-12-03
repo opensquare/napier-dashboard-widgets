@@ -13,6 +13,7 @@ boolean autoLoad = true;
 	<select id="dateSelect" <%if(autoLoad){%>onchange="getStats('day')"<%}%>></select>
 	<select id="monthSelect" style="display:none" <%if(autoLoad){%>onchange="getStats('month')"<%}%>></select>
 	<select id="yearSelect" style="display:none" <%if(autoLoad){%>onchange="getStats('year')"<%}%>></select>
+	<input type="button" onclick="getStats()" value="Refresh"/>
 </div>
 <%if(!autoLoad){%>
 <input type="button" value="Display Stats" onclick="getStats()"/>

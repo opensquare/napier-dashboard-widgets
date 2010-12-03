@@ -35,6 +35,20 @@ ul{
   color:#333;
 }
 
+/* Fixed positioning */
+#header-1,#modeSwitcher-1{
+  position:fixed;
+  width:100%;
+}
+#modeSwitcher-1{
+  margin-top:32px;
+  border-bottom:15px solid rgba(255,255,255,0.85);
+  z-moz-box-shadow:3px 3px 3px #fff;
+}
+#modeSwitched-1{
+  padding-top:66px;
+}
+
 /* Color Schemes */
 .colorScheme1{
   background-image:-moz-linear-gradient(bottom,#59f,#ace);

@@ -4,8 +4,7 @@
 </style>
 <table class="databaseTable">
 	<tr>
-		<th></th>
-		<th>Date</th>
+		<th colspan="2">Date</th>
 		<th>Start</th>
 		<th>End</th>
 		<th>No of Records</th>
@@ -22,8 +21,7 @@
 <input type="button" value="New Archive..." onclick="$('#newArchive').toggle()"/>
 <table id="newArchive" class="databaseTable" style="display:none">
 	<tr>
-		<th></th>
-		<th>Date</th>
+		<th colspan="2">Date</th>
 		<th>Start</th>
 		<th>End</th>
 		<th>No of Records</th>

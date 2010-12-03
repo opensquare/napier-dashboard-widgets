@@ -20,7 +20,7 @@
 	}
 .statsTable th:nth-child(2){
 	font-weight:normal!important;
-	text-align:right;
+	text-align:right!important;
 	}
 .statsTable td{
 	border-bottom:1px dotted silver;
@@ -32,6 +32,9 @@
 	font-size:20px!important;
 	padding-left:10px;
 	text-align:right;
+	}
+.statsTable tr:last-child{
+	border-bottom:1px solid #444;
 	}
 .statsTable a{
 	color:#48e!important;

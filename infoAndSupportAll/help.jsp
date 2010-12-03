@@ -20,11 +20,10 @@
 		<table>
 			<tr>
 				<td rowspan="2"><img src="widgets/infoAndSupportAll/help.png"/></td)
-				<td>HelpDesk</td>
+				<td><h2><a href="https://oslpoc.lighthouseapp.com">HelpDesk</a></h2></td>
 			</tr>
 			<tr>
-				<td></td)
-				<td>An online source of information...</td>
+				<td><a href="https://oslpoc.lighthouseapp.com">Report and manage support requests</a></td>
 			</tr>
 		</table>
 	</li>

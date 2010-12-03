@@ -1,9 +1,13 @@
 .databaseTable td{
-	width:120px;
+	width:150px;
+	vertical-align:middle;
 	}
 .databaseTable td:nth-child(1){
 	width:30px;
 	}
 .databaseTable td:nth-child(2){
 	width:300px;
+	}
+.databaseTable th:nth-child(5),.databaseTable td:nth-child(5){
+	text-align:right!important;
 	}

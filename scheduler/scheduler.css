@@ -22,6 +22,9 @@
   text-align:left!important;
   zvertical-align:middle!important;
 }
+.scheduler th,.scheduler td{
+  vertical-align:middle;
+}
 .schedulerJobs table th,.schedulerResults table th{
   background:#444;
   color:#fff;

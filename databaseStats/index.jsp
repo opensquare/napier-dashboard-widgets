@@ -38,17 +38,16 @@
 %>
 <table class="databaseTable">
 	<tr>
-		<th></th>
-		<th></th>
+		<th colspan="2"></th>
 		<th>Start</th>
 		<th>End</th>
 		<th>No of Records</th>
 	</tr>
 	<tr>
-		<td><img src="" /></td>
+		<td><img src="widgets/databaseStats/database.gif" /></td>
 		<td>Current database</td>
-		<td><%=oldestCalcTime%> <a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=oldestCalcID%>')"><%=oldestCalcID%></a></td>
-		<td><%=newestCalcTime%> <a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=newestCalcID%>')"><%=newestCalcID%></a></td>
+		<td><%=oldestCalcTime%> (<a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=oldestCalcID%>')">#<%=oldestCalcID%></a>)</td>
+		<td><%=newestCalcTime%> (<a href="#" onclick="window.open('showComponent?name=viewCalc&calcRef=<%=newestCalcID%>')">#<%=newestCalcID%></a>)</td>
 		<td><%=numberOfCalcs%></td>
 	</tr>
 </table>

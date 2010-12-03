@@ -5,8 +5,7 @@
 		<p>These are the main account holder's details registered for this Napier service:</p>
 		<table class="usersTable">
 			<tr>
-				<th></th>
-				<th>Organisation Name</th>
+				<th colspan="2">Organisation</th>
 				<th>Address</th>
 				<th></th>
 				<th></th>
@@ -26,8 +25,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th></th>
-				<th>Name</th>
+				<th colspan="2">Name</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right"/></th>
@@ -57,8 +55,7 @@
 		<p>These are the other users set up for your Napier service:</p>
 		<table class='usersTable'>
 			<tr>
-				<th></th>
-				<th>Name</th>
+				<th colspan="2">Name</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right;"/></th>
@@ -84,8 +81,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th></th>
-				<th>Name</th>
+				<th colspan="2">Name</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right;"/></th>
@@ -116,8 +112,7 @@
 		<p></p>
 		<table id="usersNewUser" class="usersTable" style="display:none;background-color:#d8e0ff">
 			<tr>
-				<th></th>
-				<th>Name</th>
+				<th colspan="2">Name</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" style="float:right;"/></th>
@@ -128,7 +123,7 @@
 				<td><input id='fn0' name='name' type='text'/></td>
 				<td><input id='em0' name='email' type='text'/></td>
 				<td><input type="password" name="password" />
-				<td><textarea name="validIPs" ></textarea></td>
+				<td><textarea name="validIPs" ><%=request.getRemoteAddr()%></textarea></td>
 				<td>
 					Dashboard - Admin: <input id='db' class="readonly" name='dashboard' type='checkbox' value="true"/>
 					Dashboard - User: <input id='vj' class="readonly" name='viewJobs' type='checkbox' value="true"/>
