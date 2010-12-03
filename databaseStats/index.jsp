@@ -1,6 +1,7 @@
 <%@page import="org.springframework.context.ApplicationContext"%>
 <%@page import="org.springframework.jdbc.core.JdbcTemplate"%>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
+<%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%
@@ -14,7 +15,8 @@
 
 	// Execute a query
 	String query = "SELECT calcID, physicalTime FROM calc ORDER BY calcID DESC LIMIT 1";
-	PreparedStatement statement = jdbcTemplate.getDataSource().getConnection().prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	Connection connection = jdbcTemplate.getDataSource().getConnection();
+	PreparedStatement statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	ResultSet results = statement.executeQuery();
 
 	// Handle results
@@ -25,7 +27,7 @@
 
 	// Execute a query
 	query = "SELECT calcID, physicalTime FROM calc ORDER BY calcID ASC LIMIT 1";
-	statement = jdbcTemplate.getDataSource().getConnection().prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	statement = connection.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	results = statement.executeQuery();
 
 	// Handle results
@@ -35,6 +37,10 @@
 	}
 
 	int numberOfCalcs = Integer.parseInt(newestCalcID) - Integer.parseInt(oldestCalcID);
+	
+	results.close();
+	statement.close();
+	connection.close();
 %>
 <table class="databaseTable">
 	<tr>
