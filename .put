@@ -1,2 +1,3 @@
+cd `dirname $_`
 sudo rsync --exclude="*.svn" -r . /tomcatwebapps/dev-napier-dashboard/widgets/
 sudo chown -R tomcat6:tomcat6 /tomcatwebapps/dev-napier-dashboard

@@ -1,27 +1,109 @@
-function lockFields1(){	
-	Inputs = document.getElementsByTagName("input");
-	for(var i = 0; i<Inputs.length; i++)
-	{
-		if(Inputs[i].type != 'button' && Inputs[i].type != 'submit')
-		{
-			Inputs[i].disabled = true;
-		}
-		else if(Inputs[i].className=='editConfirm' || Inputs[i].className=='hide')
-		{
-			Inputs[i].style.display = 'none';
-		}
-		else
-		{
-			Inputs[i].style.display = 'inline';
-		}
+function Widget_users(){
+	
+	this.onReadyExtend = function() {
+		var widgetObject = this;
+		
+		$("[action='add']", this.widgetDiv).click(function() {
+			var $newform = $(".baseform", this.widgetDiv).clone().removeClass("baseform").show();
+			$newform.attr("action", "create");
+			$(".standardUsers", this.widgetDiv).append($newform);
+			widgetObject.initForms($newform);
+			$("[action='edit']", $newform).click();
+		})
+		
+		$.ajax({
+			url: "user/list",
+			success: function(users) {
+				for each (var user in users) {
+					var appendClass = user.accountHolder == true ? "accountHolders" : "standardUsers";
+					var $cloneNode = $(".baseform", widgetObject.widgetDiv);
+					var $newNode = $cloneNode.clone().removeClass("baseform");
+					$("." + appendClass, widgetObject.widgetDiv).append($newNode);
+					$(":input", $newNode).each(function() {
+						var $input = $(this);
+						if (this.type == "text" || this.type == "password" || this.type == "hidden") {
+							if (defined(user[this.name])) {
+								$input.val(user[this.name]);
+							}
+						} else if (this.type == "textarea") {
+							if (defined(user[this.name])) {
+								$input.text(user[this.name]);
+							}
+						} else if (this.type == "checkbox") {
+							var collection = this.name.substring(0, this.name.indexOf("."));
+							var item = this.name.substring(this.name.indexOf(".") + 1);
+							$input.attr("checked", ($.inArray(item, user[collection]) != -1));
+						}
+					})
+					$newNode.show();
+					widgetObject.initForms($newNode);
+				}
+			},
+			error: function() {
+				alert("Failed to load users.");
+			}
+		})
 	}
-	Inputs = document.getElementsByTagName("textarea");
-	for(var i = 0; i<Inputs.length; i++)
-	{
-		Inputs[i].disabled = true;
+	
+	this.initForms = function(container) {
+		$("[action='edit']", container).click(function() {
+			var form = $(this).parents(".form")[0];
+			unlock(form, $(this).hide().siblings());
+			$(":input", form).each(function () {
+				var $this = $(this);
+				if (this.type == 'text' || this.type == 'textarea') {
+					$this.data('origValue', $this.val());
+				} else if (this.type == 'checkbox') {
+					$this.data('origValue', $this.attr("checked"));
+				}
+			})
+		})
+		$("[action='save']", container).click(function() {
+			var thisButton = this;
+			var $form = $($(this).parents(".form")[0]);
+			if (validateForm($form)) {
+				var data = $(":input", $form).serialize();
+				$form.find(':enabled').attr('disabled', true);
+				$.ajax({
+					url: $form.attr("actionUrlPrefix") + $form.attr("action"),
+					type: "post",
+					data: data,
+					success: function() {
+						$form.attr("update");
+						lock($form, $("[action='edit']", $form));
+					},
+					error: function() {
+						alert("Failed to save user.");
+					}
+				})
+			}
+		})
+		$("[action='cancel']", container).click(function() {
+			var $form = $($(this).parents(".form")[0]);
+			clearFormValidation($form);
+			if ($form.attr("action") == "create") {
+				$form.hide();
+			} else {
+				$(":input", $form).each(function () {
+					var $this = $(this);
+					if (this.type == 'text' || this.type == 'textarea') {
+						$this.val($this.data('origValue'));
+					} else if (this.type == 'checkbox') {
+						$this.attr("checked", $this.data('origValue'));
+					}
+				})
+				lock($form, $("[action='edit']", $form));
+			}
+		})
 	}
 }
 
+Widget_users.prototype = globalProperties.widgetPrototype;
+
+
+
+
+/// Some Global functions .. maybe their scope should be narrowed.
 
 function unlock(node1,node2){
 	//parameters - 1) parent node containing fields to be unlocked, 2) (optional) other items (save/cancel buttons usually) to show
@@ -35,42 +117,12 @@ function lock(node1,node2){
 	$(node2).removeAttr('disabled').show().siblings().hide();
 }
 
-function unlockFields1(currentNode){
-        var parent = currentNode.parentNode;
-        parent = parent.parentNode;
-        parent = parent.parentNode;
-//        alert(parent.nodeName);
-	Inputs = parent.getElementsByTagName("input");
-	for(var i = 0; i<Inputs.length; i++)
-	{
-		if(Inputs[i].type != 'button')
-		{
-			if(Inputs[i].type != 'submit' && Inputs[i].className != 'readonly')
-			{
-				Inputs[i].disabled = false;
-			}
-			else
-			{
-				Inputs[i].style.display = 'inline';
-			}
-		}
-		else if(Inputs[i].className=='editConfirm')
-		{
-			Inputs[i].style.display = 'inline';
-		}
-		else 
-		{
-			Inputs[i].style.display = 'none';
-		}
-	}  
-	Inputs = parent.getElementsByTagName("textarea");
-	for(var i = 0; i<Inputs.length; i++)
-	{
-		if(Inputs[i].className != 'readonly')
-		{
-			Inputs[i].disabled = false;
-		}
-	}   
+function validateForm(form) {
+	$(":input[validation='required'][value!='']", form).removeClass("required");
+	return $(":input[validation='required'][value='']", form).addClass("required").size() == 0;
+}
+function clearFormValidation(form) {
+	$(":input[validation='required']", form).removeClass("required");
 }
 
 function openWindow(type){

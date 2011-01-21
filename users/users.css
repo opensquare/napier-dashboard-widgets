@@ -1,3 +1,6 @@
+.usersTable {
+	width:826px;
+	}
 .usersTable td{
 	width:120px;
 	}
@@ -16,8 +19,11 @@
 .usersTable input[type="checkbox"]{
 	margin:0 4px;
 	}
-.usersTable input:disabled,.usersTable textarea:disabled{
+.usersTable input[type="text"]:disabled,.usersTable input[type="checkbox"]:disabled,.usersTable input[type="password"]:disabled,.usersTable textarea:disabled{
 	border:none;
 	background:none;
 	color:#333
+	}
+.required{
+	border: solid 1px red !important;
 	}

@@ -225,7 +225,7 @@ function populateFileList(data){
 				fileDivHTML += "</a><br/>";
 			}
 		}catch(e){
-			alert(e);
+			//alert(e);
 		}
 	}
 	self.files.document.getElementById("files").innerHTML = fileDivHTML;

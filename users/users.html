@@ -1,0 +1,73 @@
+<h1>Users</h1>
+<ul id="pageContent">
+	<li>
+		<h2>Account Details</h2>
+		<p>These are the main account holder's details registered for this Napier service:</p>
+		<table class="usersTable accountHolders">
+			<tr>
+				<th colspan="2">Organisation</th>
+				<th>Address</th>
+				<th></th>
+				<th></th>
+				<th style="width: 150px"></th>
+				<th style="width: 110px; visibility: hidden;"></th>
+			</tr>
+			<tr id="usersAccountOrg">
+				<td style='text-align:center'><img src='widgets/usersAll/office-small.png'/></td>
+				<td><input name='companyName' type='text' value='Open Insure' disabled="disabled" /></td>
+				<td><textarea name="address" disabled="disabled">123 Long Lane</textarea></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td style="text-align:center;">
+					<input id="usersAccountOrgEdit" onclick="unlock($('#usersAccountOrg'),$(this).siblings())" type="button" value="Edit" style="width:100px"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" value="Save" style="width:100px;display:none;"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" value="Cancel" style="width:100px;display:none;"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<th colspan="2">Name</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right"/></th>
+				<th style="width: 150px">Privileges</th>
+				<th style="width: 110px; visibility: hidden;"></th>
+			</tr>
+			<tr class="form baseform" actionUrlPrefix="user/" action="update" style="display: none;">
+				<td style='text-align:center'><img src='widgets/usersAll/person-small.gif'/><input name='userId' type='hidden' value='' /></td>
+				<td><input name='name' type='text' value='' disabled="disabled" validation="required"/></td>
+				<td><input name='username' type='text' value='' disabled="disabled" validation="required"/></td>
+				<td><input type="password" name="password" value='' disabled="disabled" validation="required"/>
+				<td><textarea name="validIPsString" disabled="disabled"></textarea></td>
+				<td>
+					Dashboard - Admin: <input name='privileges.admin' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dashboard - User: <input name='privileges.viewJobs' type='checkbox' value="true" disabled="disabled"/><br/>
+					Submit Jobs: <input name='privileges.viewAllJobs' type='checkbox' value="true" disabled="disabled"/>
+				</td>
+				<td style="width:110px;text-align:center;">
+					<input action="edit" type="button" value="Edit" style="width:100px"/>
+					<input action="save" type="button" value="Save" style="width:100px;display:none;"/>
+					<input action="cancel" type="button" value="Cancel" style="width:100px;display:none;"/>
+				</td>
+			</tr>
+		</table>
+	</li>
+	<li>
+		<h2>Users</h2>
+		<p>These are the other users set up for your Napier service:</p>
+		<table class='usersTable standardUsers'>
+			<tr>
+				<th colspan="2">Name</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>IP Checking <input type="checkbox" name="enableIPChecking" value="true" disabled="disabled" style="float:right"/></th>
+				<th style="width: 150px">Privileges</th>
+				<th style="width: 110px; visibility: hidden;"></th>
+			</tr>
+		</table>
+		<p></p>
+		<h2><a action="add">Add New User...</a></h2>
+		<p></p>
+	</li>
+</ul>
