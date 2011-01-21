@@ -1,0 +1,23 @@
+.usersTable td{
+	width:120px;
+	}
+.usersTable td:nth-child(1){
+	width:20px;
+	}
+.usersTable td:nth-child(6){
+	text-align:right;
+	}
+.usersTable td:nth-child(7){
+	width:auto;
+	}
+.usersTable textarea{
+	width:114px;
+	}
+.usersTable input[type="checkbox"]{
+	margin:0 4px;
+	}
+.usersTable input:disabled,.usersTable textarea:disabled{
+	border:none;
+	background:none;
+	color:#333
+	}
