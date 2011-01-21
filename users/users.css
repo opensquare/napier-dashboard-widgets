@@ -20,7 +20,7 @@
 	margin:0 4px;
 	}
 .usersTable input[type="text"]:disabled,.usersTable input[type="checkbox"]:disabled,.usersTable input[type="password"]:disabled,.usersTable textarea:disabled{
-	border:none;
+	border:1px solid white;
 	background:none;
 	color:#333
 	}
