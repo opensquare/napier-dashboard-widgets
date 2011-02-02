@@ -7,7 +7,7 @@
 				<xsl:when test="/response/success='true'">
 					<a class="ui-button" href="javascript:void(0)" action="scheduleNewJob">Schedule a new job</a>
 					<a class="ui-button" href="javascript:void(0)" action="schedulerUploadJob">Upload a job script</a>
-					<table>
+					<table width="100%" style="text-align:center">
 						<thead>
 							<tr>
 								<th>Name</th>
@@ -50,12 +50,15 @@
 			</td>
 			<td>
 				<span class="scheduler-actions">
-					<a href="#" class="ui-icon ui-icon-circle-triangle-e" title="trigger" action="triggerJob" jobName="{jobName}"/>
-					<a href="#" class="ui-icon ui-icon-pause" title="pause" action="pauseJob" jobName="{jobName}"/>
-					<a href="#" class="ui-icon ui-icon-play" title="resume" action="resumeJob" jobName="{jobName}"/>
-					<a href="#" class="ui-icon ui-icon-close" title="delete" action="deleteJob" jobName="{jobName}"/>
-					<a href="#" class="ui-icon ui-icon-pencil" title="edit" action="editJob" jobName="{jobName}"/>
-					<a href="#" class="ui-icon ui-icon-document" title="results" action="jobResults" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-circle-triangle-e" title="Trigger" action="triggerJob" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-pause" title="Pause" action="pauseJob" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-play" title="Resume" action="resumeJob" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-close" title="Delete" action="deleteJob" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-pencil" title="Edit" action="editJob" jobName="{jobName}"/>
+					<a href="#" class="ui-icon ui-icon-document" title="Results" action="jobResults" jobName="{jobName}"/>
+					<xsl:if test="outputDirectory='true'">
+						<a href="{schedulerOutputFiles}/{jobName}/" target="_blank" class="ui-icon ui-icon-folder-collapsed" title="Output Files"/>
+					</xsl:if>
 				</span>
 			</td>
 		</tr>

@@ -2,6 +2,7 @@
 <type>internalPage</type>
 	<parameters>
 		<url>modeSwitcher.html</url>
+		<privilegeCheck>true</privilegeCheck>
 	</parameters>
     <attributes>
     	<modeswitchchannel>default</modeswitchchannel>

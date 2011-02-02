@@ -5,13 +5,16 @@
 		<div>
 			<xsl:choose>
 				<xsl:when test="/response/success='true'">
-					<table>
+					<table width="100%" style="text-align:center">
 						<thead>
 							<tr>
 								<th>Name</th>
-								<th>Execution Time</th>
+								<th>Execution Start Time</th>
+								<th>Execution End Time</th>
 								<th>Successful</th>
 								<th>Message</th>
+								<th>View Report</th>
+								<th>View Output</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -56,13 +59,36 @@
 				<xsl:value-of select="JOB_NAME"/>
 			</td>
 			<td>
-				<xsl:value-of select="EXECUTION_TIME"/>
+				<xsl:value-of select="EXECUTION_START_TIME"/>
+			</td>
+			<td>
+				<xsl:value-of select="EXECUTION_END_TIME"/>
 			</td>
 			<td>
 				<xsl:value-of select="SUCCESS"/>
 			</td>
-			<td>
+			<td class="urlDecode">
 				<xsl:value-of select="MESSAGE"/>
+			</td>
+			<td>
+				<xsl:if test="EXECUTION_START_TIME != 'null'" >
+					<a href="#" action="viewLog" type="report">
+						<xsl:attribute name="jobName"><xsl:value-of select="JOB_NAME"/></xsl:attribute>
+						<xsl:attribute name="fireTime"><xsl:value-of select="substring(translate(EXECUTION_START_TIME, ' .:', '---'), 0, 20)"/></xsl:attribute>
+						<xsl:attribute name="fireTimeNice"><xsl:value-of select="EXECUTION_START_TIME"/></xsl:attribute>
+						View Report
+					</a>
+				</xsl:if>
+			</td>
+			<td>
+				<xsl:if test="EXECUTION_START_TIME != 'null'" >
+					<a href="#" action="viewLog" type="output">
+						<xsl:attribute name="jobName"><xsl:value-of select="JOB_NAME"/></xsl:attribute>
+						<xsl:attribute name="fireTime"><xsl:value-of select="substring(translate(EXECUTION_START_TIME, ' .:', '---'), 0, 20)"/></xsl:attribute>
+						<xsl:attribute name="fireTimeNice"><xsl:value-of select="EXECUTION_START_TIME"/></xsl:attribute>
+						View Output
+					</a>
+				</xsl:if>
 			</td>
 		</tr>
 	</xsl:template>

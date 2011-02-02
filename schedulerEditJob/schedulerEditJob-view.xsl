@@ -54,6 +54,16 @@
 					</td>
 				</tr>
 				<tr>
+					<td>Output Directory: </td>
+					<td>
+						<input type="checkbox" name="outputDirectory">
+							<xsl:if test="outputDirectory='true'">
+								<xsl:attribute name="checked">true</xsl:attribute>
+							</xsl:if>
+						</input>
+					</td>
+				</tr>
+				<tr>
 					<td>Start Date: </td>
 					<td>
 						<input type="text" name="startDate" class="datepicker">

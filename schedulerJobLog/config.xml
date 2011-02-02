@@ -1,0 +1,16 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>schedulerJobLog.html</url>
+	</parameters>
+	<attributes>
+		<title>Log</title>
+		<delayLoad>false</delayLoad>
+		<js>schedulerJobLog.js</js>
+		<css>schedulerJobLog.css</css>
+		<logLimitedUrl>proxy/scheduler/log/{jobName}/{fireTime}?kilobyteLimit=100</logLimitedUrl>
+		<logFileUrl>proxy/scheduler/log/{jobName}-{fireTime}.txt</logFileUrl>
+		<outputLimitedUrl>proxy/scheduler/output/{jobName}/{fireTime}?kilobyteLimit=100</outputLimitedUrl>
+		<outputFileUrl>proxy/scheduler/output/{jobName}-{fireTime}.txt</outputFileUrl>
+	</attributes>
+</widget>
