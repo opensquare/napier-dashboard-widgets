@@ -4,10 +4,11 @@
 		<url>instanceManagementCalcInstances.html</url>
 	</parameters>
 	<attributes>
-		<autoScaleGetInstancesUrl>/autoscale-stats/aws/instances/</autoScaleGetInstancesUrl>
-		<autoScaleStatsUrl>/autoscale-stats/stats</autoScaleStatsUrl>
+		<autoScaleGetInstancesUrl>proxy/autoscale-stats/aws/instances/</autoScaleGetInstancesUrl>
+		<autoScaleStatsUrl>proxy/autoscale-stats/stats/cpu</autoScaleStatsUrl>
+		<instancesUrl>proxy/instances</instancesUrl>
 		<imageId>ami-f394629a</imageId>
 		<js>calcInstances.js</js>
-		<displayHeader>false</displayHeader>
+		<displayHeader>true</displayHeader>
 	</attributes>
 </widget>

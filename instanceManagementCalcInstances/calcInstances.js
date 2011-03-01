@@ -2,6 +2,7 @@ function Widget_instanceManagementCalcInstances() {
 	
 	this.autoScaleGetInstancesUrl = null;
 	this.autoScaleStatsUrl = null;
+	this.instancesUrl = null;
 	
 	this.initExtend = function() {
 		addListenerToChannel(this, "calcInstancesUpdated");
@@ -10,6 +11,7 @@ function Widget_instanceManagementCalcInstances() {
 	this.onReadyExtend = function() {
 		this.autoScaleGetInstancesUrl = this.$widgetDiv.attr("autoScaleGetInstancesUrl");
 		this.autoScaleStatsUrl = this.$widgetDiv.attr("autoScaleStatsUrl");
+		this.instancesUrl = this.$widgetDiv.attr("instancesUrl");
 		this.imageId = this.$widgetDiv.attr("imageId");
 		
 		var widgetObject = this;
@@ -58,7 +60,7 @@ function Widget_instanceManagementCalcInstances() {
 		var successCalled = false;
 		$.ajax({
 			type: "GET",
-			url: "/loadbalancer/instances",
+			url: this.instancesUrl,
 			dataType: "text",
 			success: function(res) {
 				successCalled = true;
@@ -99,7 +101,7 @@ function Widget_instanceManagementCalcInstances() {
 					var privateIP = $(this).attr("privateIP");
 					for each (var instanceData in instancesData) {
 						if (instanceData.instance == privateIP) {
-							var average = instanceData.average;
+							var average = instanceData.averageCpu;
 							average = Math.round(average*100)/100
 							overallAverage += average;
 							num++;
