@@ -9,6 +9,6 @@
 		<instancesUrl>proxy/instances</instancesUrl>
 		<imageId>ami-f394629a</imageId>
 		<js>calcInstances.js</js>
-		<displayHeader>true</displayHeader>
+		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>
