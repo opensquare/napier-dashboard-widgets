@@ -5,10 +5,11 @@
 		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
-		<autoScaleGetInstancesUrl>proxy/autoscale-stats/aws/instances/</autoScaleGetInstancesUrl>
+		<autoScaleInstancesUrl>proxy/autoscale-stats/aws/instances</autoScaleInstancesUrl>
+		<autoScaleInstancesListUrl>proxy/autoscale-stats-instances-list</autoScaleInstancesListUrl>
+		<autoScaleInstanceCreateUrl>proxy/autoscale-stats-instance-create</autoScaleInstanceCreateUrl>
 		<autoScaleStatsUrl>proxy/autoscale-stats/stats/cpu</autoScaleStatsUrl>
-		<instancesUrl>proxy/instances</instancesUrl>
-		<imageId>ami-f394629a</imageId>
+		<instancesRegisteredUrl>proxy/instancesRegistered</instancesRegisteredUrl>
 		<js>calcInstances.js</js>
 		<displayHeader>false</displayHeader>
 	</attributes>

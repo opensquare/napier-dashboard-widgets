@@ -1,25 +1,28 @@
 function Widget_instanceManagementCalcInstances() {
 	
-	this.autoScaleGetInstancesUrl = null;
+	this.autoScaleInstancesUrl = null;
+	this.autoScaleInstancesListUrl = null;
+	this.autoScaleInstanceCreateUrl = null;
 	this.autoScaleStatsUrl = null;
-	this.instancesUrl = null;
+	this.instancesRegisteredUrl = null;
 	
 	this.initExtend = function() {
 		addListenerToChannel(this, "calcInstancesUpdated");
 	}
 	
 	this.onReadyExtend = function() {
-		this.autoScaleGetInstancesUrl = this.$widgetDiv.attr("autoScaleGetInstancesUrl");
+		this.autoScaleInstancesUrl = this.$widgetDiv.attr("autoScaleInstancesUrl");
+		this.autoScaleInstancesListUrl = this.$widgetDiv.attr("autoScaleInstancesListUrl");
+		this.autoScaleInstanceCreateUrl = this.$widgetDiv.attr("autoScaleInstanceCreateUrl");
 		this.autoScaleStatsUrl = this.$widgetDiv.attr("autoScaleStatsUrl");
-		this.instancesUrl = this.$widgetDiv.attr("instancesUrl");
-		this.imageId = this.$widgetDiv.attr("imageId");
+		this.instancesRegisteredUrl = this.$widgetDiv.attr("instancesRegisteredUrl");
 		
 		var widgetObject = this;
 		$.ajax({
-			url: widgetObject.autoScaleGetInstancesUrl + "?image-id=" + widgetObject.imageId,
+			url: widgetObject.autoScaleInstancesListUrl,
 			success: function(data) {
 				for(i in data){
-					data[i].autoScaleGetInstancesUrl = widgetObject.autoScaleGetInstancesUrl;				
+					data[i].autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
 				}
 				$("tr.instanceRow", widgetObject.$widgetDiv).after($("tr.instanceRow", $("table.instancesTable", widgetObject.$widgetDiv).tmpl(data)));
 				$("tr.instanceRow:first", widgetObject.$widgetDiv).remove();
@@ -30,7 +33,7 @@ function Widget_instanceManagementCalcInstances() {
 		});
 		
 		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
-			var url = widgetObject.autoScaleGetInstancesUrl + "create/" + widgetObject.imageId;
+			var url = widgetObject.autoScaleInstanceCreateUrl;
 			widgetObject.ajaxGetThenNotify(url);
 		});
 		
@@ -60,7 +63,7 @@ function Widget_instanceManagementCalcInstances() {
 		var successCalled = false;
 		$.ajax({
 			type: "GET",
-			url: this.instancesUrl,
+			url: this.instancesRegisteredUrl,
 			dataType: "text",
 			success: function(res) {
 				successCalled = true;

@@ -18,7 +18,7 @@ String loadbalancerUrl = configHelper.getLoadbalancerUrl();
 		<td><img src="widgets/instanceManagementGatewayInstance/globe.gif" /></td>
 		<td><%=loadbalancerUrl%></td>
 		<td>Active</td>
-		<td>
+		<td privilege="showDummyFeatures">
 			<input type="button" value="Stop!"/>
 		</td>
 	</tr>
