@@ -2,6 +2,7 @@
 	<type>layout</type>
 	<parameters>
 		<url>index.html</url>
+		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
 		<css>instances.css</css>

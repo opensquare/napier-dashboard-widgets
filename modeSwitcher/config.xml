@@ -1,8 +1,8 @@
 <widget>
-<type>internalPage</type>
+	<type>internalPage</type>
 	<parameters>
 		<url>modeSwitcher.html</url>
-		<privilegeCheck>true</privilegeCheck>
+		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
     <attributes>
     	<modeswitchchannel>default</modeswitchchannel>

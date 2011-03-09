@@ -38,11 +38,17 @@
 				<td style='text-align:center'><img src='{widgetPath}/person-small.gif'/><input name='userId' type='hidden' value='' /></td>
 				<td><input name='name' type='text' value='' disabled="disabled" validation="required"/></td>
 				<td><input name='username' type='text' value='' disabled="disabled" validation="required"/></td>
-				<td><input type="password" name="password" value='' disabled="disabled" validation="required"/>
+				<td><input type="password" name="password" value='' disabled="disabled" validation="required"/></td>
 				<td><textarea name="validIPsString" disabled="disabled"></textarea></td>
 				<td>
-					Dashboard - User Admin: <input name='privileges.userAdmin' type='checkbox' value="true" disabled="disabled"/><br/>
-					Dashboard - User: <input name='privileges.viewJobs' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - User: <input name='privileges.viewJobs' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - Stats: <input name='privileges.stats' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - Resources: <input name='privileges.resources' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - User Admin: <input name='privileges.userAdmin' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - View Instances: <input name='privileges.viewInstances' type='checkbox' value="true" disabled="disabled"/><br/>
+					<div aprivilege="enableInstanceScaling">
+						Dash - Start Instances: <input name='privileges.instanceScaling' type='checkbox' value="true" disabled="disabled"/><br/>
+					</div>
 					Submit Jobs: <input name='privileges.viewAllJobs' type='checkbox' value="true" disabled="disabled"/>
 				</td>
 				<td style="width:110px;text-align:center;">

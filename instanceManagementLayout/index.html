@@ -6,7 +6,7 @@
 	<li>
 		<div class="widget" name="instanceManagementCalcInstances">Loading...</div>
 	</li>
-	<li>
+	<li privilege="instanceScaling">
 		<h2 style="margin:20px 0 10px 0">
 			Automatic Scaling
 			<label style="font-weight:normal;margin-left:80px">Enabled</label>
@@ -35,44 +35,11 @@
 						<option>Large</option>
 					</select>
 				</td>
-				<td>CPU/Hour <input type="text" value="80"/> &nbsp; Max No. <input type="text" value="20"/></td>
-				<td>CPU/Hour <input type="text" value="60"/> &nbsp; Min No. <input type="text" value="1"/></td>
+				<td>CPU/Hour <input type="text" value="80"/> Max No. <input type="text" value="20"/></td>
+				<td>CPU/Hour <input type="text" value="60"/> Min No. <input type="text" value="1"/></td>
 				<td><input type="button" value="Update"/></td>
 			</tr>
 		</table>
 		<p></p>
-		<!-- input type="button" value="Start New Instance..." onclick="$('#newInstance').slideToggle()"/>
-		<table id="newInstance" class="instancesTable" style="display:none">
-			<tr>
-				<th></th>
-				<th>Description</th>
-			</tr>
-			<tr>
-				<td><img src="widgets/instanceManagementAll/machine-small.gif" /></td>
-				<td>
-					<select>
-						<option>Amazon US East</option>
-						<option>Amazon US West</option>
-						<option>Amazon EU West</option>
-						<option>Amazon Asia Pacific</option>
-					</select>
-					<select>
-						<option>Micro</option>
-						<option selected="selected">Small</option>
-						<option>Medium</option>
-						<option>Large</option>
-					</select>
-				</td>
-				<td>
-					<input type="button" value="Start"/>
-				</td>
-			</tr>
-		</table -->
 	</li>
-	<!-- li>
-		<h2>History</h2>
-		<p></p>
-		<textarea style="width:600px;height:400px;"/>
-		<input type="button" value="Clear Log"/>
-	</li -->
 </ul>

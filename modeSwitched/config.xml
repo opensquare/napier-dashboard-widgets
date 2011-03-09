@@ -2,6 +2,7 @@
 	<type>layout</type>
 	<parameters>
 		<url>modeSwitched.html</url>
+		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
 		<modeswitchchannel>default</modeswitchchannel>

@@ -2,6 +2,7 @@
 	<type>internalPage</type>
 	<parameters>
 		<url>users.html</url>
+		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
 		<css>users.css</css>
