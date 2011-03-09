@@ -20,7 +20,7 @@ function Widget_instanceManagementCalcInstances() {
 		var widgetObject = this;
 		$.ajax({
 			url: widgetObject.autoScaleInstancesListUrl,
-			dataType: json,
+			dataType: "json",
 			success: function(data) {
 				for(i in data){
 					data[i].autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
