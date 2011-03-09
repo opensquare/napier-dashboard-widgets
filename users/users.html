@@ -41,15 +41,20 @@
 				<td><input type="password" name="password" value='' disabled="disabled" validation="required"/></td>
 				<td><textarea name="validIPsString" disabled="disabled"></textarea></td>
 				<td>
-					Dash - User: <input name='privileges.viewJobs' type='checkbox' value="true" disabled="disabled"/><br/>
 					Dash - Stats: <input name='privileges.stats' type='checkbox' value="true" disabled="disabled"/><br/>
-					Dash - Resources: <input name='privileges.resources' type='checkbox' value="true" disabled="disabled"/><br/>
 					Dash - User Admin: <input name='privileges.userAdmin' type='checkbox' value="true" disabled="disabled"/><br/>
+					Dash - Resources: <input name='privileges.resources' type='checkbox' value="true" disabled="disabled"/><br/>
 					Dash - View Instances: <input name='privileges.viewInstances' type='checkbox' value="true" disabled="disabled"/><br/>
-					<div aprivilege="enableInstanceScaling">
+					<div privilege="enableInstanceScaling">
 						Dash - Start Instances: <input name='privileges.instanceScaling' type='checkbox' value="true" disabled="disabled"/><br/>
 					</div>
-					Submit Jobs: <input name='privileges.viewAllJobs' type='checkbox' value="true" disabled="disabled"/>
+					<div privilege="showDummyFeatures">
+						Dash - Start Instances: <input name='privileges.database' type='checkbox' value="true" disabled="disabled"/><br/>
+					</div>
+					<div privilege="showDummyFeatures">
+						Submit Jobs: <input name='privileges.submitJobs' type='checkbox' value="true" disabled="disabled"/>
+					</div>
+					Dash - Scheduler: <input name='privileges.scheduler' type='checkbox' value="true" disabled="disabled"/><br/>
 				</td>
 				<td style="width:110px;text-align:center;">
 					<input action="edit" type="button" value="Edit" style="width:100px"/>
