@@ -1,7 +1,7 @@
 <widget>
 	<type>layout</type>
 	<parameters>
-		<url>index.html</url>
+		<url>header.html</url>
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>
