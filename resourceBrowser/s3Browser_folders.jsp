@@ -28,11 +28,10 @@
 		<%
             ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(getServletConfig().getServletContext());
             RequestHelper requestHelper = appContext.getBean("requestHelper", RequestHelper.class);
+			String url = appContext.getBean("napierResourceManagerUrl", String.class);
 			String topLevel = request.getParameter("topLevel");
 			String path = request.getParameter("path");
 			String prefix = "";
-			Element mmConfig = ConfigHelper.getConfigFile("./mmService.xml").getRootElement();
-			String url = mmConfig.selectSingleNode("mmservice/url").getText();
 			url = url + "resources/paths";
 			System.out.println(url);
 			String responseXML = requestHelper.sendRequestToUrl(url, "GET", "");
