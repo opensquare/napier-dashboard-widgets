@@ -1,14 +1,17 @@
-<div style="position:fixed;top:32%;left:32%;width:380px;background:#fff url('widgets/login/logo.png') no-repeat 4px 4px;-moz-box-shadow:2px 2px 6px #333;-moz-border-radius:8px">
-	<form id="loginForm" action="#">
-		<fieldset style="padding:27px 0 18px 128px;">
-			<label for="username" style="line-height:1.4">Username</label><br/>
-			<input type="text" name="username" id="username" value="test"/>
-			<br/><br/>
-			<label for="password" style="line-height:1">Password</label><br/>
-			<input type="password" name="password" id="password" value="test"/>
-			<button class="pw-button" type="submit" style="margin-left:10px;cursor:pointer;background-color:#748739!important;">Login</button>
+<div style="margin:20% auto;width:380px;background:#fff url('widgets/login/logo.png') no-repeat 4px 4px;box-shadow:2px 2px 6px #333;-moz-box-shadow:2px 2px 6px #333;-webkit-box-shadow:2px 2px 6px #333;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px">
+	<form id="loginForm" action="#" style="margin:0">
+		<fieldset style="padding:27px 0 18px 128px;border:none">
+			<div style="width:200px;margin-bottom:10px">
+				<label for="username" style="line-height:1.4">Username</label>
+				<input type="text" name="username" id="username" value="test"/>
+			</div>
+			<div style="display:inline-block;width:170px;margin-bottom:10px">
+				<label for="password" style="line-height:1.4">Password</label>
+				<input type="password" name="password" id="password" value="test"/>
+			</div>
+			<button class="pw-button" type="submit" style="cursor:pointer;background-color:#748739!important;">Login</button>
 		</fieldset>
-		<div style="background:#333 -moz-linear-gradient(top,rgba(255,255,255,0.3),rgba(255,255,255,0));text-align:right;-moz-border-radius:0 0 7px 7px;color:#eee;font-size:10px;padding:6px">
+		<div style="background-color:#333;background-image:-moz-linear-gradient(top,rgba(255,255,255,0.3),rgba(255,255,255,0));background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0.3)),to(rgba(255,255,255,0)));text-align:right;border-radius:0 0 7px 7px;-moz-border-radius:0 0 7px 7px;-webkit-border-radius:0 0 7px 7px;color:#eee;font-size:10px;padding:6px">
 			Powered by <a href="http://www.opensquare.co.uk/portalwizard/" style="color:inherit;font-size:inherit;font-weight:bold;text-decoration:none;">PortalWizard</a>
 		</div>
 	</form>
