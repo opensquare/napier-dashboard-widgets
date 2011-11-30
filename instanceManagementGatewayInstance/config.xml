@@ -1,10 +1,10 @@
 <widget>
 	<type>internalPage</type>
 	<parameters>
-		<url>index.jsp</url>
+		<url>index.html</url>
 	</parameters>
 	<attributes>
 		<displayHeader>false</displayHeader>
-		<js>instanceManagementGatewayInstance</js>
+		<js>instanceManagementGatewayInstance.js</js>
 	</attributes>
 </widget>

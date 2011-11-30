@@ -7,21 +7,22 @@
 		<th>CPU Load</th>
 		<th>Started</th>
 		<th>Status</th>
+		<th></th>
 	</tr>
 
-	<tr class="instanceRow" privateIP="${privateIpAddress}" style="display: none;">
+	<tr class="instanceRow" privateIP="${ip}" style="display: none;">
 		<td>
 			<img src="widgets/instanceManagementCalcInstances/machine-small.gif"/>
 		</td>
-		<td>${placement.availabilityZone} ${instanceType} (${instanceId})</td>
+		<td>${name}</td>
 		<td style="background-image:-moz-linear-gradient(left center,lightblue 0%,white 0%);" class="cpu">Checking....</td>
 		<td>${launchTime}</td>
-		<td>${state.name} (<span class="registrationSpan">Checking....</span>)</td>
+		<td>${state} (<span class="registrationSpan">Checking....</span>)</td>
 		<td>
-			<input type="button" value="Clear Cache" onclick="window.open('http://${publicDnsName}:8080/calcservice/REST/action=clearCache')" />
-			<input type="button" value="Register" class="registerButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/register" />
-			<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${publicDnsName}:8080/calcservice/REST/deregister" />
-			<input privilege="instanceScaling" type="button" value="Terminate" class="terminateButton" style="display:none" url="${autoScaleInstancesUrl}/terminate/${instanceId}" />
+			<input type="button" value="Clear Cache" onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')" />
+			<input type="button" value="Register" class="registerButton" style="display:none" url="http://${ip}:8080/calcservice/REST/register" />
+			<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${ip}:8080/calcservice/REST/deregister" />
+			<input privilege="instanceScaling" type="button" value="Terminate" class="terminateButton" style="display:none" id="${id}" />
 		</td>
 	</tr>
 

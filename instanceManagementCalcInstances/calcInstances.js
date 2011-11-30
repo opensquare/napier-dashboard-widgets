@@ -1,7 +1,6 @@
 function Widget_instanceManagementCalcInstances() {
 	
 	this.autoScaleInstancesUrl = null;
-	this.autoScaleInstancesListUrl = null;
 	this.autoScaleInstanceCreateUrl = null;
 	this.autoScaleStatsUrl = null;
 	this.instancesRegisteredUrl = null;
@@ -11,19 +10,32 @@ function Widget_instanceManagementCalcInstances() {
 	}
 	
 	this.onReadyExtend = function() {
+		this.autoScaleUrl = this.$widgetDiv.attr("autoScaleUrl");
 		this.autoScaleInstancesUrl = this.$widgetDiv.attr("autoScaleInstancesUrl");
-		this.autoScaleInstancesListUrl = this.$widgetDiv.attr("autoScaleInstancesListUrl");
 		this.autoScaleInstanceCreateUrl = this.$widgetDiv.attr("autoScaleInstanceCreateUrl");
+		this.autoScaleInstanceTerminateUrl = this.$widgetDiv.attr("autoScaleInstanceTerminateUrl");
 		this.autoScaleStatsUrl = this.$widgetDiv.attr("autoScaleStatsUrl");
 		this.instancesRegisteredUrl = this.$widgetDiv.attr("instancesRegisteredUrl");
+		this.instanceHostnameMask = this.$widgetDiv.attr("instanceHostnameMask");
 		
 		var widgetObject = this;
+		
+		var $head = $(".widget-head", this.$widgetDiv);
+		$(".widget-title", $head).remove();
+		$head.attr("class", "").show();
+		
 		$.ajax({
-			url: widgetObject.autoScaleInstancesListUrl,
+			url: widgetObject.autoScaleInstancesUrl,
 			dataType: "json",
-			success: function(data) {
-				for(i in data){
-					data[i].autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
+			success: function(dataLoaded) {
+				var data = new Array();
+				var instanceHostnamePattern = new RegExp(widgetObject.instanceHostnameMask.replace(/\*/g, ".*"), "gi");
+				for (var i in dataLoaded){
+					var instanceData = dataLoaded[i];
+					if (instanceHostnamePattern.test(instanceData.name)) {
+						instanceData.autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
+						data.push(instanceData);
+					}
 				}
 				$("tr.instanceRow", widgetObject.$widgetDiv).after($("tr.instanceRow", $("table.instancesTable", widgetObject.$widgetDiv).tmpl(data)));
 				$("tr.instanceRow:first", widgetObject.$widgetDiv).remove();
@@ -56,8 +68,13 @@ function Widget_instanceManagementCalcInstances() {
 			rows[privateIP] = this;
 			
 			// handle register/deregister buttons
-			$(".registerButton, .deregisterButton, .terminateButton", this).click(function(){
+			$(".registerButton, .deregisterButton", this).click(function(){
 				var url = $(this).attr("url");
+				thisWidget.ajaxGetThenNotify(url);
+			});
+			$(".terminateButton", this).click(function(){
+				var id = $(this).attr("id");
+				var url = thisWidget.autoScaleInstanceTerminateUrl.replace(/{instanceId}/g, id);
 				thisWidget.ajaxGetThenNotify(url);
 			});
 		});

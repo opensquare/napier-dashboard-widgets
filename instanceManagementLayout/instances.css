@@ -1,17 +1,17 @@
-.instancesTable td{
+.instancesTable th{
 	width:120px;
 	}
-.instancesTable td:nth-child(1){
+.instancesTable th:nth-child(1){
 	width:30px;
 	text-align:center;
 	}
-.instancesTable td:nth-child(2){
+.instancesTable th:nth-child(2){
 	width:300px;
 	}
-.instancesTable td:nth-child(3){
+.instancesTable th:nth-child(3){
 	width:80px;
 	}
-.instancesTable td:nth-child(6){
+.instancesTable th:nth-child(6){
 	width:auto;
 	}
 #instancesGateway td:nth-child(2){

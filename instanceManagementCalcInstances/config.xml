@@ -5,11 +5,12 @@
 		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
-		<autoScaleInstancesUrl>proxy/autoscale-stats/aws/instances</autoScaleInstancesUrl>
-		<autoScaleInstancesListUrl>proxy/autoscale-stats-instances-list</autoScaleInstancesListUrl>
-		<autoScaleInstanceCreateUrl>proxy/autoscale-stats-instance-create</autoScaleInstanceCreateUrl>
-		<autoScaleStatsUrl>proxy/autoscale-stats/stats/cpu</autoScaleStatsUrl>
-		<instancesRegisteredUrl>proxy/instancesRegistered</instancesRegisteredUrl>
+		<autoScaleInstancesUrl>proxy/autoscale-instances</autoScaleInstancesUrl>
+		<autoScaleStatsUrl>proxy/autoscale-stats-cpu</autoScaleStatsUrl>
+		<autoScaleInstanceCreateUrl>proxy/autoscale-instance-create</autoScaleInstanceCreateUrl>
+		<autoScaleInstanceTerminateUrl>proxy/autoscale-instance-terminate/{instanceId}</autoScaleInstanceTerminateUrl>
+		<instancesRegisteredUrl>proxy/instances-registered</instancesRegisteredUrl>
+		<instanceHostnameMask>dev-nr*-rs</instanceHostnameMask>
 		<js>calcInstances.js</js>
 		<displayHeader>false</displayHeader>
 	</attributes>
