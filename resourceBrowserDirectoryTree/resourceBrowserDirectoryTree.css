@@ -1,0 +1,72 @@
+.resourceBrowserDirectoryTree{
+	width:400px;
+	float:left;
+}
+.resourceBrowserDirectoryTree form input:first-child{
+	width:160px;
+}
+.resourceBrowserDirectoryTree .Options{
+	font-size:80%;
+	margin-left:75px;
+}
+.resourceBrowserDirectoryTree .tree{
+	border:1px solid #aaa;
+	min-height:400px;
+}
+.resourceBrowserDirectoryTree .node{
+	margin-left:20px;
+}
+.resourceBrowserDirectoryTree .tree > .node{
+	margin-left:0px;
+}
+.resourceBrowserDirectoryTree .node a:hover{
+	background-color:#aaa;
+}
+.resourceBrowserDirectoryTree .node a{
+	width:97%;
+}
+.resourceBrowserDirectoryTree .node a.plus{
+	display:inline-block;
+	padding:4px;
+	text-decoration:none;
+	width:7px;
+	display:none;
+}
+.resourceBrowserDirectoryTree .node a.dir{
+	background:url("folder.gif") no-repeat scroll 9px 6px transparent;
+	display:inline-block;
+	height:12px;
+	padding:4px;
+	text-decoration:none;
+}
+.resourceBrowserDirectoryTree .node a.active{
+	zwidth:100%;
+	background-color:#555;
+	color:#fff;
+}
+.resourceBrowserDirectoryTree .node a.dir .name{
+	padding-left:26px;
+	text-decoration:underline;
+}
+
+/* all context menus have this class */
+.context-menu{
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	background-color:#f2f2f2;
+	border:1px solid #999;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.context-menu a{
+	display:block;
+	padding:3px;
+	text-decoration:none;
+	color:#333;
+}
+.context-menu a:hover{
+	background-color:#666;
+	color:white;
+}

@@ -1,0 +1,13 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>resourceBrowserFiles.html</url>
+	</parameters>
+	<attributes>
+		<js>resourceBrowserFiles.js</js>
+		<css>resourceBrowserFiles.css</css>
+		<resourceManagerUrl>{resourceManagerUrl}</resourceManagerUrl>
+		<displayHeader>false</displayHeader>
+		<showHiddenFiles>false</showHiddenFiles>
+	</attributes>
+</widget>

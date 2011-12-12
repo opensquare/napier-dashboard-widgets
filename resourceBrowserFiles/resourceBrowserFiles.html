@@ -1,0 +1,95 @@
+<div style="text-align: right">
+	<label for="loadMetadata">Load Metadata</label>
+	<input type="checkbox" name="loadMetadata" id="loadMetadata"/>
+</div>
+<div id="busySpinner">
+	<img src ='widgets/resourceBrowserFiles/images/spinner.gif'/>
+</div>
+<div class="recreate">
+	<h1 class="folderName"></h1>
+	<div style="max-height:300px; overflow:auto">
+	<table class="tablesorter resources">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Effective</th>
+				<th>Modified</th>
+				<th class="metadata">User ID</th>
+				<th style="width: 60px;">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="display:none;" type="{{= type}}" showhide="{{= showHide}}" name="{{= name}}" showHideProfile="{{= showHideProfile}}">
+				<td><a class="versionExp" href="#" lastAction='hide'>${versionInd}</a></td>
+				<td><a href="#" key="{{= key}}/{{= name}}" name="{{= name}}" action="view">${name}</a></td>
+				<td>${effectiveDate}</td>
+				<td>${modifiedDate}</td>
+				<td class="metadata">${metadata_userid}</td>
+				<td class="actions">
+					<img src='widgets/resourceBrowserFiles/images/arrow-down.png' alt='v' />
+					<div style="display:none;">
+						<a href="#" link="{{= href}}" action="download" target="_blank">Download</a>
+						<a href="#" action="delete" key="{{= key}}/{{= name}}">Delete</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<h3></h3>
+	<div name="viewImageDiv" class="view" id="viewImage">
+		<img src ="" alt=""> 
+	</div>
+	<form method="POST" target="resourceBrowserFiles-uploadIframe" name="contentsForm" class="view">
+		<p>
+			<input type="text" name="path" style="display: none;"/>
+		</p>
+		<p>
+			Content:
+			<br/>
+			<textarea name="fileContents" style="width: 95%; height: 200px; "/>
+			<br/>
+		</p>
+		<p>
+			Effective Date (dd/mm/yyyy or dd/mm/yyyy hh:mm:ss):
+			<br/>
+			<input type="text" name="effectiveDate" value="now"/>
+		</p>
+		<input type="submit" value="Save"/>
+		<br/>
+	</form>
+	<br/>
+	<br/>
+	<br/>
+	<form action="" method="POST" enctype="multipart/form-data" target="resourceBrowserFiles-uploadIframe" name="uploadForm" >
+		<h2>Upload</h2>
+		<p>
+			File:<br/>
+			<input type="file" name="file" />
+		</p>
+		<p>
+			<a href="#" action="toggleAdvancedOptions" class="advancedOptions">Show advanced options</a>
+			<a href="#" action="toggleAdvancedOptions" class="advancedOptions hidden">Hide advanced options</a>
+		</p>
+		<div class="advancedOptions hidden">
+			<p>
+				New Filename:<br/>
+				<input type="text" name="path" size="80" class="hidden"/>
+				<input type="text" name="filename" size="80"/>
+			</p>
+			<p>
+				Effective Date (dd/mm/yyyy or dd/mm/yyyy hh:mm:ss):<br/>
+				<input type="text" name="effectiveDate" value="now"/>
+			</p>
+		</div>
+		<p class="advancedOptions hidden">
+			Transformer Chain:
+			<br/>
+			<input type="text" name="transformerChain" size="80"/>
+		</p>
+		<input type="submit" value="Upload"/>
+	</form>
+</div>
+
+<iframe name="resourceBrowserFiles-uploadIframe" src="{widgetPath}/blank.html"></iframe>

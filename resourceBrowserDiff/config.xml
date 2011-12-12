@@ -1,0 +1,13 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>resourceBrowserDiff.html</url>
+	</parameters>
+	<attributes>
+		<js>resourceBrowserDiff.js</js>
+		<resourceManagerUrl>{resourceManagerUrl}</resourceManagerUrl>
+		<targetChannel>resourceBrowserTarget</targetChannel>
+		<diffChannel>resourceBrowserDiff</diffChannel>
+		<displayHeader>false</displayHeader>
+	</attributes>
+</widget>

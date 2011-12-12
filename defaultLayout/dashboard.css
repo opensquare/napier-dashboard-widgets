@@ -193,11 +193,7 @@ li.pageOptions:hover {
 #pageContent a[name], #footer a[name] {
 	display:block;
 	float:left;
-	position:relative;
-	top:-80px;
 	left:-40px;
-	width:20px;
-	height:25px;
 	background-image:url('top.gif');
 	background-repeat:no-repeat;
 	}

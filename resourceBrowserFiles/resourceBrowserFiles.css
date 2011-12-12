@@ -1,0 +1,36 @@
+.resourceBrowserFiles {
+}
+.resourceBrowserFiles .widget-content {
+	padding: 10px;
+}
+
+a.versionExp {
+	text-decoration: none
+}
+td.actions {
+	cursor:pointer
+}
+td div {
+	display: none;
+	width: 100px;
+	background: #E6EEEE;
+	border: 1px solid #FFFFFF;
+	padding: 4px;
+	text-align: left;
+	position: absolute;
+	box-shadow: 2px 2px 3px rgba(100,100,100,0.4);
+}
+td div a {
+	display:block;
+}
+
+#busySpinner {
+	display: none;
+	background: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	padding: 4px;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 100px;
+	box-shadow: 2px 2px 3px rgba(100,100,100,0.4);	
+}

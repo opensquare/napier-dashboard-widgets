@@ -1,0 +1,15 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>resourceBrowserDirectoryTree.html</url>
+	</parameters>
+	<attributes>
+		<js>resourceBrowserDirectoryTree.js</js>
+		<css>resourceBrowserDirectoryTree.css</css>
+		<resourceManagerUrl>{resourceManagerUrl}</resourceManagerUrl>
+		<resourcesPath>{resourcesPath}</resourcesPath>
+		<diffChannel>resourceBrowserDiff</diffChannel>
+		<displayHeader>false</displayHeader>
+		<hideRoot>true</hideRoot>
+	</attributes>
+</widget>

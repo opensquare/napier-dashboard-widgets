@@ -1,0 +1,30 @@
+<div id="counters"></div>
+<div class="container">
+	<p id="whereAmI" style="display:none"></p>
+	<div class="recreate" style="width:800px">
+		<table class="tablesorter resources diffTable" id="diffTable">
+			<thead>
+				<tr>
+					<th style="width:10px">Select</th>
+					<th style="width:300px">Path</th>
+					<th style="width:200px">Name</th>
+					<th style="width:200px">Effective Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="display:none;" type="{{= type}}">
+					<td class="tdCheckbox">
+					<input type="checkbox" name="select" id="selectFile"/>
+					</td>
+					<td class="tdPath"></td>
+					<td class="tdName"></td>
+					<td class="tdEffDate"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="updateButton" align="right" style="width:800px">
+		<input type="submit" value="Copy" id="copyFiles">
+	</div>
+</div>
+<div id="compMessage"></div>

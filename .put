@@ -1,5 +1,5 @@
 cd `dirname $_`
-app="dev-napier-dashboard"
+app="napier-dashboard"
 #app="box-test-napier-dashboard"
-sudo rsync --exclude="*.svn" -r . /tomcatwebapps/$app/widgets/
-sudo chown -R tomcat6:tomcat6 /tomcatwebapps/$app
+sudo rsync --exclude="*.svn" -r . /var/lib/tomcat6/webapps/$app/widgets/
+sudo chown -R tomcat6:tomcat6 /var/lib/tomcat6/webapps/$app
