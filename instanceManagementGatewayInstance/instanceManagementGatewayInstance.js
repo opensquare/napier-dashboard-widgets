@@ -4,7 +4,6 @@ function Widget_instanceManagementGatewayInstance() {
 		this.loadbalancerUrl = this.$widgetDiv.attr("loadbalancerUrl");
 		$(".loadbalancerUrl", this.$widgetDiv).html(this.loadbalancerUrl);
 	}
-	
 }
 
 Widget_instanceManagementGatewayInstance.prototype = globalProperties.widgetPrototype;
