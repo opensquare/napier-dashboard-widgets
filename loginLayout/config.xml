@@ -4,4 +4,7 @@
 		<url>index.html</url>
 		<secure>false</secure>
 	</parameters>
+	<attributes>
+		<style>background:#666 url('background.png');</style>
+	</attributes>
 </widget>
