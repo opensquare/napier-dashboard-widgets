@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+
+Users Table
+===========
+
+Intended Use:	Table to display and maintain users when the database user manager is in use
+
+Dependencies:	Database user manager
+		UsersLayout must point to this widget
+
+Configuration:	<permissions> tag below lists the permissions that it is possible to assign to
+		users.
+		Permission is in format "privileges.xxxx - Dash - XXXX" where "xxxx" is what will
+		appear in the database & "Dash - XXXX" is what will appear on screen.
+
+(c) Open Square, 2012
+
+-->
+
+
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>usersTable.jsp</url>
+		<privilegeFiltered>true</privilegeFiltered>
+	</parameters>
+	<attributes>
+		<js>usersTable.js</js>
+		<displayHeader>false</displayHeader>
+		<class>colorcombo-body</class>
+		<permissions>privileges.stats - Dash - Stats,privileges.userAdmin - Dash - User Admin,privileges.resources - Dash - Resources,privileges.viewInstances - Dash - View Instances,privileges.scheduler - Dash - Scheduler</permissions>
+	</attributes>
+</widget>

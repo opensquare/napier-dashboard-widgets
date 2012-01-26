@@ -1,54 +1,17 @@
-function Widget_users() {
+function Widget_usersAccount() {
 
 	this.showInactive = false;
-	this.permButtons = "";
 
 	this.onReadyExtend = function() {
 		var widgetObject = this;
 
-		this.accBaseForm = $("#usersAccountOrg", this.$widgetDiv);
-		this.headRow = $("#headRow", this.$widgetDiv).html();
-		this.cloneNode = $(".baseform", this.$widgetDiv);
-		this.recreateDivHtml = $("div.recreate", this.$widgetDiv).html();
+		this.accBaseFormTop = $("#usersAccountOrg", this.$widgetDiv);
+		this.recreateDivHtml = $("div.recreateTop", this.$widgetDiv).html();
 
-		var permissionsArray = this.$widgetDiv.attr("permissions").split(",");
-		var count = 0;
-		var permissions = new Array();
-
-		// Get the list of permissions available from the config.xml. Build a checkbox for each.
-		//var permButtons = "";
-		permissionsArray.forEach(function(item) {
-			var pos = item.indexOf(" - ");
-			if(pos > 0) {
-				var permID = item.substring(0, pos);
-				var permName = item.substring(pos + 3, item.length);
-				permissions[count] = permName + "<input name='" + permID + "' type='checkbox' value='true' disabled='disabled'/><br/>";
-				widgetObject.permButtons = widgetObject.permButtons + permName + "<input name='" + permID + "' type='checkbox' value='true' disabled='disabled'/><br/>";
-				count++;
-			}
-		});
-		// Check/uncheck the "Show Inactive Users"
-		$("input[name='showInactive']", this.$widgetDiv).change(function() {
-			widgetObject.showInactive = !widgetObject.showInactive;
-			widgetObject.loadUsers();
-		});
-
-		$("[action='add']", this.widgetDiv).click(function() {
-			var $newform = $(".baseform", this.widgetDiv).clone().removeClass("baseform").show();
-			$newform.attr("action", "create");
-
-			// Add the permissions checkboxes to $newform
-			$("#permCheckButtons", $newform).html(widgetObject.permButtons)
-
-			$(".standardUsers", this.widgetDiv).append($newform);
-			widgetObject.initForms($newform);
-			$("[action='edit']", $newform).click();
-		})
-
-		widgetObject.loadUsers();
+		widgetObject.loadAccount();
 	}
 
-	this.loadUsers = function() {
+	this.loadAccount = function() {
 		// Reset the page
 		$("div.recreate", this.$widgetDiv).html(this.recreateDivHtml);
 		widgetObject = this;
@@ -57,7 +20,7 @@ function Widget_users() {
 			url : "user/account-details",
 			success : function(account) {
 
-				var $cloneNode = widgetObject.accBaseForm;
+				var $cloneNode = $("#usersAccountOrg", this.$widgetDiv);
 				var $newNode = $cloneNode.clone();
 
 				account.address = account.address1;
@@ -93,59 +56,6 @@ function Widget_users() {
 			}
 		});
 
-		$.ajax({
-			url : "user/list",
-			success : function(users) {
-				$("table.standardUsers").html(widgetObject.headRow);
-				users.forEach(function(user) {
-					//for each (var user in users) {
-					var appendClass = user.accountHolder == true ? "accountHolders" : "standardUsers";
-
-					var $cloneNode = widgetObject.cloneNode;
-					var $newNode = $cloneNode.clone().removeClass("baseform");
-
-					// Add the permissions checkboxes to $newNode
-					$("#permCheckButtons", $newNode).html(widgetObject.permButtons)
-
-					$("." + appendClass, this.widgetDiv).append($newNode);
-
-					var userActive = 0;
-					$(":input", $newNode).each(function() {
-						var $input = $(this);
-						if(this.type == "text" || this.type == "password" || this.type == "hidden") {
-							if(defined(user[this.name])) {
-								$input.val(user[this.name]);
-							}
-						} else if(this.type == "textarea") {
-							if(defined(user[this.name])) {
-								$input.text(user[this.name]);
-							}
-						} else if(this.type == "checkbox") {
-							var collection = this.name.substring(0, this.name.indexOf("."));
-							var item = this.name.substring(this.name.indexOf(".") + 1);
-							$input.attr("checked", ($.inArray(item, user[collection]) != -1));
-							if($.inArray(item, user[collection]) != -1) {
-								userActive = 1;
-							}
-						}
-					})
-					// Is the user inactive?
-					if(userActive == 0) {
-						if(widgetObject.showInactive) {
-							$(":input", $newNode).parent("td").parent("tr").attr("inactive", "show");
-						} else {
-							$(":input", $newNode).parent("td").parent("tr").attr("inactive", "hide");
-						}
-					}
-
-					$newNode.show();
-					widgetObject.initForms($newNode);
-				});
-			},
-			error : function() {
-				alert("Failed to load users.");
-			}
-		})
 	}
 
 	this.initForms = function(container) {
@@ -175,6 +85,8 @@ function Widget_users() {
 						$form.attr("update");
 						lock($form, $("[action='edit']", $form));
 
+						// Can't have an inactive account - yet
+						/* 
 						// If all checkboxes unchecked then the user is inactive.
 						var userActive = 0;
 						$("input:checkbox:checked", $form).each(function() {
@@ -188,7 +100,7 @@ function Widget_users() {
 							} else {
 								$(":input", $form).parent("td").parent("tr").attr("inactive", "hide");
 							}
-						}
+						}*/
 
 					},
 					error : function() {
@@ -218,7 +130,7 @@ function Widget_users() {
 	}
 }
 
-Widget_users.prototype = globalProperties.widgetPrototype;
+Widget_usersAccount.prototype = globalProperties.widgetPrototype;
 
 /// Some Global functions .. maybe their scope should be narrowed.
 
@@ -356,6 +268,7 @@ function checkPw() {
 	if(pw1.value != pw2.value) {
 		alert("Please make sure you input identical password twice.")
 		pw1.focus();
+
 	}
 }
 

@@ -26,4 +26,16 @@
 	}
 .required{
 	border: solid 1px red !important;
-	}
+}
+.usersTable tr[inactive="show"] td {
+	color: #D1CFCF;
+}
+.usersTable tr[inactive="show"] td input[type='text']{
+	color: #D1CFCF;
+}
+.usersTable tr[inactive="show"] td input[type='password']{
+	color: #D1CFCF;
+}
+.usersTable tr[inactive="hide"] td {
+	display: none;
+}

@@ -9,5 +9,6 @@
 		<js>users.js</js>
 		<displayHeader>false</displayHeader>
 		<class>colorScheme2</class>
+		<permissions>privileges.stats - Dash - Stats,privileges.userAdmin - Dash - User Admin,privileges.resources - Dash - Resources,privileges.viewInstances - Dash - View Instances,privileges.settings - Dash - Settings</permissions>
 	</attributes>
 </widget>

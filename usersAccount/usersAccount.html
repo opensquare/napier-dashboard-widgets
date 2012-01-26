@@ -1,0 +1,78 @@
+<style>
+	.colorcombo-body a {
+		cursor: pointer;
+	}
+	.accountTable td{
+		width:120px;
+	}
+	.accountTable td:nth-child(1){
+		width:20px;
+	}
+        .accountTable th {
+                font-weight:bold;
+                text-align:left;
+                background:#444;
+                color:#fff;
+                padding:2px 4px;
+                border-right:1px solid #fff;
+                font-size:90%;
+        }
+	.accountTable textarea{
+		min-width:180px;
+		max-width:280px;
+		min-height:50px;
+		max-height:100px;
+	}
+	.accountTable input[type="text"]:disabled,.accountTable input[type="checkbox"]:disabled,.accountTable input[type="password"]:disabled,.accountTable textarea:disabled{
+		border:none;
+		background:none;
+		color:inherit;
+		padding:1px;
+	}
+	.required{
+		border: solid 1px red !important;
+	}
+        .accountTable td {
+                padding:2px;
+                font-size:90%;
+        }
+        .accountTable table input {
+                font-size:90%;
+        }
+        .accountTable table table{
+                border:none;
+        }
+	input.button {
+		width:100px;
+		margin:2px;
+	}
+</style>
+<div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
+	<h2>Account Details</h2>
+	<p>
+		These are the main account details registered for this service:
+	</p>
+	<div class="recreateTop">
+		<table class="accountTable">
+			<tr id="accHeadRow">
+				<th colspan="2">Organisation</th>
+				<th>Address</th>
+				<th style="width: 110px; visibility: hidden;"></th>
+			</tr>
+			<tr id="usersAccountOrg" class="form">
+				<td style='text-align:center'><img src='widgets/usersAccount/office-small.png'/></td>
+				<td>
+					<input name='companyName' type='text' value='' disabled='disabled' />
+				</td>
+				<td>
+					<textarea name="address" disabled="disabled"></textarea>
+				</td>
+				<td style="text-align:center;">
+					<input id="usersAccountOrgEdit" onclick="unlock($('#usersAccountOrg'),$(this).siblings())" type="button" class="button" value="Edit"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" class="button" value="Save" style="display:none;"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" class="button" value="Cancel" style="display:none;"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,118 @@
+<style>
+	.colorcombo-body a {
+		cursor: pointer;
+	}
+	.accountTable {
+		width:826px;
+	}
+	.accountTable td{
+		width:120px;
+	}
+	.accountTable td:nth-child(1){
+		width:20px;
+	}
+	.accountTable td:nth-child(6){
+		text-align:right;
+	}
+	.accountTable td:nth-child(7){
+		width:auto;
+	}
+	.accountTable textarea{
+		width:114px;
+	}
+	.accountTable input[type="checkbox"]{
+		margin:0 4px;
+	}
+	.accountTable input[type="text"]:disabled,.accountTable input[type="checkbox"]:disabled,.accountTable input[type="password"]:disabled,.accountTable textarea:disabled{
+		border:1px solid white;
+		background:none;
+		color:#333
+	}
+	.required{
+		border: solid 1px red !important;
+	}
+        th {
+                font-weight:bold;
+                text-align:left;
+                background:#444;
+                color:inherit;
+                padding:2px 4px;
+                border-right:1px solid #fff;
+                font-size:90%;
+        }
+        td {
+                padding:2px;
+                font-size:90%;
+        }
+        table input {
+                font-size:90%;
+        }
+        table .dark {
+                background:#aaa;
+        }
+        table .data1 {
+                background:#ddd;
+        }
+        table table{
+                border:none;
+        }
+
+</style>
+<div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
+	<h2>Account Details</h2>
+	<p>
+		These are the main account holder's details registered for this service:
+	</p>
+	<div class="recreateTop">
+		<table class="accountTable">
+			<tr id="accHeadRow">
+				<th colspan="2">Organisation</th>
+				<th>Address</th>
+				<th></th>
+				<th></th>
+				<th style="width: 160px"></th>
+				<th style="width: 110px; visibility: hidden;"></th>
+			</tr>
+			<tr id="usersAccountOrg" class="form">
+				<td style='text-align:center'><img src='widgets/users/office-small.png'/></td>
+				<td>
+					<input name='companyName' type='text' value='' disabled='disabled' />
+				</td>
+				<td>
+					<textarea name="address" disabled="disabled"></textarea>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td style="text-align:center;">
+					<input id="usersAccountOrgEdit" onclick="unlock($('#usersAccountOrg'),$(this).siblings())" type="button" value="Edit" style="width:100px"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" value="Save" style="width:100px;display:none;"/>
+					<input onclick="lock($('#usersAccountOrg'),$('#usersAccountOrgEdit'))" type="button" value="Cancel" style="width:100px;display:none;"/>
+				</td>
+			</tr>
+			<tr class="form baseformTop" actionUrlPrefix="user/" action="update" style="display: none;">
+				<td style='text-align:center'><img src='{widgetPath}/person-small.gif'/>
+					<input name='userId' type='hidden' value='' />
+				</td>
+				<td>
+					<input name='name' type='text' value='' disabled="disabled" validation="required"/>
+				</td>
+				<td>
+					<input name='username' type='text' value='' disabled="disabled" validation="required"/>
+				</td>
+				<td>
+					<input type="password" name="password" value='' disabled="disabled" validation="required"/>
+				</td>
+				<td>
+					<textarea name="validIPsString" disabled="disabled"></textarea>
+				</td>
+				<td id="permCheckButtonsAcc"></td>
+				<td style="width:110px;text-align:center;">
+					<input action="edit" type="button" value="Edit" style="width:100px"/>
+					<input action="save" type="button" value="Save" style="width:100px;display:none;"/>
+					<input action="cancel" type="button" value="Cancel" style="width:100px;display:none;"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

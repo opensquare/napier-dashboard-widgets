@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+
+Accounts Table
+==============
+
+Intended Use:	Table to display and maintain (not currently) account details when the
+		database user manager is in use
+
+Dependencies:	Database user manager
+		UsersLayout must point to this widget
+
+Configuration:	
+
+(c) Open Square, 2012
+
+-->
+
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>usersAccount.html</url>
+		<privilegeFiltered>true</privilegeFiltered>
+	</parameters>
+	<attributes>
+		<js>usersAccount.js</js>
+		<displayHeader>false</displayHeader>
+		<class>colorcombo-body</class>
+	</attributes>
+</widget>

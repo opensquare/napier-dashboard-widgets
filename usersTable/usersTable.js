@@ -1,15 +1,15 @@
-function Widget_users() {
+function Widget_usersTable() {
 
 	this.showInactive = false;
 	this.permButtons = "";
+	this.currUser = "";
 
 	this.onReadyExtend = function() {
 		var widgetObject = this;
 
-		this.accBaseForm = $("#usersAccountOrg", this.$widgetDiv);
-		this.headRow = $("#headRow", this.$widgetDiv).html();
-		this.cloneNode = $(".baseform", this.$widgetDiv);
+		this.cloneNode = $(".baseformTable", this.$widgetDiv);
 		this.recreateDivHtml = $("div.recreate", this.$widgetDiv).html();
+		this.currUser = $("span.userId", this.$widgetDiv).html();
 
 		var permissionsArray = this.$widgetDiv.attr("permissions").split(",");
 		var count = 0;
@@ -33,8 +33,9 @@ function Widget_users() {
 			widgetObject.loadUsers();
 		});
 
-		$("[action='add']", this.widgetDiv).click(function() {
-			var $newform = $(".baseform", this.widgetDiv).clone().removeClass("baseform").show();
+
+		$("[action='add']", this.$widgetDiv).live("click", function(){
+			var $newform = $(".baseformTable", this.widgetDiv).clone().removeClass("baseformTable").show();
 			$newform.attr("action", "create");
 
 			// Add the permissions checkboxes to $newform
@@ -43,7 +44,8 @@ function Widget_users() {
 			$(".standardUsers", this.widgetDiv).append($newform);
 			widgetObject.initForms($newform);
 			$("[action='edit']", $newform).click();
-		})
+		});
+
 
 		widgetObject.loadUsers();
 	}
@@ -54,56 +56,17 @@ function Widget_users() {
 		widgetObject = this;
 
 		$.ajax({
-			url : "user/account-details",
-			success : function(account) {
-
-				var $cloneNode = widgetObject.accBaseForm;
-				var $newNode = $cloneNode.clone();
-
-				account.address = account.address1;
-				if(account.address2.length > 0) {
-					account.address += "\n" + account.address2;
-				}
-				if(account.address3.length > 0) {
-					account.address += "\n" + account.address3;
-				}
-				if(account.address4.length > 0) {
-					account.address += "\n" + account.address4;
-				}
-				if(account.postcode.length > 0) {
-					account.address += "\n" + account.postcode;
-				}
-
-				$(":input", $newNode).each(function() {
-					var $input = $(this);
-					if(this.type == "text" || this.type == "password" || this.type == "hidden") {
-						if(defined(account[this.name])) {
-							$input.val(account[this.name]);
-						}
-					} else if(this.type == "textarea") {
-						if(defined(account[this.name])) {
-							$input.text(account[this.name]);
-						}
-					}
-				});
-
-				$("#usersAccountOrg").replaceWith($newNode);
-				$newNode.show();
-				widgetObject.initForms($newNode);
-			}
-		});
-
-		$.ajax({
 			url : "user/list",
 			success : function(users) {
-				$("table.standardUsers").html(widgetObject.headRow);
+				//$("table.standardUsers").html(widgetObject.headRow);
 				users.forEach(function(user) {
 					//for each (var user in users) {
-					var appendClass = user.accountHolder == true ? "accountHolders" : "standardUsers";
 
+					if (user.accountHolder == false || (user.accountHolder = true & widgetObject.currUser == user.username)){
+					var appendClass = "standardUsers";
 					var $cloneNode = widgetObject.cloneNode;
-					var $newNode = $cloneNode.clone().removeClass("baseform");
-
+					var $newNode = $cloneNode.clone().removeClass("baseformTable");
+					
 					// Add the permissions checkboxes to $newNode
 					$("#permCheckButtons", $newNode).html(widgetObject.permButtons)
 
@@ -138,8 +101,14 @@ function Widget_users() {
 						}
 					}
 
+					// Add styling for account holder
+					if (user.username == widgetObject.currUser) {
+						$(":input", $newNode).parent("td").parent("tr").addClass("accHolder");
+					}
+
 					$newNode.show();
 					widgetObject.initForms($newNode);
+					}
 				});
 			},
 			error : function() {
@@ -159,8 +128,11 @@ function Widget_users() {
 				} else if(this.type == 'checkbox') {
 					$this.data('origValue', $this.attr("checked"));
 				}
-			})
-		})
+			});
+			// Display the Add New User button
+			$("[action='add']", this.$widgetDiv).toggle();
+		});
+
 		$("[action='save']", container).click(function() {
 			var thisButton = this;
 			var $form = $($(this).parents(".form")[0]);
@@ -194,9 +166,11 @@ function Widget_users() {
 					error : function() {
 						alert("Failed to save user.");
 					}
-				})
+				});
 			}
-		})
+			// Display the Add New User button
+			$("[action='add']", this.$widgetDiv).toggle();
+		});
 
 		$("[action='cancel']", container).click(function() {
 			var $form = $($(this).parents(".form")[0]);
@@ -211,14 +185,16 @@ function Widget_users() {
 					} else if(this.type == 'checkbox') {
 						$this.attr("checked", $this.data('origValue'));
 					}
-				})
+				});
 				lock($form, $("[action='edit']", $form));
 			}
+			// Display the Add New User button
+			$("[action='add']", this.$widgetDiv).toggle();
 		})
 	}
 }
 
-Widget_users.prototype = globalProperties.widgetPrototype;
+Widget_usersTable.prototype = globalProperties.widgetPrototype;
 
 /// Some Global functions .. maybe their scope should be narrowed.
 

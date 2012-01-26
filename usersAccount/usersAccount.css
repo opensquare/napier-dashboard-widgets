@@ -1,0 +1,41 @@
+.accountTable {
+	width:826px;
+	}
+.accountTable td{
+	width:120px;
+	}
+.accountTable td:nth-child(1){
+	width:20px;
+	}
+.accountTable td:nth-child(6){
+	text-align:right;
+	}
+.accountTable td:nth-child(7){
+	width:auto;
+	}
+.accountTable textarea{
+	width:114px;
+	}
+.accountTable input[type="checkbox"]{
+	margin:0 4px;
+	}
+.accountTable input[type="text"]:disabled,.accountTable input[type="checkbox"]:disabled,.accountTable input[type="password"]:disabled,.accountTable textarea:disabled{
+	border:1px solid white;
+	background:none;
+	color:#333
+	}
+.required{
+	border: solid 1px red !important;
+}
+.accountTable tr[inactive="show"] td {
+	color: #D1CFCF;
+}
+.accountTable tr[inactive="show"] td input[type='text']{
+	color: #D1CFCF;
+}
+.accountTable tr[inactive="show"] td input[type='password']{
+	color: #D1CFCF;
+}
+.accountTable tr[inactive="hide"] td {
+	display: none;
+}
