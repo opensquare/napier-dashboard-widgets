@@ -6,11 +6,11 @@
 		<table>
 			<tr>
 				<td><img src="widgets/infoAndSupportAll/pdf-small.gif"/></td>
-				<td><a href="widgets/infoAndSupportAll/Getting%20started%20with%20Napier%20-%201%20Apr%2009.pdf">Getting started with Napier</a></td>
+				<td><a href="widgets/infoAndSupportAll/Getting%20started%20with%20Napier.pdf">Getting started with Napier</a></td>
 			</tr>
 			<tr>
 				<td><img src="widgets/infoAndSupportAll/pdf-small.gif"/></td>
-				<td><a href="widgets/infoAndSupportAll/Learning%20Napier%20CalcScript%20-%201%20Apr%2009.pdf">Learning Napier CalcScript</a></td>
+				<td><a href="widgets/infoAndSupportAll/Learning%20Napier%20CalcScript.pdf">Learning Napier CalcScript</a></td>
 			</tr>
 		</table>
 	</li>
