@@ -6,5 +6,6 @@
 	<attributes>
 		<displayHeader>false</displayHeader>
 		<css>dashboard.css</css>
+		<style>border-radius:0;</style>
 	</attributes>
 </widget>
