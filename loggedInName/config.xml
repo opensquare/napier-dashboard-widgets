@@ -1,0 +1,11 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>index.jsp</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<title>Logged In Name</title>
+	</attributes>
+</widget>
+
