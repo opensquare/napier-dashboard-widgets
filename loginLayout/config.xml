@@ -6,5 +6,6 @@
 	</parameters>
 	<attributes>
 		<style>background:#666 url('background.png');</style>
+		<css>napierdash.css</css>
 	</attributes>
 </widget>
