@@ -50,7 +50,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 	border-radius:0;
 	}
 .widget.ui-corner-all,.widget-head.ui-corner-all{
-	border-radius:12px;
+	zborder-radius:12px;
 	}
 .ui-tabs{
 	font-size:120%;
@@ -89,7 +89,6 @@ input:not([type]),input[type="text"],input[type="password"]{
 	border-color:#3C8C9D;
 	}
 .colorcombo-header .button{
-	zcolor:#fff!important;
 	background-color:rgba(0,0,0,0.2);
 	}
 .colorcombo-header2{
@@ -106,7 +105,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 	}
 .colorcombo-body .button{
 	color:#fff!important;
-	background-color:#B299B7;
+	background-color:##748739;
 	}
 .colorcombo-sidebar{
 	color:#333;
