@@ -23,7 +23,6 @@ input:not([type]),input[type="text"],input[type="password"]{
 	padding:3px;
 	}
 
-
 /* Widget Override Styles */
 .widget-head{
 	margin:-1px;
@@ -86,7 +85,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 /* Color Palettes */
 .colorcombo-header{
 	color:#FFF;
-	background-color:#B299B7;
+	background-color:#748739;
 	border-color:#3C8C9D;
 	}
 .colorcombo-header .button{
@@ -138,5 +137,5 @@ input:not([type]),input[type="text"],input[type="password"]{
 	}
 .colorcombo-faded{
 	opacity:0.5;
-	}ubuntu@ec2-dev-mailmerger:/var/lib/tomcat6/webapps/portal-wizard/widgets/loginLayout$ 
+	}
 
