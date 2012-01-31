@@ -1,3 +1,30 @@
+<style>
+        #navbar table {
+                width:90%;
+                table-layout:fixed;
+                text-align:center;
+                margin:auto;
+                zborder:1px dotted rgba(255,255,255,0.2);
+                }
+        #navbar td:nth-child(1){
+                display:none;
+        }
+        #navbar a {
+                display:block;
+                text-decoration:none;
+                padding:4px;
+                margin: 4px;
+                cursor:pointer;
+                border:1px dotted rgba(255,255,255,0.4);
+        }
+        #navbar a:hover{
+                background-color:rgba(255,255,255,0.2);
+        }
+        #navbar a.selected{
+                background-color:rgba(255,255,255,0.2);
+        }
+</style>
+
 <div id="navbar">
 	<table id="navOptions">
 		<tr>
