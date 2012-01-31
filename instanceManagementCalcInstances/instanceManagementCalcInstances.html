@@ -66,10 +66,10 @@
 			<td>${launchTime}</td>
 			<td>${state} (<span class="registrationSpan">Checking....</span>)</td>
 			<td>
-				<input type="button" value="Clear Cache" onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')" />
-				<input type="button" value="Register" class="registerButton" style="display:none" url="http://${ip}:8080/calcservice/REST/register" />
-				<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${ip}:8080/calcservice/REST/deregister" />
-				<input privilege="instanceScaling" type="button" value="Terminate" class="terminateButton" style="display:none" id="${id}" />
+				<input class="button" type="button" value="Clear Cache" onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')" />
+				<input class="button" type="button" value="Register" class="registerButton" style="display:none" url="http://${ip}:8080/calcservice/REST/register" />
+				<input class="button" type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${ip}:8080/calcservice/REST/deregister" />
+				<input privilege="instanceScaling" class="button" type="button" value="Terminate" class="terminateButton" style="display:none" id="${id}" />
 			</td>
 		</tr>
 		<tr>
@@ -80,5 +80,5 @@
 	</table>
 </div>
 <div privilege="instanceScaling">
-	<input type="button" value="Start New Instance" class="newInstanceButton"/>
+	<input class="button" type="button" value="Start New Instance" class="newInstanceButton"/>
 </div>
