@@ -1,0 +1,29 @@
+<!--
+
+Standard PW Footer Widget
+=========================
+
+Intended Use:	Presents a thin footer bar with a small reference to PortalWizard and a hyperlink
+		to the web site.
+
+Dependencies: 	None
+
+Configuration:	* Style attribute below knocks out standard corner rounding on widgets
+		* Secure is set to false below so that the footer can be used on login pages
+		* Uses "colorcombo-footer" color palette class
+		* Change link destination, if necessary, in line #2 of html
+		
+(c) Open Square, 2011
+
+-->
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>footer.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<displayheader>false</displayheader>
+		<style>border-radius:0</style>
+	</attributes>
+</widget>

@@ -1,11 +1,12 @@
 <widget>
-    <type>internalPage</type>
-    <parameters>
-        <url>index.html</url>
-        <secure>false</secure>
-    </parameters>
-    <attributes>
-        <js>login.js</js>
+	<type>internalPage</type>
+	<parameters>
+		<url>index.html</url>
+		<secure>false</secure>
+	</parameters>
+	<attributes>
+		<js>login.js</js>
 		<displayheader>false</displayheader>
-    </attributes>
+		<contentstyle>border-radius:inherit;</contentstyle>
+	</attributes>
 </widget>
