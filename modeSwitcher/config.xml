@@ -4,11 +4,11 @@
 		<url>modeSwitcher.html</url>
 		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
-    <attributes>
-    	<modeswitchchannel>default</modeswitchchannel>
-        <js>modeSwitcher.js</js>
-        <css>style.css</css>
+	<attributes>
+		<modeswitchchannel>default</modeswitchchannel>
+		<js>modeSwitcher.js</js>
 		<useHashUrl>true</useHashUrl>
 		<displayheader>false</displayheader>
-    </attributes>
+		<style>border-radius:0;</style>
+	</attributes>
 </widget>
