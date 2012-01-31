@@ -1,38 +1,84 @@
-<h2>Calc Instances</h2>
-<p>Instances listed here carry out the calculation function of your Napier service.</p>
-<table class="instancesTable">
-	<tr>
-		<th/>
-		<th>Description</th>
-		<th>CPU Load</th>
-		<th>Started</th>
-		<th>Status</th>
-		<th></th>
-	</tr>
-
-	<tr class="instanceRow" privateIP="${ip}" style="display: none;">
-		<td>
-			<img src="widgets/instanceManagementCalcInstances/machine-small.gif"/>
-		</td>
-		<td>${name}</td>
-		<td style="background-image:-moz-linear-gradient(left center,lightblue 0%,white 0%);" class="cpu">Checking....</td>
-		<td>${launchTime}</td>
-		<td>${state} (<span class="registrationSpan">Checking....</span>)</td>
-		<td>
-			<input type="button" value="Clear Cache" onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')" />
-			<input type="button" value="Register" class="registerButton" style="display:none" url="http://${ip}:8080/calcservice/REST/register" />
-			<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${ip}:8080/calcservice/REST/deregister" />
-			<input privilege="instanceScaling" type="button" value="Terminate" class="terminateButton" style="display:none" id="${id}" />
-		</td>
-	</tr>
-
-	<tr>
-		<td/>
-		<td style="text-align:right">Overall Average CPU Load</td>
-		<td class="overallAverage">Checking....</td>
-	</tr>
-
-</table>
+<style>
+	.colorcombo-body a {
+		cursor: pointer;
+	}
+	.instancesTable td:nth-child(1){
+		width:30px;
+		text-align:center;
+	}
+        .instancesTable td:nth-child(2){
+                width:300px;
+        }
+        .instancesTable td:nth-child(3){
+                width:80px;
+        }
+        .instancesTable th {
+                font-weight:bold;
+                text-align:left;
+                background:#444;
+                color:#fff;
+                padding:2px 4px;
+                border-right:1px solid #fff;
+                font-size:90%;
+        }
+	.zinstancesTable textarea{
+		min-width:180px;
+		max-width:280px;
+		min-height:50px;
+		max-height:100px;
+	}
+	.required{
+		border: solid 1px red !important;
+	}
+        .instances td {
+                padding:2px;
+                font-size:90%;
+        }
+        .instancesTable table table{
+                border:none;
+        }
+	input.button {
+		width:100px;
+		margin:2px;
+	}
+	p {
+		margin: 10px;
+	}
+</style>
+<div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
+	<h2>Calc Instances</h2>
+	<p>Instances listed here carry out the calculation function of your Napier service.</p>
+	<table class="instancesTable">
+		<tr>
+			<th/>
+			<th>Description</th>
+			<th>CPU Load</th>
+			<th>Started</th>
+			<th>Status</th>
+			<th></th>
+		</tr>
+		<tr class="instanceRow" privateIP="${ip}" style="display: none;">
+			<td>
+				<img src="widgets/instanceManagementCalcInstances/machine-small.gif"/>
+			</td>
+			<td>${name}</td>
+			<td style="background-image:-moz-linear-gradient(left center,lightblue 0%,white 0%);" class="cpu">Checking....</td>
+			<td>${launchTime}</td>
+			<td>${state} (<span class="registrationSpan">Checking....</span>)</td>
+			<td>
+				<input type="button" value="Clear Cache" onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')" />
+				<input type="button" value="Register" class="registerButton" style="display:none" url="http://${ip}:8080/calcservice/REST/register" />
+				<input type="button" value="Deregister" class="deregisterButton" style="display:none" url="http://${ip}:8080/calcservice/REST/deregister" />
+				<input privilege="instanceScaling" type="button" value="Terminate" class="terminateButton" style="display:none" id="${id}" />
+			</td>
+		</tr>
+		<tr>
+			<td/>
+			<td style="text-align:right">Overall Average CPU Load</td>
+			<td class="overallAverage">Checking....</td>
+		</tr>
+	</table>
+</div>
 <div privilege="instanceScaling">
 	<input type="button" value="Start New Instance" class="newInstanceButton"/>
 </div>
