@@ -20,7 +20,7 @@
 			<td rowspan="2"><img src="widgets/infoAndSupportAll/help.png"/></td)
 		</tr>
 		<tr>
-			<td><a href="https://oslpoc.lighthouseapp.com">Helpdesk - Report and manage support requests</a></td>
+			<td><a href="https://oslpoc.lighthouseapp.com" target="_blank">Helpdesk - Report and manage support requests</a></td>
 		</tr>
 	</table>
 </div>
