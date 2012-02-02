@@ -1,12 +1,12 @@
+a {
+	color:inherit;
+}
 .resourceBrowserDirectoryTree{
 	width:400px;
 	float:left;
 }
 .resourceBrowserDirectoryTree form input:first-child{
 	width:160px;
-}
-.resourceBrowserDirectoryTree .Options{
-	font-size:80%;
 }
 .resourceBrowserDirectoryTree .tree{
 	border:1px solid #aaa;
@@ -16,7 +16,7 @@
 	margin-left:20px;
 }
 .resourceBrowserDirectoryTree .tree > .node{
-	margin-left:0px;
+	margin-left:-20px;
 }
 .resourceBrowserDirectoryTree .node a:hover{
 	background-color:#aaa;
