@@ -1,5 +1,4 @@
 <div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
-<ul id="pageContent">
 	<h2>Information</h2>
 	<p>Here are some resources to get you started using your Napier service:</p>
 	<table>
@@ -19,10 +18,9 @@
 	<table>
 		<tr>
 			<td rowspan="2"><img src="widgets/infoAndSupportAll/help.png"/></td)
-			<td><h2><a href="https://oslpoc.lighthouseapp.com">HelpDesk</a></h2></td>
 		</tr>
 		<tr>
-			<td><a href="https://oslpoc.lighthouseapp.com">Report and manage support requests</a></td>
+			<td><a href="https://oslpoc.lighthouseapp.com">Helpdesk - Report and manage support requests</a></td>
 		</tr>
 	</table>
 </div>
