@@ -1,5 +1,5 @@
 <widget>
-	<type>internalPage</type>
+	<type>layout</type>
 	<parameters>
 		<url>index.html</url>
 		<secure>false</secure>
