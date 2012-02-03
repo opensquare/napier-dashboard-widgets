@@ -1,5 +1,5 @@
 <%
-boolean autoLoad = true;
+boolean autoLoad = false;
 %>
 <h1>Stats</h1>
 <ul class="filter">
@@ -50,7 +50,7 @@ boolean autoLoad = true;
 	</div>
 	<span id="noErrors">No activity</span>
 	<%if(!autoLoad){%>
-	<input class="button" type="button" value="Display Stats" onclick="getErrorStats()"/>
+	<input class="button" type="button" value="Display Errors" onclick="getErrorStats()"/>
 	<%}%>
 </div>
 <script type="text/javascript">
