@@ -159,7 +159,9 @@ function Widget_resourceBrowserFiles() {
 		var widgetObject = this;
 		$("form[name='uploadForm']", this.$widgetDiv).submit(function() {
 			var $this = $(this);
-			var uploadPath = $("[name='path']", $this).val();
+			//var uploadPath = $("[name='path']", $this).val();
+			var uploadPath = widgetObject.path;
+
 			var uploadFilename = $("[name='filename']", $this).val();
 			var file = $("[name='file']", $this).val();
 			if(file.length != 0) {
