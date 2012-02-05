@@ -20,7 +20,8 @@ td div {
 }
 td div a {
 	display:block;
-	height:20px;
+	height:25px;
+	padding-left:30px;
 }
 td div a.download {
 	background: url("download.png") no-repeat scroll 9px 6px;
