@@ -33,7 +33,7 @@ a {
 }
 .resourceBrowserDirectoryTree .node a.dir{
 	zbackground:url("folder_closed.png") no-repeat scroll 9px 6px transparent;
-	background:url("folder_closed.png") no-repeat scroll 9px 6px #555;
+	background:url("folder_closed.png") no-repeat scroll 9px 6px;
 	display:inline-block;
 	height:12px;
 	padding:4px;
