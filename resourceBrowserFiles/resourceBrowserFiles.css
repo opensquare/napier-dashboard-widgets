@@ -3,7 +3,7 @@
 }
 
 a.versionExp {
-	text-decoration: none
+	text-decoration:none
 }
 td.actions {
 	cursor:pointer
@@ -22,6 +22,10 @@ td div a {
 	display:block;
 	height:25px;
 	padding-left:30px;
+	text-decoration:none;
+}
+td div a:hover {
+	text-decoration:underline;
 }
 td div a.download {
 	background: url("download.png") no-repeat scroll 9px 6px;
