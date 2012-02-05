@@ -32,16 +32,18 @@ a {
 	display:none;
 }
 .resourceBrowserDirectoryTree .node a.dir{
-	background:url("folder_closed.png") no-repeat scroll 9px 6px transparent;
+	zbackground:url("folder_closed.png") no-repeat scroll 9px 6px transparent;
+	background:url("folder_closed.png") no-repeat scroll 9px 6px #555;
 	display:inline-block;
 	height:12px;
 	padding:4px;
 	text-decoration:none;
 }
 .resourceBrowserDirectoryTree .node a.active{
-	background-color:#555;
+	zbackground-color:#555;
 	color:#fff;
-        background:url("folder_open.png") no-repeat scroll 9px 6px transparent;
+        zbackground:url("folder_open.png") no-repeat scroll 9px 6px transparent;
+	background:url("folder_open.png") no-repeat scroll 9px 6px #555;
 }
 .resourceBrowserDirectoryTree .node a.dir .name{
 	padding-left:26px;
