@@ -5,5 +5,7 @@
 	</parameters>
 	<attributes>
 		<displayheader>false</displayheader>
+		<js>footer.js</js>
+		<css>footer.css</css>
 	</attributes>
 </widget>
