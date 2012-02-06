@@ -42,7 +42,7 @@ boolean autoLoad = false;
 	<h2>Calculation Errors</h2>
 	<p>The table shows all the recorded errors in the period.</p>
 	<div id="errorTable" style="display:none">
-	<table>
+	<table class="statsTable">
 		<tr>
 			<thead><th>ID</th><th>Submitted</th><th> </th></thead>
 			<tbody></tbody>

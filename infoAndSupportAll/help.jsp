@@ -1,3 +1,20 @@
+<style>
+	div table tr {
+		height:25px;
+	}
+	div table tr td {
+		vertical-align:middle;
+	}
+	div table tr td img {
+		margin: 5px;
+	}
+	a {
+		text-decoration:none;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+</style>
 <div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
 	<h2>Information</h2>
 	<p>Here are some resources to get you started using your Napier service:</p>
@@ -17,9 +34,7 @@
 	<p>If you need help using your Napier service:</p>
 	<table>
 		<tr>
-			<td rowspan="2"><img src="widgets/infoAndSupportAll/help.png"/></td)
-		</tr>
-		<tr>
+			<td><img src="widgets/infoAndSupportAll/help.png"/></td>
 			<td><a href="https://oslpoc.lighthouseapp.com" target="_blank">Helpdesk - Report and manage support requests</a></td>
 		</tr>
 	</table>
