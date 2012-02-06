@@ -111,7 +111,7 @@
 		<input type="checkbox" name="showInactive" id="showInactive"/>
 	</div>
 	<p>
-		These are the other users set up for your service:
+		These are the users set up for your service:
 	</p>
 	<div class="recreate">
 		<table class='usersTable standardUsers'>

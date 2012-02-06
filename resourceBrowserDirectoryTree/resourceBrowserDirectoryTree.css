@@ -1,6 +1,3 @@
-a {
-	color:inherit;
-}
 .resourceBrowserDirectoryTree{
 	width:400px;
 	float:left;
@@ -9,45 +6,30 @@ a {
 	width:160px;
 }
 .resourceBrowserDirectoryTree .tree{
-	border:1px solid #aaa;
 	min-height:400px;
+	padding:4px;
+	border:1px solid #aaa;
 }
-.resourceBrowserDirectoryTree .node{
+.resourceBrowserDirectoryTree .node .node .node{
 	margin-left:20px;
 }
-.resourceBrowserDirectoryTree .tree > .node{
-	margin-left:-20px;
-}
-.resourceBrowserDirectoryTree .node a:hover{
-	background-color:#aaa;
-}
-.resourceBrowserDirectoryTree .node a{
-	width:97%;
-}
-.resourceBrowserDirectoryTree .node a.plus{
-	display:inline-block;
-	padding:4px;
-	text-decoration:none;
-	width:7px;
+.resourceBrowserDirectoryTree .plus{
 	display:none;
 }
-.resourceBrowserDirectoryTree .node a.dir{
-	zbackground:url("folder_closed.png") no-repeat scroll 9px 6px transparent;
-	background:url("folder_closed.png") no-repeat scroll 9px 6px;
-	display:inline-block;
-	height:12px;
-	padding:4px;
+.resourceBrowserDirectoryTree .dir{
+	display:block;
+	padding:4px 6px 4px 26px;
+	background:url("folder_closed.png") no-repeat scroll;
 	text-decoration:none;
+	color:inherit;
 }
-.resourceBrowserDirectoryTree .node a.active{
-	zbackground-color:#555;
+.resourceBrowserDirectoryTree .active{
 	color:#fff;
-        zbackground:url("folder_open.png") no-repeat scroll 9px 6px transparent;
-	background:url("folder_open.png") no-repeat scroll 9px 6px #555;
+	background:url("folder_open.png") no-repeat scroll #555;
 }
-.resourceBrowserDirectoryTree .node a.dir .name{
-	padding-left:26px;
+.resourceBrowserDirectoryTree a:hover{
 	text-decoration:underline;
+	outline:1px dotted;
 }
 /* all context menus have this class */
 .context-menu{
