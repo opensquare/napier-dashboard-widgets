@@ -37,6 +37,7 @@ boolean autoLoad = false;
 	<%if(!autoLoad){%>
 	<input class="button" type="button" value="Display Stats" onclick="getPerformanceStats()"/>
 	<%}%>
+</div>
 <div id="statsErrors" style="display:none">
 	<h2>Calculation Errors</h2>
 	<p>The table shows all the recorded errors in the period.</p>

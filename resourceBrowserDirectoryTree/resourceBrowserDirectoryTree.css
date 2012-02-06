@@ -21,7 +21,6 @@
 	padding:4px 6px 4px 26px;
 	background:url("folder_closed.png") no-repeat scroll;
 	text-decoration:none;
-	color:inherit;
 }
 .resourceBrowserDirectoryTree .active{
 	color:#fff;
