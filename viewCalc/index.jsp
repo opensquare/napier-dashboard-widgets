@@ -7,7 +7,7 @@ ConfigHelper configHelper = appContext.getBean("configHelper", ConfigHelper.clas
 String loadbalancerUrl = configHelper.getLoadbalancerUrl();
 String calcRef = request.getParameter("calcRef");
 %>
-<iframe src="<%loadbalancerUrl%>REST/calcs/<%=calcRef%>" frameborder="0" width="100%" height="100%">
+<iframe src="<%=loadbalancerUrl%>REST/calcs/<%=calcRef%>" frameborder="0" width="100%" height="100%">
 
 </iframe>
 
