@@ -1,21 +1,21 @@
 <style>
-	div table tr {
+	.infoAndSupport>table tr {
 		height:25px;
 	}
-	div table tr td {
+	.infoAndSupport>table tr td {
 		vertical-align:middle;
 	}
-	div table tr td img {
+	.infoAndSupport>table tr td img {
 		margin: 5px;
 	}
-	a {
+	.infoAndSupport>table tr td a {
 		text-decoration:none;
 	}
-	a:hover {
+	.infoAndSupport> table tr td a:hover {
 		text-decoration:underline;
 	}
 </style>
-<div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
+<div class="infoAndSupport" style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
 	<h2>Information</h2>
 	<p>Here are some resources to get you started using your Napier service:</p>
 	<table>
@@ -29,7 +29,7 @@
 		</tr>
 	</table>
 </div>
-<div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
+<div class="infoAndSupport" style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
 	<h2>Support</h2>
 	<p>If you need help using your Napier service:</p>
 	<table>
