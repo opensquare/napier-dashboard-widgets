@@ -23,6 +23,7 @@ td div a {
 	height:25px;
 	padding-left:30px;
 	text-decoration:none;
+	padding-top:11px;
 }
 td div a:hover {
 	text-decoration:underline;
