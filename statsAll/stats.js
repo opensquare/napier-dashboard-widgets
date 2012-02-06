@@ -258,7 +258,7 @@ function updateVolumeStats(){
 					var volumeStatsHtml = "<table class='statsTable'><tr><th>Traffic Summary</th><th>#</th></tr>";
 					volumeStatsHtml += "<tr><td>Jobs submitted in period: </td><td>" + jobTotal + "</td></tr>";
 					volumeStatsHtml += "<tr><td>Average jobs in period/" + period + " (Over " + periodLength + " " + period + "s): </td><td>" + average + "</td></tr>";
-					volumeStatsHtml += '<tr><td>Failed jobs in period: (<a href="" onclick="$('+"'#statsErrors'"+').show()">view</a>) </td><td>' + errorTotal + "</td></tr>";
+					volumeStatsHtml += '<tr><td>Failed jobs in period: (<a href="#" onclick="$('+"'#statsErrors'"+').show()">view</a>) </td><td>' + errorTotal + "</td></tr>";
 					if(partialPeriod == "true"){
 						volumeStatsHtml += "<tr><td>Estimated total jobs submission in period: </td><td>" + estimate + "</td></tr>";
 					}
