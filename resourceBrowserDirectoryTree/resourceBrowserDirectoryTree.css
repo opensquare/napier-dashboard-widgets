@@ -18,13 +18,13 @@
 }
 .resourceBrowserDirectoryTree .dir{
 	display:block;
-	padding:4px 6px 4px 26px;
-	background:url("folder_closed.png") no-repeat scroll;
+	padding:6px 6px 4px 30px;
+	background:url("folder_closed.png") no-repeat scroll 4px 1px;
 	text-decoration:none;
 }
 .resourceBrowserDirectoryTree .active{
 	color:#fff;
-	background:url("folder_open.png") no-repeat scroll #555;
+	background:url("folder_open.png") no-repeat scroll 4px 1px #555;
 }
 .resourceBrowserDirectoryTree a:hover{
 	text-decoration:underline;
