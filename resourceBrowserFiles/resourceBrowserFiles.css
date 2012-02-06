@@ -1,46 +1,42 @@
-.resourceBrowserFiles .widget-content {
-	padding: 10px;
+.resourceBrowserFiles .widget-content{
+	padding:10px;
 }
-
-a.versionExp {
+.resourceBrowserFiles a.versionExp{
 	text-decoration:none
 }
-td.actions {
+.resourceBrowserFiles td.actions{
 	cursor:pointer
 }
-td div {
+.resourceBrowserFiles td div{
 	display: none;
 	width: 100px;
 	background: #E6EEEE;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #FFF;
 	padding: 4px;
 	text-align: left;
 	position: absolute;
 	box-shadow: 2px 2px 3px rgba(100,100,100,0.4);
 }
-td div a {
+.resourceBrowserFiles td div a{
 	display:block;
 	height:25px;
 	padding-left:30px;
 	text-decoration:none;
 	padding-top:11px;
 }
-td div a:hover {
+.resourceBrowserFiles td div a:hover{
 	text-decoration:underline;
 }
-td div a.download {
+.resourceBrowserFiles td div a.download {
 	background: url("download.png") no-repeat scroll 9px 6px;
 }
-td div a.delete {
+.resourceBrowserFiles td div a.delete {
 	background: url("delete.png") no-repeat scroll 9px 6px;
 }
-#busySpinner {
-	display: none;
-	background: #FFFFFF;
-	border: 1px solid #FFFFFF;
-	padding: 4px;
-	position: absolute;
-	margin-top: 50px;
-	margin-left: 100px;
-	box-shadow: 2px 2px 3px rgba(100,100,100,0.4);	
+#busySpinner{
+	display:none;
+	position:absolute;
+	background:#FFF;
+	background:rgba(255,255,255,0.5);
+	padding:4px;
 }
