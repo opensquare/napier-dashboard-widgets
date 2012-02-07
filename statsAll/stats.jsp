@@ -1,7 +1,6 @@
 <%
 boolean autoLoad = false;
 %>
-<h1>Stats</h1>
 <ul class="filter">
 	<li class="selected"><a>All</a></li>
 	<li><a>By Source</a></li>
