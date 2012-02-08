@@ -33,6 +33,9 @@
 .resourceBrowserFiles td div a.delete {
 	background: url("delete.png") no-repeat scroll 9px 6px;
 }
+.resourceBrowserFiles .hidden {
+		display: none;
+}
 #busySpinner{
 	display:none;
 	position:absolute;
