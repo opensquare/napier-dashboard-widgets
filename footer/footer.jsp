@@ -4,7 +4,7 @@
 	String appName = application.getServletContextName();
 	//String appPath = application.getContextPath();
 	String osName = System.getProperty("os.name");
-	String osVersion = System.getProperty("os.version");
+	//String osVersion = System.getProperty("os.version");
 	String[] refDate = {"",""};
 	String[] appVersion = {"","",""};
 
@@ -18,7 +18,6 @@
 	
 	refDate = getWidgetRefreshDate(appPath, p, rt);
 	appVersion = getAppVersion(appPath, p, rt);
-	String versionNo = getPackageVersion(p, rt);
 %>
 	
 <%!
@@ -60,30 +59,6 @@
 		return retVal;
 	}
 	
-	public String getPackageVersion(Process p, Runtime rt){
-		String retVal = "No Package info available";
-		String version = "";
-		int exitVal = 0;
-		try{
-
-			p = rt.exec(new String[] { "sh", "-c", "dpkg -l |grep opensquare-portal-wizard"});
-	
-			exitVal = p.waitFor();
-			if (exitVal == 0){
-				java.io.InputStreamReader myIStreamReader = new java.io.InputStreamReader(p.getInputStream());
-				int ch; 
-				while ((ch = myIStreamReader.read()) != -1) { 
-					version = version + (char)ch;
-				}
-				if (version.length() > 0){
-					retVal = version.substring(38,68);
-				}
-			}
-		}catch(Exception e){
-		}
-		return retVal;	
-	}
-	
 	public String[] getAppVersion(String appPath, Process p, Runtime rt){
 		String retVal[] = {"No App version info available","",""};
 		String version = "";
@@ -119,7 +94,6 @@
 		<u><%out.println("Portal Info");%></u><br />
 		App Name: <%=appName%><br />
 		App Path: <%=appPath%><br />
-		App Package Version: <%=versionNo%><br />
 		Last Widget Refresh: <%=refDate[0]%> @ <%=refDate[1]%><br />
 		From Bucket: <%=prop.getProperty("wizardWidgetStore")%><br />
 		Os Name: <%=osName%><br />
