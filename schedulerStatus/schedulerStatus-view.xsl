@@ -8,13 +8,20 @@
 					<table>
 						<tr>
 							<td><h2>Scheduler Status: </h2></td>
-							<td>
-								<xsl:value-of select="/response/status"/>
+							<td style="padding:0px 15px;">
+								<h2><xsl:value-of select="/response/status"/></h2>
 							</td>
 							<td>
-								<a href="#" class="ui-button" action="start">Start</a>
-								<a href="#" class="ui-button" action="stop">Stop</a>
+								<xsl:choose>
+									<xsl:when test="/response/status='running'">
+										<a href="#" class="button" action="stop">Stop</a>
+									</xsl:when>
+									<xsl:otherwise>
+										<a href="#" class="button" action="start">Start</a>
+									</xsl:otherwise>
+								</xsl:choose>
 							</td>
+
 						</tr>
 					</table>
 				</xsl:when>

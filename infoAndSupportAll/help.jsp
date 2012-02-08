@@ -1,17 +1,17 @@
 <style>
-	.infoAndSupport>table tr {
+	.infoAndSupporttable tr {
 		height:25px;
 	}
-	.infoAndSupport>table tr td {
+	.infoAndSupport table tr td {
 		vertical-align:middle;
 	}
-	.infoAndSupport>table tr td img {
+	.infoAndSupport table tr td img {
 		margin: 5px;
 	}
-	.infoAndSupport>table tr td a {
+	.infoAndSupport table tr td a {
 		text-decoration:none;
 	}
-	.infoAndSupport> table tr td a:hover {
+	.infoAndSupport table tr td a:hover {
 		text-decoration:underline;
 	}
 </style>
