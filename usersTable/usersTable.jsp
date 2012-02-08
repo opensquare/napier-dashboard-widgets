@@ -33,15 +33,12 @@
 		border: solid 1px red !important;
 	}
 	.usersTable tr[inactive="show"] td {
-		zcolor: #D1CFCF;
 		opacity: 0.8;
 	}
 	.usersTable tr[inactive="show"] td input[type='text']{
-		zcolor: #D1CFCF;
 		opacity: 0.8;
 	}
 	.usersTable tr[inactive="show"] td input[type='password']{
-		zcolor: #D1CFCF;
 		opacity: 0.8;
 	}
 	.usersTable tr[inactive="hide"] td {
@@ -75,13 +72,6 @@
         .usersTable table table{
 		border:none;
         }
-	.h1 {
-		display:block;
-		font-size:140%;
-		font-weight:bold;
-		padding-top:6px;
-	}
-
         .p {
 		display: block;
 		padding: 2px 20px 2px 2px;
@@ -91,14 +81,7 @@
 		padding-left: 16px;
 		text-decoration: none;
         }
-        h1{
-		font-size:160%;
-		font-weight:normal;
-        }
-        h2{
-		font-size:120%;
-        }
-        input.button {
+        .usersTable>input.button {
                 width:100px;
                 margin:2px;
         }
