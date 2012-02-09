@@ -5,6 +5,5 @@
 	</parameters>
 	<attributes>
 		<js>schedulerUploadJob.js</js>
-		<class>colorcombo-body</class>
 	</attributes>
 </widget>
