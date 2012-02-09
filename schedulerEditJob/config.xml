@@ -9,6 +9,6 @@
 		<delayLoad>true</delayLoad>
 		<js>schedulerEditJob.js</js>
 		<schedulerUrl>{schedulerUrl}</schedulerUrl>
+		<class>colorcombo-body</class>
 	</attributes>
-	
 </widget>

@@ -8,5 +8,6 @@
 	<attributes>
 		<schedulerUrl>{schedulerUrl}</schedulerUrl>
 		<js>schedulerStatus.js</js>
+		<class>colorcombo-body</class>
 	</attributes>
 </widget>

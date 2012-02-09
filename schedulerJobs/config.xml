@@ -8,5 +8,6 @@
 	<attributes>
 		<js>schedulerJobs.js</js>
 		<schedulerUrl>{schedulerUrl}</schedulerUrl>
+		<class>colorcombo-body</class>
 	</attributes>
 </widget>
