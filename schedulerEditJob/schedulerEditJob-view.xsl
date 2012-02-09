@@ -17,7 +17,7 @@
 	</xsl:template>
 	<xsl:template match="job">
 		<p>Enter details about the job.</p>
-		<form method="POST">
+		<form method="POST" class="colorcombo-body">
 			<xsl:attribute name="action">{schedulerUrl}/REST/jobs</xsl:attribute>
 			<input type="hidden" name="jobType" value="PactJythonJob"/>
 			<table>
