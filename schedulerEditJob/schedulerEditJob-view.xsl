@@ -145,7 +145,7 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit" class="ui-button" value="Schedule Job"/>
+			<input type="submit" class="button" value="Schedule Job"/>
 		</form>
 	</xsl:template>
 </xsl:stylesheet>

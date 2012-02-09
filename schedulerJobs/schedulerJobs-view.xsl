@@ -5,8 +5,8 @@
 		<div>
 			<xsl:choose>
 				<xsl:when test="/response/success='true'">
-					<a class="ui-button" href="javascript:void(0)" action="scheduleNewJob">Schedule a new job</a>
-					<a class="ui-button" href="javascript:void(0)" action="schedulerUploadJob">Upload a job script</a>
+					<a class="button" href="javascript:void(0)" action="scheduleNewJob">Schedule a new job</a>
+					<a class="button" href="javascript:void(0)" action="schedulerUploadJob">Upload a job script</a>
 					<table width="100%" style="text-align:center">
 						<thead>
 							<tr>
