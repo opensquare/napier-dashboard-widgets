@@ -88,7 +88,7 @@
 		return retVal;
 	}	
 %>
-<div style="background-color:#444;background-image:-moz-linear-gradient(center top,#666,#333);-webkit-gradient(linear,left top,left bottom,from(#666),to(#333));padding:4px;text-shadow:1px 1px 2px #000;color:#fff;font-size:11px">
+<div style="background-color:#444;padding:4px;text-shadow:1px 1px 2px #000;color:#fff;font-size:11px">
 	Powered by <b><span id="clickMe">PortalWizard<span></b>
 	<div id="info">
 		<u><%out.println("Portal Info");%></u><br />
