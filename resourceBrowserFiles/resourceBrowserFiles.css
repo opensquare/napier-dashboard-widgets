@@ -1,6 +1,9 @@
 .resourceBrowserFiles .widget-content{
 	padding:10px;
 }
+.resourceBrowserFiles .bfMetadata{
+	float:right;
+}
 .resourceBrowserFiles h1{
 	display:inline-block;
 	width:80%;
