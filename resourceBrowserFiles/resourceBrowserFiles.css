@@ -1,37 +1,38 @@
 .resourceBrowserFiles .widget-content{
 	padding:10px;
 }
-.resourceBrowserFiles a.versionExp{
-	text-decoration:none
+.resourceBrowserFiles h1{
+	display:inline-block;
+	width:80%;
+}
+.resourceBrowserFiles a{
+	text-decoration:none;
+}
+.resourceBrowserFiles a:hover{
+	text-decoration:underline;
+}
+.resourceBrowserFiles .resources{
+	margin:0;
 }
 .resourceBrowserFiles td.actions{
-	cursor:pointer
+	cursor:pointer;
 }
 .resourceBrowserFiles td div{
-	display: none;
-	width: 100px;
-	background: #E6EEEE;
-	border: 1px solid #FFF;
-	padding: 4px;
-	text-align: left;
-	position: absolute;
-	box-shadow: 2px 2px 3px rgba(100,100,100,0.4);
+	position:absolute;
+	background:#EEE;
+	border:1px solid #FFF;
+	padding:4px 14px 0px 4px;
+	box-shadow:2px 2px 3px rgba(100,100,100,0.4);
 }
 .resourceBrowserFiles td div a{
 	display:block;
-	height:25px;
-	padding-left:30px;
-	text-decoration:none;
-	padding-top:11px;
-}
-.resourceBrowserFiles td div a:hover{
-	text-decoration:underline;
+	padding:4px 0 8px 25px;
 }
 .resourceBrowserFiles td div a.download {
-	background: url("download.png") no-repeat scroll 9px 6px;
+	background:url("download.png") no-repeat scroll;
 }
 .resourceBrowserFiles td div a.delete {
-	background: url("delete.png") no-repeat scroll 9px 6px;
+	background:url("delete.png") no-repeat scroll;
 }
 .resourceBrowserFiles .hidden {
 	display: none;
