@@ -1,12 +1,18 @@
 .resourceBrowserDirectoryTree{
-	width:400px;
+	zwidth:400px;
 	float:left;
+	margin:10px 20px 0 0;
+}
+.resourceBrowserDirectoryTree .Options input{
+	font-size:80%;
+	width:150px!important;
+	margin-bottom:13px;
 }
 .resourceBrowserDirectoryTree form input:first-child{
 	width:160px;
 }
 .resourceBrowserDirectoryTree .tree{
-	min-height:400px;
+	max-height:400px;
 	padding:4px;
 	border:1px solid #aaa;
 }
