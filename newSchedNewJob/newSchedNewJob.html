@@ -1,0 +1,50 @@
+<div style="border: 2px solid rgba(0, 0, 0, 0.5); padding: 5px;width:350px;display:none;">
+	<p>Enter details about the job.</p>
+	<form method="POST" class="colorcombo-body">
+		<input type="hidden" name="jobType" value="JythonJob"/>
+		<table>
+			<tr>
+				<td>Job Name: </td><td><input type="text" name="jobName"/></td>
+			</tr>
+			<tr>
+				<td>Description: </td><td><input type="text" name="description"/></td>
+			</tr>
+			<tr>
+				<td>Script: </td><td><input type="text" name="script"/></td>
+			</tr>
+			<tr>
+				<td>Method: </td><td><input type="text" name="method"/></td>
+			</tr>
+			<tr>
+				<td>Params: </td><td><input type="text" name="params"/></td>
+			</tr>
+			<tr>
+				<td>Output Directory: </td>
+				<td>
+					<input type="checkbox" name="outputDirectory"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Start Date: </td><td><input type="text" name="startDate" class="datepicker"/></td>
+			</tr>
+			<tr>
+				<td>Start Time: </td><td><input type="text" name="startTime"/></td>
+			</tr>
+			<tr>
+				<td>End Date: </td><td><input type="text" name="endDate" class="datepicker"/></td>
+			</tr>
+			<tr>
+				<td>End Time: </td><td><input type="text" name="endTime"/></td>
+			</tr>
+			<tr>
+				<td>Repeat: </td><td>Every <input type="text" name="interval" value="" style="width:50px;"/><select name="period" style="margin:0px 5px 0px 5px"><option value="s">Seconds</option><option value="m">Minutes</option><option value="h">Hours</option><option value="d">Days</option><option value="w">Weeks</option><option value="M">Months</option><option value="y">Years</option></select></td>
+			</tr>
+		</table>
+		<input type="submit" class="button" value="Schedule Job"/>
+	</form>
+</div>
+<div onclick="$(this).prev().slideToggle()" style="text-align:left;">
+	<div class="colorcombo-highlight2" style="width:100%;height:2px;background-color: rgba(0,0,0,0.5);width:364px;"></div>
+	<div class="colorcombo-highlight2" style="display:inline-block;padding:2px 20px 6px;cursor:pointer;border-radius:20px;border-top-left-radius:0;border-top-right-radius:0;background-color:rgba(0,0,0,0.5);">New Job</div>
+</div>
+<iframe name="schedulerNewJob-uploadIframe" src="{widgetPath}/blank.html"></iframe>
