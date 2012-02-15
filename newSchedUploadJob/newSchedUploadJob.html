@@ -1,0 +1,11 @@
+<div class="colorcombo-body" style="border: 2px solid rgba(0, 0, 0, 0.5); padding: 5px;width:350px;display:none;">
+	<p>Upload a zip file containing your script and any associated files.</p>
+	<form method="POST" enctype="multipart/form-data" onsubmit="return uploadSchedulerJobFiles(this)">
+		<input type="file" name="zipFile"/>
+		<input type="submit" class="button" value="Upload"/>
+	</form>
+</div>
+<div onclick="$(this).prev().slideToggle()" style="text-align:left;">
+	<div class="colorcombo-highlight2" style="width:100%;height:2px;background-color: rgba(0,0,0,0.5);width:364px;"></div>
+	<div class="colorcombo-highlight2" style="display:inline-block;padding:2px 20px 6px;cursor:pointer;border-radius:20px;border-top-left-radius:0;border-top-right-radius:0;background-color:rgba(0,0,0,0.5);">New Job</div>
+</div>
