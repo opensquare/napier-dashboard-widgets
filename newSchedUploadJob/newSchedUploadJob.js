@@ -7,16 +7,10 @@ function Widget_newSchedUploadJob() {
 	}
 	
 	this.onReadyExtend = function() {
-	//	this.dialogue = $(".dialogue", this.$widgetDiv).dialog({
-	//		title: "Upload Scheduler Job",
-	//		autoOpen: false
-	//	});
 	}
 	
 	this.handleEvent = function(channel, event) {
-	//	this.dialogue.dialog("open");
 	}
-
 
 	this.uploadSchedulerJobFiles = function(){
 		widgetObject = this;
@@ -33,7 +27,6 @@ function Widget_newSchedUploadJob() {
 			}
 		});
 	}
-	
 }
 
 Widget_newSchedUploadJob.prototype = globalProperties.widgetPrototype;
