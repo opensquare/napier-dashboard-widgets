@@ -51,7 +51,7 @@ function Widget_users() {
 	this.loadUsers = function() {
 		// Reset the page
 		$("div.recreate", this.$widgetDiv).html(this.recreateDivHtml);
-		widgetObject = this;
+		var widgetObject = this;
 
 		$.ajax({
 			url : "user/account-details",

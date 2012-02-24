@@ -23,6 +23,12 @@
 .resourceBrowserFiles td.actions{
 	cursor:pointer;
 }
+.resourceBrowserFiles a{
+	text-decoration:none;
+}
+.resourceBrowserFiles a:hover{
+	text-decoration:underline;
+}
 .resourceBrowserFiles td div{
 	position:absolute;
 	background:#EEE;

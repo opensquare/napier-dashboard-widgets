@@ -20,7 +20,7 @@ function Widget_schedulerUploadJob() {
 
 
 	this.uploadSchedulerJobFiles = function(){
-		widgetObject = this;
+		var widgetObject = this;
 		var actionUrl = widgetObject.schedulerUrl + "/uploadScript";
 		actionUrl = getRelativeUrl(actionUrl);
 		$(widgetObject).attr("action", actionUrl);
