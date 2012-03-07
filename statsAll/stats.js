@@ -118,7 +118,7 @@ var selectedPeriod;
 
 function getStats(){
 	getVolumeStats();
-	// getErrorStats();
+	getErrorStats();
 	getPerformanceStats();
 }
 

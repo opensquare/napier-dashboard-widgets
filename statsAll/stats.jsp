@@ -15,7 +15,7 @@ boolean autoLoad = false;
 	<input class="button" type="button" onclick="getStats()" value="Refresh"/>
 </div>
 <%if(!autoLoad){%>
-<input class="button" type="button" value="Display Stats" onclick="getStats()"/>
+<!--input class="button" type="button" value="Display Stats" onclick="getStats()"/-->
 <%}%>
 <div style="clear:both;border-top:1px solid;padding:20px 0;">
 	<h2>Traffic Overview</h2>
@@ -24,7 +24,7 @@ boolean autoLoad = false;
 	<span id="noVolume" style="display:none">No activity</span>
 	<span id="volumeStats"></span>
 	<%if(!autoLoad){%>
-	<input class="button" type="button" value="Display Stats" onclick="getVolumeStats()"/>
+	<!--input class="button" type="button" value="Display Stats" onclick="getVolumeStats()"/-->
 	<%}%>
 </div>
 <div>
@@ -34,23 +34,23 @@ boolean autoLoad = false;
 	<span id="noPerformance" style="display:none">No activity</span>
 	<span id="performanceStats"></span>
 	<%if(!autoLoad){%>
-	<input class="button" type="button" value="Display Stats" onclick="getPerformanceStats()"/>
+	<!--input class="button" type="button" value="Display Stats" onclick="getPerformanceStats()"/-->
 	<%}%>
 </div>
-<div id="statsErrors" style="display:none">
+<div id="statsErrors" style="display:none;padding:20px 0;">
 	<h2>Calculation Errors</h2>
-	<p>The table shows all the recorded errors in the period.</p>
+	<p style="line-height:1.5;">The table shows all the recorded errors in the period.</p>
 	<div id="errorTable" style="display:none">
-	<table class="statsTable">
-		<tr>
-			<thead><th>ID</th><th>Submitted</th><th> </th></thead>
-			<tbody></tbody>
-		</tr>
-	</table>
+		<table class="statsTable">
+			<tr>
+				<thead><th>ID</th><th>Submitted</th><th> </th></thead>
+				<tbody></tbody>
+			</tr>
+		</table>
 	</div>
 	<span id="noErrors">No activity</span>
 	<%if(!autoLoad){%>
-	<input class="button" type="button" value="Display Errors" onclick="getErrorStats()"/>
+	<!--input class="button" type="button" value="Display Errors" onclick="getErrorStats()"/-->
 	<%}%>
 </div>
 <script type="text/javascript">
