@@ -14,10 +14,21 @@ function Widget_newSchedNewJob() {
 		$("form",$(".newJob")).attr("action", getRelativeUrl(widgetObject.schedulerUrl + "/REST/jobs"));
 		$("form",$(".newJob")).submit(function() {
 			var form = this;
-				return ajaxSubmitForm(form, function(form, responseDoc) {
+			return ajaxSubmitForm(form, function(form, responseDoc) {
 				var success = responseDoc.getElementsByTagName("success")[0].childNodes[0].nodeValue;
 				if (success == "true") {
-					$(form).html("<p class='ui-state-alert'>Scheduled successfully</p>");
+					$(form).before("<p class='ui-state-alert'>Scheduled successfully</p>");
+					$("[name='jobName']", form).val("");
+					$("[name='description']", form).val("");
+					$("[name='script']", form).val("");
+					$("[name='method']", form).val("");
+					$("[name='params']", form).val("");
+					$("[name='outputDirectory']", form).val("");
+					$("[name='startDate']", form).val("");
+					$("[name='startTime']", form).val("");
+					$("[name='endDate']", form).val("");
+					$("[name='endTime']", form).val("");
+					$("[name='interval']", form).val("");
 					notifyChannelOfEvent("schedulerUpdated");
 				} else {
 					var error = responseDoc.getElementsByTagName("error")[0].childNodes[0].nodeValue;
