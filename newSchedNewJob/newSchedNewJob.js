@@ -17,7 +17,8 @@ function Widget_newSchedNewJob() {
 			return ajaxSubmitForm(form, function(form, responseDoc) {
 				var success = responseDoc.getElementsByTagName("success")[0].childNodes[0].nodeValue;
 				if (success == "true") {
-					$(form).before("<p class='ui-state-alert'>Scheduled successfully</p>");
+					var jobName = $("[name='jobName']", form).val();
+					$(form).before("<p class='ui-state-alert'>" + jobName + " Scheduled successfully</p>");
 					$("[name='jobName']", form).val("");
 					$("[name='description']", form).val("");
 					$("[name='script']", form).val("");
