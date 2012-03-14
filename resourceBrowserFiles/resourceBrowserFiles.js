@@ -8,11 +8,13 @@ function Widget_resourceBrowserFiles() {
 	this.binaryExtensionsArray = null;
 	this.rightArrow = "<img src='widgets/resourceBrowserFiles/images/arrow-right.png' alt='+'>";
 	this.downArrow = "<img src='widgets/resourceBrowserFiles/images/arrow-down.png' alt='-'/>";
+	this.uploadOptions = null;
 
 	this.initExtend = function() {
 		this.resourceManagerUrl = this.$widgetDiv.attr("resourceManagerUrl");
 		this.showHiddenFiles = "true" == this.$widgetDiv.attr("showHiddenFiles");
 		this.filesChannel = this.$widgetDiv.attr("filesChannel");
+		this.uploadOptions = this.$widgetDiv.attr("uploadOptions");
 		attachCSS("js/tablestorter-css/black/style.css");
 		addListenerToChannel(this, this.filesChannel);
 	}
@@ -22,6 +24,13 @@ function Widget_resourceBrowserFiles() {
 		
 		$(".view", widgetObject.$widgetDiv).hide();
 		$("div.versions", widgetObject.$widgetDiv).hide();
+
+		if (this.uploadOptions != null) {
+			$(".uploadOptions", this.$widgetDiv).html("<div class='widget' name='" + this.uploadOptions + "'></div>");
+			loadWidgetAttributes($(".widget", this.$widgetDiv)[0]);
+			importWidgets(this.$widgetDiv);
+		}
+
 		this.recreateDivHtml = $("div.recreate", this.$widgetDiv).html();
 
 		if(this.loadMetadata == true) {
@@ -117,6 +126,7 @@ function Widget_resourceBrowserFiles() {
 			$("form :file, form :text", this.$widgetDiv).val("");
 			$("form :input[name='effectiveDate']", this.$widgetDiv).val("now");
 		});
+		
 		replayLastChannelEvent(this, this.filesChannel);
 	}
 

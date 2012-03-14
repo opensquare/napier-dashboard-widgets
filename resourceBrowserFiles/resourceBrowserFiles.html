@@ -57,6 +57,7 @@
 		<input type="submit" value="Save"/>
 		<br/>
 	</form>
+</div>
 	<form action="" method="POST" enctype="multipart/form-data" target="resourceBrowserFiles-uploadIframe" name="uploadForm" style="display:none; border: 2px solid rgba(0,0,0,0.5); padding: 5px;" >
 		<h2>Upload</h2>
 		<p>
@@ -67,6 +68,7 @@
 			<a href="#" action="toggleAdvancedOptions" class="advancedOptions" style="float:right;">Show advanced options</a>
 			<a href="#" action="toggleAdvancedOptions" class="advancedOptions hidden" style="float:right;">Hide advanced options</a>
 		</p>
+		<div class="uploadOptions"></div>
 		<div class="advancedOptions hidden">
 			<p>
 				New Filename:<br/>
@@ -79,7 +81,7 @@
 			</p>
 		</div>
 		<p class="advancedOptions hidden">
-			Transformer Chain:
+			Transformer Chain:<br/>
 			<input type="text" name="transformerChain" size="80"/>
 		</p>
 		<input class="button" type="submit" value="Upload"/>
@@ -88,6 +90,5 @@
 		<div class="colorcombo-highlight2" style="width:100%;height:2px;background-color: rgba(0,0,0,0.5);"></div>
 		<div class="colorcombo-highlight2" style="display:inline-block;padding:2px 20px 6px;cursor:pointer;border-radius:20px;border-top-left-radius:0;border-top-right-radius:0;background-color:rgba(0,0,0,0.5);">Upload</div>
 	</div>
-</div>
 
 <iframe name="resourceBrowserFiles-uploadIframe" src="{widgetPath}/blank.html"></iframe>
