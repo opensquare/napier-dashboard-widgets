@@ -1,0 +1,57 @@
+<style>
+	.colorcombo-body a {
+		cursor: pointer;
+	}
+	.instancesTable td:nth-child(1){
+		width:30px;
+		text-align:center;
+	}
+        .instancesTable td:nth-child(2){
+                width:300px;
+        }
+        .instancesTable td:nth-child(3){
+                width:80px;
+        }
+        .instancesTable th {
+                font-weight:bold;
+                text-align:left;
+                background:#444;
+                color:#fff;
+                padding:2px 4px;
+                border-right:1px solid #fff;
+                font-size:90%;
+        }
+        .instances td {
+                padding:2px;
+                font-size:90%;
+        }
+        .instancesTable table table{
+                border:none;
+        }
+	input.button {
+		width:100px;
+		margin:2px;
+	}
+	p {
+		margin: 10px;
+	}
+</style>
+<div style="border:1px dotted #ddd; margin:20px 0 30px 0;padding:4px;clear:both;">
+	<h2>Database Instance</h2>
+	<p>This instance is the Database instance used by Napier</p>
+	<table id="instanceDatabase" class="instancesTable">
+		<tr>
+			<th></th>
+			<th>URL</th>
+			<th>Status</th>
+		</tr>
+		<tr style="height:30px;">
+			<td><img src="widgets/instanceManagementDatabase/database.gif" /></td>
+			<td>osldb.cljjnwsojxej.us-east-1.rds.amazonaws.com</td>
+			<td>Active</td>
+			<!--td privilege="showDummyFeatures">
+				<input class="button" type="button" value="Pause"/>
+			</td-->
+		</tr>
+	</table>
+</div>

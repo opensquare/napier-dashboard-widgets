@@ -1,11 +1,9 @@
 <widget>
 	<type>internalPage</type>
 	<parameters>
-		<url>newSchedNewJob.html</url>
+		<url>index.html</url>
 	</parameters>
 	<attributes>
-		<js>newSchedNewJob.js</js>
-		<schedulerUrl>{schedulerUrl}</schedulerUrl>
 		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>

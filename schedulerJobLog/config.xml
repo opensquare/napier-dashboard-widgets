@@ -12,5 +12,6 @@
 		<logFileUrl>proxy/scheduler/log/{jobName}-{fireTime}.txt</logFileUrl>
 		<outputLimitedUrl>proxy/scheduler/output/{jobName}/{fireTime}?kilobyteLimit=100</outputLimitedUrl>
 		<outputFileUrl>proxy/scheduler/output/{jobName}-{fireTime}.txt</outputFileUrl>
+		<displayHeader>false</displayHeader>
 	</attributes>
 </widget>
