@@ -2,15 +2,14 @@
 	<type>internalPage</type>
 	<parameters>
 		<url>instanceManagementCalcInstances.html</url>
-		<privilegeFiltered>true</privilegeFiltered>
 	</parameters>
 	<attributes>
 		<autoScaleInstancesUrl>proxy/autoscale-instances</autoScaleInstancesUrl>
 		<autoScaleStatsUrl>proxy/autoscale-stats-cpu</autoScaleStatsUrl>
 		<autoScaleInstanceCreateUrl>proxy/autoscale-instance-create</autoScaleInstanceCreateUrl>
 		<autoScaleInstanceTerminateUrl>proxy/autoscale-instance-terminate/{instanceId}</autoScaleInstanceTerminateUrl>
-		<instancesRegisteredUrl>proxy/instances-registered</instancesRegisteredUrl>
-		<instanceHostnameMask>dev-nr*-rs</instanceHostnameMask>
+		<instancesRegisteredUrl>proxy/instancesRegistered</instancesRegisteredUrl>
+		<instanceHostnameMask>*</instanceHostnameMask>
 		<js>calcInstances.js</js>
 		<displayHeader>false</displayHeader>
 	</attributes>

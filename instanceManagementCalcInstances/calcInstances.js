@@ -30,13 +30,13 @@ function Widget_instanceManagementCalcInstances() {
 			success: function(dataLoaded) {
 				var data = new Array();
 				var instanceHostnamePattern = new RegExp(widgetObject.instanceHostnameMask.replace(/\*/g, ".*"), "gi");
-				for (var i in dataLoaded){
-					var instanceData = dataLoaded[i];
+
+				dataLoaded.forEach(function(instanceData) {
 					if (instanceHostnamePattern.test(instanceData.name)) {
 						instanceData.autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
 						data.push(instanceData);
 					}
-				}
+				});
 				$("tr.instanceRow", widgetObject.$widgetDiv).after($("tr.instanceRow", $("table.instancesTable", widgetObject.$widgetDiv).tmpl(data)));
 				$("tr.instanceRow:first", widgetObject.$widgetDiv).remove();
 				$("tr.instanceRow", widgetObject.$widgetDiv).show();
@@ -47,7 +47,12 @@ function Widget_instanceManagementCalcInstances() {
 		
 		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
 			var url = widgetObject.autoScaleInstanceCreateUrl;
-			widgetObject.ajaxGetThenNotify(url);
+			var instanceSize = $("#instanceSize").val();
+			var instanceLoc = $("#instanceLocation").val();
+			confirm("Are you sure you want to start a new " + instanceSize + " instance in " + instanceLoc + "?", function() {
+				widgetObject.ajaxGetThenNotify(url);
+			});
+
 		});
 		
 	}
@@ -63,7 +68,7 @@ function Widget_instanceManagementCalcInstances() {
 		var instances = [];
 		var rows = {};
 		$(".instanceRow", this.$widgetDiv).each(function(){
-			var privateIP = $(this).attr("privateIP");
+			var privateIP = $(this).attr("privateip");
 			instances.push(privateIP);
 			rows[privateIP] = this;
 			
@@ -85,10 +90,9 @@ function Widget_instanceManagementCalcInstances() {
 			dataType: "text",
 			success: function(res) {
 				successCalled = true;
-				for (i in instances){
-					var privateIP = instances[i];
-					var row = rows[privateIP];
-					if(res.indexOf("http://" + privateIP + ":") > -1){
+				instances.forEach(function(instance) {
+					var row = rows[instance];
+					if(res.indexOf("http://" + instance + ":") > -1){
 						$(".registrationSpan", row).html("Registered");
 						$(".registerButton", row).css("display", "none");
 						$(".deregisterButton", row).css("display", "inline");
@@ -99,7 +103,7 @@ function Widget_instanceManagementCalcInstances() {
 						$(".deregisterButton", row).css("display", "none");
 						$(".terminateButton", row).css("display", "inline");
 					}
-				}
+				});
 			},
 			complete: function(XMLHttpRequest, textStatus) {
 				if (!successCalled) {
@@ -120,15 +124,16 @@ function Widget_instanceManagementCalcInstances() {
 				var num = 0;
 				$(".instanceRow", widgetObject.$widgetDiv).each(function() {
 					var privateIP = $(this).attr("privateIP");
-					for each (var instanceData in instancesData) {
+					var currRow = this;
+					instancesData.forEach(function(instanceData){
 						if (instanceData.instance == privateIP) {
 							var average = instanceData.averageCpu;
 							average = Math.round(average*100)/100
 							overallAverage += average;
 							num++;
-							$(".cpu", this).html(average + "%").css("background-image", "-moz-linear-gradient(left center,lightblue " + average + "%,white " + (average + 20) + "%)");
+							$(".cpu", currRow).html(average + "%").css("background-image", "-moz-linear-gradient(left center,lightblue " + average + "%,white " + (average + 20) + "%)");
 						}
-					}
+					});
 				});
 				if (num > 0) {
 					overallAverage = overallAverage / num;
