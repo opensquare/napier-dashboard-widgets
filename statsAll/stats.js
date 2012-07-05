@@ -153,7 +153,8 @@ function getVolumeStats(){
 	}else{
 		volumeChartLabel = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec";
 	}
-	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod;
+	var source = $('#calcSourceSelect option:selected').val();
+	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod + "&source=" + source;
 	var url = "getVolumeStats?" + params;
 	if (typeof XMLHttpRequest != "undefined") {
 		volumeReq = new XMLHttpRequest();
@@ -281,7 +282,8 @@ function updateVolumeStats(){
 function getErrorStats(){
 	var timePeriod = document.getElementById("timePeriod").value;
 	var selectedPeriod = getSelectedPeriod(timePeriod);	
-	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod;
+	var source = $('#calcSourceSelect option:selected').val();
+	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod + "&source=" + source;
 	var url = "getErrorStats?" + params;
 	if (typeof XMLHttpRequest != "undefined") {
 		errorReq = new XMLHttpRequest();
@@ -329,7 +331,8 @@ function updateErrorStats(){
 function getPerformanceStats(){
 	var timePeriod = document.getElementById("timePeriod").value;
 	var selectedPeriod = getSelectedPeriod(timePeriod);
-	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod;
+	var source = $('#calcSourceSelect option:selected').val();
+	var params = "timePeriod=" + timePeriod + "&selectedPeriod=" + selectedPeriod + "&source=" + source;
 	var url = "getPerformanceStats?" + params;
 	if (typeof XMLHttpRequest != "undefined") {
 		iPerfReq = new XMLHttpRequest();
@@ -417,3 +420,19 @@ function updatePerformanceStats()
 		}
 	}	
 }
+
+function Widget_statsAll() {
+
+	this.onReadyExtend = function() {
+		$.ajax('getCalcSources').done(function(json) {
+			var $sourceSelect = $('#calcSourceSelect');
+			for (var i = 0; i < json.sources.length; i++) {
+				var $option = $('<option>').attr('value', json.sources[i]).text(json.sources[i]);
+				$sourceSelect.append($option);
+			}
+		});
+		
+	};
+}
+
+Widget_statsAll.prototype = globalProperties.widgetPrototype;

@@ -2,9 +2,10 @@
 boolean autoLoad = false;
 %>
 <ul class="filter">
-	<li class="selected"><a>All</a></li>
-	<li><a>By Source</a></li>
-	<li><a>By Calculation</a></li>
+	Source:
+	<select id="calcSourceSelect">
+		<option value="">All</option>
+	</select>
 </ul>
 <div style="float:right;margin:10px 0">
 	<label>View stats by: <select id="timePeriod" onchange="showPeriodSelect(this.value);<%if(autoLoad){%>getStats(this.value)<%}%>"><option value="hour">Hour</option><option value="day" selected>Day</option><option value="month">Month</option><option value="year">Year</option></select></label>
