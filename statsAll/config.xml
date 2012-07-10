@@ -1,7 +1,7 @@
 <widget>
 	<type>internalPage</type>
 	<parameters>
-		<url>stats.jsp</url>
+		<url>stats.html</url>
 	</parameters>
 	<attributes>
 		<css>stats.css</css>
