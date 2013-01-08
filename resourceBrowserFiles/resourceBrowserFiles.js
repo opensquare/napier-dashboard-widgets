@@ -108,10 +108,8 @@ function Widget_resourceBrowserFiles() {
 			var $filenameBox = $("input[name='filename']", widgetObject.$widgetDiv);
 			var filenameValue = $filenameBox.val();
 
-			// .contains is not javascript
-			if(filenameValue == "") {
-				$filenameBox.val(filename);
-			}
+			$filenameBox.val(filename);
+
 			return false;
 		});
 
@@ -123,7 +121,9 @@ function Widget_resourceBrowserFiles() {
 		$("[name='resourceBrowserFiles-uploadIframe']", this.$widgetDiv).load(function() {
 			replayLastChannelEvent(widgetObject, widgetObject.filesChannel);
 			$("#busySpinner", this.$widgetDiv).hide();
-			$("form :file, form :text", this.$widgetDiv).val("");
+			$("form :file", this.$widgetDiv).val("");
+			$("form :input[name='path']", this.$widgetDiv).val("");
+			$("form :input[name='filename']", this.$widgetDiv).val("");
 			$("form :input[name='effectiveDate']", this.$widgetDiv).val("now");
 		});
 		
