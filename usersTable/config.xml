@@ -29,6 +29,6 @@ Configuration:	<permissions> tag below lists the permissions that it is possible
 		<js>usersTable.js</js>
 		<displayHeader>false</displayHeader>
 		<class>colorcombo-body</class>
-		<permissions>privileges.stats - Dash - Stats,privileges.userAdmin - Dash - User Admin,privileges.resources - Dash - Resources,privileges.viewInstances - Dash - View Instances,privileges.scheduler - Dash - Scheduler</permissions>
+		<permissions>privileges.stats - Dash - Stats,privileges.userAdmin - Dash - User Admin,privileges.resources - Dash - Resources,privileges.viewInstances - Dash - View Instances,privileges.testHarness - Dash - Test Harness,privileges.scheduler - Dash - Scheduler</permissions>
 	</attributes>
 </widget>

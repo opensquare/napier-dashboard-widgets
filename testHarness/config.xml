@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>testHarness.html</url>
+		<privilegeFiltered>true</privilegeFiltered>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<class>colorcombo-body</class>
+		<js>testHarness.js</js>
+		<calcservice-end-point>{calcserviceEndPoint}</calcservice-end-point>
+	</attributes>
+</widget>

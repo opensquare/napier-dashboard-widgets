@@ -18,30 +18,30 @@ function Widget_modeSwitcher() {
 			widgetObject.checkAddressChange();
 		}, 200);
 		
-		$("[name='modeSwitch']", this.$widgetDiv).click(function() {
+		$(".modeSwitch", this.$widgetDiv).click(function() {
 			widgetObject.handleModeSwitch(this.getAttribute("mode"));
 		});
-		
+
 		// Select the first mode
 		var modeButtonToClick;
 		if (this.useHashUrl && getHashUrl() != "") {
 			var mode = getHashUrl().split("#")[0];
-			var match = $("[name='modeSwitch'][mode='" + mode + "']", this.$widgetDiv);
+			var match = $(".modeSwitch[mode='" + mode + "']", this.$widgetDiv);
 			if (match.length > 0) {
 				modeButtonToClick = match[0];
 				this.skipSettingHashUrl = true;
 			}
 		}
 		if (!defined(modeButtonToClick)) {
-			modeButtonToClick = $("[name='modeSwitch']", this.$widgetDiv)[0];
+			modeButtonToClick = $(".modeSwitch", this.$widgetDiv)[0];
 		}
 		$(modeButtonToClick).click();
 	}
-	
+
 	this.handleModeSwitch = function(event) {
 		this.selectedMode = event;
-		$("[name='modeSwitch']", this.$widgetDiv).removeClass("selected");
-		$("[name='modeSwitch'][mode='" + this.selectedMode + "']", this.$widgetDiv).addClass("selected");
+		$(".modeSwitch", this.$widgetDiv).removeClass("selected");
+		$(".modeSwitch[mode='" + this.selectedMode + "']", this.$widgetDiv).addClass("selected");
 		if (this.useHashUrl) {
 			if (!this.skipSettingHashUrl) {
 				setHashUrl(this.selectedMode);

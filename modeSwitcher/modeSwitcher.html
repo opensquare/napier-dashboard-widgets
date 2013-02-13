@@ -1,58 +1,65 @@
 <style>
-        #navbar table {
-                width:90%;
-                table-layout:fixed;
-                text-align:center;
-                margin:auto;
-                zborder:1px dotted rgba(255,255,255,0.2);
-                }
-        #navbar td:nth-child(1){
-                display:none;
-        }
-        #navbar a {
-                display:block;
-                text-decoration:none;
-                padding:4px;
-                margin: 4px;
-                cursor:pointer;
-                border:1px dotted rgba(255,255,255,0.4);
-        }
-        #navbar a:hover{
-                background-color:rgba(255,255,255,0.2);
-        }
-        #navbar a.selected{
-                background-color:rgba(255,255,255,0.2);
-        }
+	#navbar table {
+		width: 90%;
+		table-layout: fixed;
+		text-align: center;
+		margin: auto;
+		zborder: 1px dotted rgba(255, 255, 255, 0.2);
+	}
+
+	#navbar td:nth-child(1) {
+		display: none;
+	}
+
+	#navbar a {
+		display: block;
+		text-decoration: none;
+		padding: 4px;
+		margin: 4px;
+		cursor: pointer;
+		border: 1px dotted rgba(255, 255, 255, 0.4);
+	}
+
+	#navbar a:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+
+	#navbar a.selected {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
 </style>
 
 <div id="navbar">
 	<table id="navOptions">
 		<tr>
 			<td>
-				<a name="modeSwitch" mode="home" hardcoded="true">Home</a>
+				<a class="modeSwitch" mode="home" hardcoded="true">Home</a>
 			</td>
 			<td privilege="stats">
-				<a name="modeSwitch" mode="stats" hardcoded="true">Stats</a>
+				<a class="modeSwitch" mode="stats" hardcoded="true">Stats</a>
 			</td>
 			<td privilege="userAdmin">
-				<a name="modeSwitch" mode="users" hardcoded="true">Users</a>
+				<a class="modeSwitch" mode="users" hardcoded="true">Users</a>
 			</td>
 			<td privilege="resources">
-				<a name="modeSwitch" mode="calculationRules" hardcoded="true">Resources</a>
+				<a class="modeSwitch" mode="calculationRules" hardcoded="true">Resources</a>
 			</td>
 			<td privilege="viewInstances">
-				<a name="modeSwitch" mode="instanceManagement" hardcoded="true">Instances</a>
+				<a class="modeSwitch" mode="instanceManagement" hardcoded="true">Instances</a>
 			</td>
 			<td privilege="database">
-				<a name="modeSwitch" mode="database" hardcoded="true">Database</a>
+				<a class="modeSwitch" mode="database" hardcoded="true">Database</a>
 			</td>
 			<td privilege="scheduler">
-				<a name="modeSwitch" mode="scheduler" hardcoded="true">Scheduler</a>
+				<a class="modeSwitch" mode="scheduler" hardcoded="true">Scheduler</a>
+			</td>
+			<td privilege="testHarness">
+				<a class="modeSwitch" mode="testHarness" hardcoded="true">Test Harness</a>
 			</td>
 			<td>
-				<a name="modeSwitch" mode="infoAndSupport" hardcoded="true">Help</a>
+				<a class="modeSwitch" mode="infoAndSupport" hardcoded="true">Help</a>
 			</td>
 		</tr>
 	</table>
 </div>
-<div class="modeSwitchBottom"> </div>
+<div class="modeSwitchBottom"></div>
