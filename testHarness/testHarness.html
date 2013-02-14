@@ -1,13 +1,18 @@
 <style type="text/css">
+	.testHarnessDiv {
+		width:95%;
+	}
 	.testHarnessDiv label {
 		display:block;
-		width:200px;
 	}
 	.th-inputSection {
 		margin-bottom: 10px;
 	}
 	.testHarnessDiv input[type="text"] {
-		width:85%;
+		width:100%;
+	}
+	.testHarnessDiv textarea {
+		width:100%;
 	}
 </style>
 <div class="testHarnessDiv">
@@ -186,6 +191,7 @@
 		<button type="submit">Request Quote</button>
 	</form>
 </div>
-<h1>Response</h1>
-<div><textarea id="testHarnessResponse" cols="120" rows="20"></textarea></div>
+<h1 style="float:left">Response</h1>
+<div style="text-align: right"><label style="display: inline">Calc Ref <input id="calcRefInput" type="text" style="width:10%"/></label><button id="retrieveCalcButton">Retrieve</button></div>
+<div><textarea id="testHarnessResponse" cols="130" rows="20"></textarea></div>
 </div>

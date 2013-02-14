@@ -21,6 +21,22 @@ function Widget_testHarness() {
 			});
 			return false;
 		});
+		$('#retrieveCalcButton', widgetObject.$widgetDiv).click(function() {
+			var calcRef = $.trim($('#calcRefInput').val());
+			if (calcRef !== '') {
+				var url = _this.calcserviceEndPoint + '/' + calcRef;
+				$.ajax({type:"GET", url:url, dataType:"text",
+					success:function(responseString, textStatus, jqXHR) {
+						$('#testHarnessResponse', widgetObject.$widgetDiv).val(responseString);
+					},
+					error:function(jqXHR, textStatus, error) {
+						if (jqXHR.status != 200) {
+							alert("Error talking to calcservice.");
+						}
+					}
+				});
+			}
+		});
 	};
 }
 
