@@ -1,0 +1,10 @@
+<widget>
+	<type>internalPage</type>
+	<parameters>
+		<url>testHarnessOptions.html</url>
+	</parameters>
+	<attributes>
+		<displayHeader>false</displayHeader>
+		<css>../optionStyle/optionStyle.css</css>
+	</attributes>
+</widget>

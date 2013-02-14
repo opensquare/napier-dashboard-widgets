@@ -1,7 +1,25 @@
+<style type="text/css">
+	.testHarnessDiv label {
+		display:block;
+		width:200px;
+	}
+	.th-inputSection {
+		margin-bottom: 10px;
+	}
+	.testHarnessDiv input[type="text"] {
+		width:85%;
+	}
+</style>
+<div class="testHarnessDiv">
 <h1>Test Harness</h1>
-<form method="post">
-	<input type="hidden" name="calcType" value="/Products/Motor/Lookups,/Products/Motor/Precalculation,/Products/Motor/Risk Premium,/Products/Motor/Excess,/Products/Motor/Underwriting,/Products/Motor/Gross Premium"/>
-	<textarea name="calcData" cols="120" rows="30">
+<div style="margin-bottom: 20px">
+	<form method="post">
+		<div class="th-inputSection"><label for="th-calcType">calcType</label><input id="th-calcType" type="text" name="calcType" value="/Products/Motor/Lookups,/Products/Motor/Precalculation,/Products/Motor/Risk Premium,/Products/Motor/Excess,/Products/Motor/Underwriting,/Products/Motor/Gross Premium"/></div>
+		<!--div class="th-inputSection"><label for="th-transform">transform</label><input id="th-transform" type="text" name="transform" value=""/></div-->
+		<!--div class="th-inputSection"><label for="th-calcResponse">calcResponse</label><input id="th-calcResponse" type="text" name="calcResponse" value=""/></div-->
+		<div class="th-inputSection"><label for="th-source">source</label><input id="th-source" type="text" name="source" value="Napier Dashboard Test Harness"/></div>
+		<div class="th-inputSection"><label for="th-test">test</label><input id="th-test" type="text" name="test" value="test"/></div>
+		<div class="th-inputSection"><label for="th-calcData">calcData</label><textarea id="th-calcData" name="calcData" cols="120" rows="30">
 <calcData>
 	<volExcessDiscountBand>6</volExcessDiscountBand>
 	<coverStartDateTime>16/01/2013 15:23:15</coverStartDateTime>
@@ -164,6 +182,10 @@
 		<rateKey>Keys V2</rateKey>
 	</part>
 </calcData>
-	</textarea><br/>
-	<button type="submit">Request Quote</button>
-</form>
+		</textarea></div>
+		<button type="submit">Request Quote</button>
+	</form>
+</div>
+<h1>Response</h1>
+<div><textarea id="testHarnessResponse" cols="120" rows="20"></textarea></div>
+</div>

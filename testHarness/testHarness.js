@@ -9,12 +9,14 @@ function Widget_testHarness() {
 	this.onReadyExtend = function() {
 		var widgetObject = this;
 		$('form', widgetObject.$widgetDiv).submit(function() {
-			$.ajax({type:"POST", url:_this.calcserviceEndPoint, dataType:"xml", data:$(this).serialize(),
-				success:function(data, textStatus, jqXHR) {
-					alert(data);
+			$.ajax({type:"POST", url:_this.calcserviceEndPoint, dataType:"text", data:$(this).serialize(),
+				success:function(xmlString, textStatus, jqXHR) {
+					$('#testHarnessResponse', widgetObject.$widgetDiv).val(xmlString);
 				},
 				error:function(jqXHR, textStatus, error) {
-					alert("Error. responseText:" + jqXHR.responseText + ", responseXml:" + jqXHR.responseXML);
+					if (jqXHR.status != 200) {
+						alert("Error talking to calcservice.");
+					}
 				}
 			});
 			return false;
