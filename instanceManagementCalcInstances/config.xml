@@ -9,7 +9,7 @@
 		<autoScaleInstanceCreateUrl>proxy/autoscale-instance-create</autoScaleInstanceCreateUrl>
 		<autoScaleInstanceTerminateUrl>proxy/autoscale-instance-terminate/{instanceId}</autoScaleInstanceTerminateUrl>
 		<instancesRegisteredUrl>proxy/instancesRegistered</instancesRegisteredUrl>
-		<instanceHostnameMask>*</instanceHostnameMask>
+		<instanceHostnameMask>{instanceHostnameMask}</instanceHostnameMask>
 		<js>calcInstances.js</js>
 		<displayHeader>false</displayHeader>
 	</attributes>

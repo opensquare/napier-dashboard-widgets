@@ -33,7 +33,7 @@ function Widget_instanceManagementCalcInstances() {
 
 				dataLoaded.forEach(function(instanceData) {
 					if (instanceHostnamePattern.test(instanceData.name)) {
-						instanceData.autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;				
+						instanceData.autoScaleInstancesUrl = widgetObject.autoScaleInstancesUrl;
 						data.push(instanceData);
 					}
 				});
@@ -46,13 +46,12 @@ function Widget_instanceManagementCalcInstances() {
 		});
 		
 		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
-			var url = widgetObject.autoScaleInstanceCreateUrl;
 			var instanceSize = $("#instanceSize").val();
 			var instanceLoc = $("#instanceLocation").val();
+			var url = widgetObject.autoScaleInstanceCreateUrl + "&instanceType=" + instanceSize;
 			confirm("Are you sure you want to start a new " + instanceSize + " instance in " + instanceLoc + "?", function() {
 				widgetObject.ajaxGetThenNotify(url);
 			});
-
 		});
 		
 	}
