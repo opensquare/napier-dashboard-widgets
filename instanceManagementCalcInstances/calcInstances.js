@@ -48,7 +48,7 @@ function Widget_instanceManagementCalcInstances() {
 		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
 			var instanceSize = $("#instanceSize").val();
 			var instanceLoc = $("#instanceLocation").val();
-			var url = widgetObject.autoScaleInstanceCreateUrl + "&instanceType=" + instanceSize;
+			var url = widgetObject.autoScaleInstanceCreateUrl + "?name=model-office-nr*&imageId=ami-7234a51b&packages=blah&instanceType=" + instanceSize;
 			confirm("Are you sure you want to start a new " + instanceSize + " instance in " + instanceLoc + "?", function() {
 				widgetObject.ajaxGetThenNotify(url);
 			});

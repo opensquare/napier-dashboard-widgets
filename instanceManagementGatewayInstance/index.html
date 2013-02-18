@@ -2,51 +2,58 @@
 	.colorcombo-body a {
 		cursor: pointer;
 	}
-	.instancesTable td:nth-child(1){
-		width:30px;
-		text-align:center;
+
+	.instancesTable {
+		width:100%;
 	}
-        .instancesTable td:nth-child(2){
-                width:300px;
-        }
-        .instancesTable td:nth-child(3){
-                width:80px;
-        }
-        .instancesTable th {
-                font-weight:bold;
-                text-align:left;
-                background:#444;
-                color:#fff;
-                padding:2px 4px;
-                border-right:1px solid #fff;
-                font-size:90%;
-        }
-        .instances td {
-                padding:2px;
-                font-size:90%;
-        }
-        .instancesTable table table{
-                border:none;
-        }
+
+	.instancesTable td:nth-child(1) {
+		width: 30px;
+		text-align: center;
+	}
+
+	.instancesTable th {
+		font-weight: bold;
+		text-align: left;
+		background: #444;
+		color: #fff;
+		padding: 2px 4px;
+		border-right: 1px solid #fff;
+		font-size: 90%;
+	}
+
+	.instances td {
+		padding: 2px;
+		font-size: 90%;
+	}
+
+	.instancesTable table table {
+		border: none;
+	}
+
 	input.button {
-		width:100px;
-		margin:2px;
+		width: 100px;
+		margin: 2px;
 	}
+
 	p {
 		margin: 10px;
 	}
 </style>
 <div style="border:1px dotted #ddd; margin:10px 0 30px 0;padding:4px;clear:both;">
 	<h2>Gateway Instance</h2>
-	<p>This instance provides the web endpoint for your Napier service.  You will need to give the URL to those users who are authorised to submit jobs.</p>
+
+	<p>This instance provides the web endpoint for your Napier service. You will need to give the URL to those users who
+		are authorised to submit jobs.</p>
 	<table id="instancesGateway" class="instancesTable">
 		<tr>
 			<th></th>
 			<th>URL</th>
 			<th>Status</th>
+			<th></th>
 		</tr>
 		<tr>
-			<td><img src="widgets/instanceManagementGatewayInstance/globe.gif" /></td>
+			<td><img src="widgets/instanceManagementGatewayInstance/globe.gif"/></td>
 			<td class="loadbalancerUrl"></td>
 			<td>Active</td>
 			<td privilege="showDummyFeatures">
