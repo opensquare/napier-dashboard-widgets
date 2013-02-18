@@ -11,31 +11,23 @@ function Widget_newSchedNewJob() {
 	this.onReadyExtend = function() {
 
 		var widgetObject = this;
-		$("form",$(".newJob")).attr("action", getRelativeUrl(widgetObject.schedulerUrl + "/REST/jobs"));
-		$("form",$(".newJob")).submit(function() {
-			var form = this;
-			return ajaxSubmitForm(form, function(form, responseDoc) {
-				var success = responseDoc.getElementsByTagName("success")[0].childNodes[0].nodeValue;
-				if (success == "true") {
-					var jobName = $("[name='jobName']", form).val();
-					$(form).before("<p class='ui-state-alert'>" + jobName + " Scheduled successfully</p>");
-					$("[name='jobName']", form).val("");
-					$("[name='description']", form).val("");
-					$("[name='script']", form).val("");
-					$("[name='method']", form).val("");
-					$("[name='params']", form).val("");
-					$("[name='outputDirectory']", form).val("");
-					$("[name='startDate']", form).val("");
-					$("[name='startTime']", form).val("");
-					$("[name='endDate']", form).val("");
-					$("[name='endTime']", form).val("");
-					$("[name='interval']", form).val("");
+		var $form = $('form', widgetObject.$widgetDiv);
+		var url = widgetObject.schedulerUrl + "/REST/jobs";
+		$form.submit(function() {
+			$.ajax({type:"POST", url:url, dataType:"xml", data:$form.serialize(),
+				success:function() {
+					var jobName = $("[name='jobName']", $form).val();
+					alert(jobName + " scheduled successfully.");
+					$('input[type="text"]',$form).val('');
 					notifyChannelOfEvent("schedulerUpdated");
-				} else {
-					var error = responseDoc.getElementsByTagName("error")[0].childNodes[0].nodeValue;
-					$(form).before("<p class='ui-state-alert'>Job could not be scheduled: " + error + "</p>")
+				},
+				error:function(jqXHR) {
+					if (jqXHR.status != 200) {
+						alert("Error talking to scheduler.");
+					}
 				}
 			});
+			return false;
 		});
 	}
 	

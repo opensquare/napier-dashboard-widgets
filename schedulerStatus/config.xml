@@ -2,7 +2,7 @@
 	<type>httpRequest</type>
 	<parameters>
 		<method>GET</method>
-		<url>{schedulerUrl}/REST/manager/status</url>
+		<url>{internalSchedulerUrl}/REST/manager/status</url>
 		<xsl>schedulerStatus</xsl>
 	</parameters>
 	<attributes>

@@ -2,7 +2,7 @@
 	<type>httpRequest</type>
 	<parameters>
 		<method>GET</method>
-		<url>{schedulerUrl}/REST/jobs</url>
+		<url>{internalSchedulerUrl}/REST/jobs</url>
 		<xsl>schedulerJobs</xsl>
 	</parameters>
 	<attributes>
