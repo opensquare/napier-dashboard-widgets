@@ -29,7 +29,7 @@ function Widget_instanceManagementCalcInstances() {
 			dataType: "json",
 			success: function(dataLoaded) {
 				var data = new Array();
-				var instanceHostnamePattern = new RegExp(widgetObject.instanceHostnameMask.replace(/\*/g, ".*"), "gi");
+				var instanceHostnamePattern = new RegExp(widgetObject.instanceHostnameMask.replace(/\*/g, ".*"), "i");
 
 				dataLoaded.forEach(function(instanceData) {
 					if (instanceHostnamePattern.test(instanceData.name)) {
@@ -46,11 +46,11 @@ function Widget_instanceManagementCalcInstances() {
 		});
 		
 		$(".newInstanceButton", widgetObject.$widgetDiv).click(function(){
-			var instanceSize = $("#instanceSize").val();
+			var instanceType = $("#instanceSize").val();
 			var instanceLoc = $("#instanceLocation").val();
-			var url = widgetObject.autoScaleInstanceCreateUrl + "?name=model-office-nr*&imageId=ami-7234a51b&packages=blah&instanceType=" + instanceSize;
+			var url = widgetObject.autoScaleInstanceCreateUrl.replace(/{instanceType}/g, instanceType);
 			confirm("Are you sure you want to start a new " + instanceSize + " instance in " + instanceLoc + "?", function() {
-				widgetObject.ajaxGetThenNotify(url);
+				widgetObject.ajaxPostThenNotify(url);
 			});
 		});
 		
@@ -79,7 +79,7 @@ function Widget_instanceManagementCalcInstances() {
 			$(".terminateButton", this).click(function(){
 				var id = $(this).attr("id");
 				var url = thisWidget.autoScaleInstanceTerminateUrl.replace(/{instanceId}/g, id);
-				thisWidget.ajaxGetThenNotify(url);
+				thisWidget.ajaxPostThenNotify(url);
 			});
 		});
 		var successCalled = false;
@@ -146,6 +146,17 @@ function Widget_instanceManagementCalcInstances() {
 	this.ajaxGetThenNotify = function(url) {
 		$.ajax({
 			type: "GET",
+			url: url,
+			dataType: "text",
+			complete: function() {
+				notifyChannelOfEvent("calcInstancesUpdated");
+			}
+		});
+	}
+
+	this.ajaxPostThenNotify = function(url) {
+		$.ajax({
+			type: "POST",
 			url: url,
 			dataType: "text",
 			complete: function() {
