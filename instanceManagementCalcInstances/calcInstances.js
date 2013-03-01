@@ -3,7 +3,7 @@ function Widget_instanceManagementCalcInstances() {
 	this.autoScaleInstancesUrl = null;
 	this.autoScaleInstanceCreateUrl = null;
 	this.autoScaleStatsUrl = null;
-	this.instancesRegisteredUrl = null;
+	this.instancesUrl = null;
 	
 	this.initExtend = function() {
 		addListenerToChannel(this, "calcInstancesUpdated");
@@ -15,7 +15,7 @@ function Widget_instanceManagementCalcInstances() {
 		this.autoScaleInstanceCreateUrl = this.$widgetDiv.attr("autoScaleInstanceCreateUrl");
 		this.autoScaleInstanceTerminateUrl = this.$widgetDiv.attr("autoScaleInstanceTerminateUrl");
 		this.autoScaleStatsUrl = this.$widgetDiv.attr("autoScaleStatsUrl");
-		this.instancesRegisteredUrl = this.$widgetDiv.attr("instancesRegisteredUrl");
+		this.instancesUrl = this.$widgetDiv.attr("instancesUrl");
 		this.instanceHostnameMask = this.$widgetDiv.attr("instanceHostnameMask");
 		
 		var widgetObject = this;
@@ -85,7 +85,7 @@ function Widget_instanceManagementCalcInstances() {
 		var successCalled = false;
 		$.ajax({
 			type: "GET",
-			url: this.instancesRegisteredUrl,
+			url: this.instancesUrl,
 			dataType: "text",
 			success: function(res) {
 				successCalled = true;

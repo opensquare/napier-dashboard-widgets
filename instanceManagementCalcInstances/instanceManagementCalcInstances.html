@@ -76,11 +76,11 @@
 			<td>${state} (<span class="registrationSpan">Checking....</span>)</td>
 			<td>
 				<input class="button" type="button" value="Clear Cache"
-				       onclick="window.open('http://${ip}:8080/calcservice/REST/action/clearCache')"/>
+				       onclick="window.open('proxy/loadbalancer/instances/${ip}/REST/action/clearCache')"/>
 				<input class="button registerButton" type="button" value="Register" style="display:none"
-				       url="http://${ip}:8080/calcservice/REST/register"/>
+				       url="proxy/loadbalancer/register?url=http://${ip}:8080/calcservice/"/>
 				<input class="button deregisterButton" type="button" value="Deregister" style="display:none"
-				       url="http://${ip}:8080/calcservice/REST/deregister"/>
+				       url="proxy/loadbalancer/deregister?url=http://${ip}:8080/calcservice/"/>
 				<input privilege="instanceScaling" class="button terminateButton" type="button" value="Terminate"
 				       style="display:none" id="${id}"/>
 			</td>

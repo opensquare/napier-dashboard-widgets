@@ -8,7 +8,7 @@
 		<autoScaleStatsUrl>{autoscaleStatsCpu}</autoScaleStatsUrl>
 		<autoScaleInstanceCreateUrl>{autoscaleInstanceCreate}</autoScaleInstanceCreateUrl>
 		<autoScaleInstanceTerminateUrl>{autoscaleInstanceTerminate}</autoScaleInstanceTerminateUrl>
-		<instancesRegisteredUrl>{instancesRegistered}</instancesRegisteredUrl>
+		<instancesUrl>{instancesUrl}</instancesUrl>
 		<instanceHostnameMask>{instanceHostnameMask}</instanceHostnameMask>
 		<js>calcInstances.js</js>
 		<displayHeader>false</displayHeader>
