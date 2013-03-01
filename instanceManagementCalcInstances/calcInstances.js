@@ -74,7 +74,7 @@ function Widget_instanceManagementCalcInstances() {
 			// handle register/deregister buttons
 			$(".registerButton, .deregisterButton", this).click(function(){
 				var url = $(this).attr("url");
-				thisWidget.ajaxGetThenNotify(url);
+				thisWidget.ajaxPostThenNotify(url);
 			});
 			$(".terminateButton", this).click(function(){
 				var id = $(this).attr("id");
