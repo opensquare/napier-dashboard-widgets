@@ -7,5 +7,6 @@
 		<displayHeader>false</displayHeader>
 		<css>../loginLayout/napierdash.css</css>
 		<style>border-radius:0;</style>
+		<js>defaultLayout.js</js>
 	</attributes>
 </widget>
