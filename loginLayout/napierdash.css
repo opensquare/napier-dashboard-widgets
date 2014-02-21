@@ -140,3 +140,8 @@ input:not([type]),input[type="text"],input[type="password"]{
 	opacity:0.5;
 }
 
+/*  ----- TABLES ----- */
+
+.usersTable th	{
+	background-color:#005151;
+}
