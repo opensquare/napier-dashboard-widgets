@@ -31,7 +31,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 	margin:-1px;
 	padding:4px 8px;
 	color:#FFF;
-	background:#6CBCCD;
+	background:#96a5a5;
 	border-bottom-right-radius:0!important;
 	border-bottom-left-radius:0!important;
 }
@@ -87,19 +87,18 @@ input:not([type]),input[type="text"],input[type="password"]{
 
 /* Color Palettes */
 .colorcombo-header{
-	color:#FFF;
-	background-color:#748739;
-	border-color:#3C8C9D;
+	color:#333;
+	background-color:#fff;
 }
 .colorcombo-header .button{
-	background-color:rgba(0,0,0,0.2);
+	background-color:rgba(0,0,0,0.4);
 }
 .colorcombo-header2{
-	color:#FFF;
-	background-color:#333;
+	color:#333;
+	background-color:#fff;
 }
 .colorcombo-title{
-	color:#6CBCCD;
+	color:#96a5a5;
 	background-color:#FFF;
 }
 .colorcombo-body{
@@ -108,7 +107,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 }
 .colorcombo-body .button{
 	color:#fff!important;
-	background-color:#748739;
+	background-color:#005151;
 }
 .colorcombo-sidebar{
 	color:#333;

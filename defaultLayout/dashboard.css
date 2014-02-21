@@ -51,7 +51,7 @@ ul{
 
 /* Color Schemes */
 .colorScheme1{
-  background-color:#748739;
+  background-color:#005151;
   zbackground-image:-moz-linear-gradient(bottom,#59f,#ace);
   background-image:-moz-linear-gradient(top,rgba(255,255,255,0.4),rgba(255,255,255,0));
   color:#333;
@@ -61,12 +61,12 @@ ul{
   -moz-border-radius:0;
 }
 .colorScheme2 a{
-  color:#748739;
+  color:#005151;
   text-decoration:underline;
   cursor:pointer;
 }
 .pw-button{
-  background:#748739!important;
+  background:#005151!important;
   margin-right:4px;
 }
 
