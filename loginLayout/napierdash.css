@@ -142,6 +142,6 @@ input:not([type]),input[type="text"],input[type="password"]{
 
 /*  ----- TABLES ----- */
 
-table .usersTable th	{
-	background-color:#005151;
+table tr th	{
+	background-color:#005151 !important;
 }
