@@ -88,7 +88,7 @@ input:not([type]),input[type="text"],input[type="password"]{
 /* Color Palettes */
 .colorcombo-header{
 	color:#333;
-	background-color:#fff;
+	background-color:#005151;
 }
 .colorcombo-header .button{
 	background-color:rgba(0,0,0,0.4);
