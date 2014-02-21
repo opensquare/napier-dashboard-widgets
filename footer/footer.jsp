@@ -89,10 +89,10 @@
 	}	
 %>
 <div style="background-color:#005151;padding:4px;text-shadow:1px 1px 2px #000;color:#fff;font-size:11px">
-	Powered by <b><span id="clickMe">PortalWizard<span></b>
+	Powered by <b><span id="clickMe">Challenger<span></b>
 	<div id="info">
 		<u><%out.println("Portal Info");%></u><br />
-		App Name: <%=appName%><br />
+		App Name: Challenger<br />
 		App Path: <%=appPath%><br />
 		Last Widget Refresh: <%=refDate[0]%> @ <%=refDate[1]%><br />
 		From Bucket: <%=prop.getProperty("wizardWidgetStore")%><br />
@@ -104,7 +104,7 @@
     	<input id="closePopup" type="Submit" value="Close"/>
 	</div>
 	<div style="float:right">
-		&copy; Open Square, 2009 -
+		&copy; Quindell Enterprise Technology Solutions Ltd
 		<%
 			out.println(new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()));
 		%>
