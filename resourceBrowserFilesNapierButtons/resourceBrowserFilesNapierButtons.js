@@ -1,5 +1,23 @@
 function Widget_resourceBrowserFilesNapierButtons() {
 
+    this.initExtend = function(){
+        var parentForm = this.$widgetDiv.parents("form")[0];
+        $(parentForm).submit(function(e){
+            e.preventDefault();
+            this.submit();
+            var $releaseInput = $("input.release", this.$widgetDiv);
+            if($releaseInput.prop("checked")){
+                $.ajax({
+                    url : "proxy/loadbalancer/instances/all/REST/action/clearCache",
+                    type : "GET",
+                    error : function() {
+                        alert("Failed to deploy to calcservice instances");
+                    }
+                });
+            }
+        });
+    }
+
 	this.onReadyExtend = function() {
 		var widgetObject = this;
 		
