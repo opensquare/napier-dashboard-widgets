@@ -1,10 +1,8 @@
 function Widget_resourceBrowserFilesNapierButtons() {
 
     this.initExtend = function(){
-        var parentForm = this.$widgetDiv.parents("form")[0];
-        $(parentForm).submit(function(e){
-            e.preventDefault();
-            this.submit();
+        var iframe = this.$widgetDiv.parents(".widget").find("iframe")[0];
+        $(iframe).load(function(e){
             var $releaseInput = $("input.release", this.$widgetDiv);
             if($releaseInput.prop("checked")){
                 $.ajax({
