@@ -360,7 +360,7 @@ function Widget_resourceBrowserFiles() {
 	}
 	this.fileTypeFromName = function(filename) {
 		if (/.(jpg|jpeg|gif|png|bmp|tiff)$/i.test(filename)) return "image";
-		else if (/.(pdf|xls)$/i.test(filename)) return "binary";
+		else if (/.(pdf|xls|xlsx)$/i.test(filename)) return "binary";
 		else return "text"
 	}
 }
